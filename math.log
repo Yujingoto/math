@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.7.2-170924-2.6 (utf8.sjis) (TeX Live 2017/W32TeX) (preloaded format=platex 2017.12.7)  2 OCT 2018 13:58
+This is e-pTeX, Version 3.14159265-p3.7.2-170924-2.6 (utf8.sjis) (TeX Live 2017/W32TeX) (preloaded format=platex 2017.12.7)  4 OCT 2018 16:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -171,8 +171,7 @@ Package: tascmac 2017/12/06 v2.0e ascmac package (community edition)
 \@@bwsp=\box51
 \@bcal=\count103
 \shaderule=\dimen140
-))
-No file math.aux.
+)) (./math.aux)
 \openout1 = `math.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
@@ -202,6 +201,7 @@ LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
 LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
 (Font)              scaled to size 5.76599pt on input line 24.
 LaTeX Font Info:    Try loading font information for U+msa on input line 24.
+
 (c:/w32tex/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
@@ -249,65 +249,33 @@ LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
 (Font)              scaled to size 6.72699pt on input line 72.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
 (Font)              scaled to size 4.805pt on input line 72.
- [3] [4] [5] [6]
-[7] [8] [9]
-LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <10> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 391.
-LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
-(Font)              scaled to size 9.60999pt on input line 391.
-LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <10> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 391.
-LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 9.60999pt on input line 391.
-
-
-LaTeX Warning: Reference `eq:tan' on page 10 undefined on input line 391.
-
-
-LaTeX Warning: Reference `eq:square' on page 10 undefined on input line 392.
-
-
-LaTeX Warning: Reference `eq:tan2' on page 10 undefined on input line 393.
-
-
-LaTeX Warning: Reference `eq:square' on page 10 undefined on input line 393.
-
-[10]
+ [3] [4] [5]
 
 Package amsmath Warning: Cannot use `split' here;
-(amsmath)                trying to recover with `aligned' on input line 429.
+(amsmath)                trying to recover with `aligned' on input line 206.
 
+[6] [7] [8] [9] [10]
 
-LaTeX Warning: Reference `eq:aplusb' on page 11 undefined on input line 432.
+Package amsmath Warning: Cannot use `split' here;
+(amsmath)                trying to recover with `aligned' on input line 432.
 
+[11] [12] [13] [14] [15] [16]
 
-LaTeX Warning: Reference `eq:kahou' on page 11 undefined on input line 432.
+Package amsmath Warning: Cannot use `split' here;
+(amsmath)                trying to recover with `aligned' on input line 650.
 
-[11] [12]
-
-LaTeX Warning: Reference `eq:sum' on page 13 undefined on input line 497.
-
-
-LaTeX Warning: Reference `eq:sum' on page 13 undefined on input line 497.
-
-
-LaTeX Warning: Reference `eq:euler' on page 13 undefined on input line 517.
-
-[13] (./math.aux)
-
-LaTeX Warning: There were undefined references.
-
+[17] [18] (./math.aux)
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 1920 strings out of 493629
- 21947 string characters out of 6150213
- 87883 words of memory out of 5000000
- 5498 multiletter control sequences out of 15000+600000
+ 1926 strings out of 493629
+ 21987 string characters out of 6150213
+ 88883 words of memory out of 5000000
+ 5502 multiletter control sequences out of 15000+600000
  23885 words of font info for 104 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
- 27i,14n,26p,470b,244s stack positions out of 5000i,500n,10000p,500000b,80000s
+ 27i,15n,26p,470b,244s stack positions out of 5000i,500n,10000p,500000b,80000s
 
-Output written on math.dvi (13 pages, 37568 bytes).
+Output written on math.dvi (18 pages, 51100 bytes).
