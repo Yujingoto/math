@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.7.2-170924-2.6 (utf8.sjis) (TeX Live 2017/W32TeX) (preloaded format=platex 2017.12.7)  15 OCT 2018 19:19
+This is e-pTeX, Version 3.14159265-p3.7.2-170924-2.6 (utf8.sjis) (TeX Live 2017/W32TeX) (preloaded format=platex 2017.12.7)  16 OCT 2018 10:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -252,31 +252,35 @@ LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
  [3] [4] [5]
 
 Package amsmath Warning: Cannot use `split' here;
-(amsmath)                trying to recover with `aligned' on input line 212.
+(amsmath)                trying to recover with `aligned' on input line 198.
+
+
+Package amsmath Warning: Cannot use `split' here;
+(amsmath)                trying to recover with `aligned' on input line 219.
 
 [6] [7] [8] [9] [10]
 
 Package amsmath Warning: Cannot use `split' here;
-(amsmath)                trying to recover with `aligned' on input line 435.
+(amsmath)                trying to recover with `aligned' on input line 441.
 
-[11] [12] [13] [14] [15] [16]
-
-Package amsmath Warning: Cannot use `split' here;
-(amsmath)                trying to recover with `aligned' on input line 651.
-
-[17] [18] [19] [20] [21] [22] [23] [24] [25]
+[11] [12] [13] [14] [15] [16] [17]
 
 Package amsmath Warning: Cannot use `split' here;
-(amsmath)                trying to recover with `aligned' on input line 966.
+(amsmath)                trying to recover with `aligned' on input line 693.
 
-[26] [27] [28] (./math.aux) ) 
+[18] [19] [20] [21] [22] [23] [24] [25] [26]
+
+Package amsmath Warning: Cannot use `split' here;
+(amsmath)                trying to recover with `aligned' on input line 1008.
+
+[27] [28] [29] (./math.aux) ) 
 Here is how much of TeX's memory you used:
- 1933 strings out of 493629
- 22049 string characters out of 6150213
+ 1934 strings out of 493629
+ 22055 string characters out of 6150213
  89883 words of memory out of 5000000
- 5509 multiletter control sequences out of 15000+600000
+ 5510 multiletter control sequences out of 15000+600000
  23885 words of font info for 104 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
  27i,15n,26p,470b,244s stack positions out of 5000i,500n,10000p,500000b,80000s
 
-Output written on math.dvi (28 pages, 82072 bytes).
+Output written on math.dvi (29 pages, 85772 bytes).
