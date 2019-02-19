@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.7.2-170924-2.6 (utf8.sjis) (TeX Live 2017/W32TeX) (preloaded format=platex 2017.12.7)  19 FEB 2019 18:00
+This is e-pTeX, Version 3.14159265-p3.7.2-170924-2.6 (utf8.sjis) (TeX Live 2017/W32TeX) (preloaded format=platex 2017.12.7)  19 FEB 2019 18:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -171,11 +171,7 @@ Package: tascmac 2017/12/06 v2.0e ascmac package (community edition)
 \@@bwsp=\box51
 \@bcal=\count103
 \shaderule=\dimen140
-)) (./math.aux
-
-LaTeX Warning: Label `addition_theorem' multiply defined.
-
-)
+)) (./math.aux)
 \openout1 = `math.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
@@ -205,7 +201,8 @@ LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
 LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
 (Font)              scaled to size 5.76599pt on input line 24.
 LaTeX Font Info:    Try loading font information for U+msa on input line 24.
- (c:/w32tex/share/texmf-dist/tex/latex/amsfonts/umsa.fd
+
+(c:/w32tex/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 24.
@@ -281,11 +278,7 @@ Package amsmath Warning: Cannot use `split' here;
 Package amsmath Warning: Cannot use `split' here;
 (amsmath)                trying to recover with `aligned' on input line 1032.
 
-[28] [29] [30] (./math.aux)
-
-LaTeX Warning: There were multiply-defined labels.
-
- ) 
+[28] [29] [30] (./math.aux) ) 
 Here is how much of TeX's memory you used:
  1942 strings out of 493629
  22148 string characters out of 6150213
@@ -295,4 +288,4 @@ Here is how much of TeX's memory you used:
  934 hyphenation exceptions out of 8191
  27i,15n,26p,460b,244s stack positions out of 5000i,500n,10000p,500000b,80000s
 
-Output written on math.dvi (30 pages, 93964 bytes).
+Output written on math.dvi (30 pages, 93968 bytes).
