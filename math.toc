@@ -58,8 +58,8 @@
 \contentsline {subsection}{\numberline {3.1.2}マクローリン展開}{31}
 \contentsline {subsection}{\numberline {3.1.3}指数関数と三角関数のマクローリン展開}{32}
 \contentsline {subsection}{\numberline {3.1.4}オイラーの公式の有用性}{33}
-\contentsline {section}{\numberline {3.2}フーリエ変換}{35}
-\contentsline {subsubsection}{}{35}
-\contentsline {subsubsection}{フーリエ級数展開}{35}
-\contentsline {subsubsection}{フーリエ変換}{35}
-\contentsline {subsection}{\numberline {3.2.1}}{35}
+\contentsline {section}{\numberline {3.2}フーリエ変換}{34}
+\contentsline {subsubsection}{脳波とは}{35}
+\contentsline {subsubsection}{フーリエ級数展開}{36}
+\contentsline {subsubsection}{フーリエ変換}{36}
+\contentsline {subsection}{\numberline {3.2.1}}{36}
