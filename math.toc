@@ -60,6 +60,7 @@
 \contentsline {subsection}{\numberline {3.1.4}オイラーの公式の有用性}{33}
 \contentsline {section}{\numberline {3.2}フーリエ変換}{34}
 \contentsline {subsubsection}{脳波とは}{35}
-\contentsline {subsubsection}{フーリエ級数展開}{36}
 \contentsline {subsubsection}{フーリエ変換}{36}
-\contentsline {subsection}{\numberline {3.2.1}}{36}
+\contentsline {subsection}{\numberline {3.2.1}wavelet 変換}{37}
+\contentsline {subsubsection}{フーリエ変換の弱点}{37}
+\contentsline {subsubsection}{morlet wavelet}{37}
