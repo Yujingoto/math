@@ -1111,9 +1111,7 @@ i\sin x = \sum_{k=0}^{\infty}(-1)^k \frac{x^{2k + 1}}{(2k + 1)!} = \frac{ix}{1!}
 \\
 こうして, 複雑極まりない脳波を, 単純で解釈のしやすい三角関数の足し合わせとして表現しよう！というのがフーリエ変換のモチベーションです.\\
 \\
-\subsection{フーリエ変換}
-本当は, フーリエ変換以前にフーリエ級数展開なるものを学んだりするものですが, 本書は大雑把な理解を目的としているのでそこらへんは自分でやってみてください.\\
-\\
+\subsection{フーリエ級数展開}
 さて, フーリエ変換をする目的は, 複雑すぎて解釈できない時間関数を単純な関数によって表現する事で表現することでした.\\
 \\
 複雑な関数でも, 三角関数の足し合わせで表現できるという事は既に確認しましたね. 三角関数の特徴は, その振幅と角周波数が分かれば定義する事ができます. \\
@@ -1121,6 +1119,52 @@ i\sin x = \sum_{k=0}^{\infty}(-1)^k \frac{x^{2k + 1}}{(2k + 1)!} = \frac{ix}{1!}
 \\
 つまりフーリエ変換とは, 元関数を単純な三角関数に分け, それぞれの振幅を角周波数毎に求める事をさします.\\
 \\
+このうち, 元関数f(t)を単純な三角関数の足し合わせに分解するまでをフーリエ級数展開と言い, 式では以下のようになります. 
+\begin{eqnarray}
+f(t) = a_0 + \sum_{\omega=1}^\infty {(a_\omega \sin(\omega t) + b_\omega \cos(\omega t))}
+\label{eq:fourierkyusu}
+\end{eqnarray}
+式(\ref{eq:fourierkyusu})の意味はこうです. 「元関数f(t)を, 1から無限の角周波数のsin, cos波の足し合わせとして表現する」 そのまんまですね！\\
+\\
+ここでのaやbは変数で, 実際にはそれぞれの項毎に異なる値を取ります. 要は振幅の事ですね.\\
+\subsection{複素フーリエ級数}
+しかし, 式(\ref{eq:fourierkyusu})は面倒ですね. なんていったってsinとcosを分けて計算するのがだるすぎます. どうにか綺麗にできないものか...\\
+\\
+え？オイラーの公式を使えばいいって？ ...天才かよ！！
+\\
+早速オイラーの公式を使って簡単にしてみましょう. 
+\begin{eqnarray}
+\mathrm{e}^{i\omega t} = \cos\omega t + i\sin\omega t
+\label{eq:normaleuler}
+\end{eqnarray}
+いつもは$\pi$のところですが, 今回は空気を読んで角周波数$\omega t$に変形しています. しかし問題はあれです. オイラーの公式には愛がありますが, フーリエ級数展開の方には愛がありません. どうしたことか.\\
+\\
+オイラーの公式の裏を使います.
+\begin{eqnarray}
+\mathrm{e}^{-i\omega t} = \cos\omega t - i\sin\omega t
+\label{eq:eulerminus}
+\end{eqnarray}
+式(\ref{eq:eulerminus})が成り立つのは大丈夫ですね？角度が実軸対称に飛んだら, cos成分は変わりませんがsin成分は符号が反転します. うちの猫でも知ってる事です.\\
+\\
+さて, 次に式(\ref{eq:normaleuler})と式(\ref{eq:eulerminus})を連立して解く事で式(\ref{eq:fourierkyusu})のcosとsinを置き換えます. \\
+\begin{eqnarray}
+f(t) = a_0 + \sum_{\omega=1}^\infty {(a_\omega \frac{\mathrm{e}^{i\omega t}+\mathrm{e}^{-i\omega t}}{2} + b_\omega \frac{\mathrm{e}^{i\omega t} - \mathrm{e}^{-i\omega t}}{2i})}
+\label{eq:complexfourier}
+\end{eqnarray}
+この式を同類項を抜き出して整理すると
+\begin{eqnarray}
+f(t) = a_0 + \sum_{\omega=1}^\infty {(\frac{a_\omega - ib_\omega}{2}\mathrm{e}^{i\omega t})} + \sum_{\omega=1}^\infty {(\frac{a_\omega + ib\omega}{2}\mathrm{e}^{i\omega t})}
+\label{eq:complexfourierkai}
+\end{eqnarray}
+となり, 更に$\mathrm{e}^{-i\omega t}$において$\omega$を1から$\infty$まで足すのと, $\mathrm{e}^{i\omega t}$において$-\infty$から-1まで足すのは同義なため, この3項をうまくくっつける事で
+\begin{eqnarray}
+f(t) = \sum_{\omega = -\infty}^\infty F_\omega \mathrm{e}^{i\omega t}
+\end{eqnarray}
+とおけますね！いい感じにまとまりました！！！\\
+あ, 定数部分は面倒なので$F_\omega$とおいてます. \\
+\\
+フーリエ変換では, この係数たちを求めます. 
+\subsection{フーリエ変換} 
 実際に式を見てみましょう.\\
 \begin{eqnarray}
 F(\omega) = \int_{-\infty}^{\infty} f(t)\mathrm{e}^{-i\omega t}
@@ -1142,10 +1186,19 @@ F(\omega) = \int_{-\infty}^{\infty} f(t)(\cos\omega t - i\sin\omega t)
 F(\omega) = \int_{-\infty}^{\infty} (f(t)\cos\omega t - f(t)i\sin\omega t)
 \label{eq:furierkaikai}
 \end{eqnarray}
-もう完璧ですね. ここまで解してあげれば赤ちゃんでも噛み砕けそうですね！！噛み砕けない人は乳歯が生えていないのです. 成長を待ちましょう.\\
+もう完璧ですね. ここまで解してあげれば赤ちゃんでも噛み砕けそうです！！噛み砕けない人は乳歯が生えていないのでしょう. かわいそうに...\\
 \\
 さて, 式(\ref{eq:furierkaikai})を日本語にしてみましょうか.\\
-まず, 時間(t)における元関数(ここでは, ある電極で取れた脳波ですね)と, 角周波数($\omega$)のcos, sin成分それぞれとの内積を取っています. この時, sin波の方にはiをかけていますね. これはオイラーの公式でやっているので大丈夫でしょう. 別の軸ですからね. \\
+まず, 時間(t)における元関数(ここでは, ある電極で取れた脳波ですね)と, 角周波数($\omega$)のcos, sin成分それぞれとの内積を取っています. この時, sin波の方にはiをかけていますね. \\
+\\
+\\
+ここの説明は少し面倒なので省いてしまいますが, ざっくり言うと\\
+\\
+・係数を求めるということは, 内積を取るという事\\
+・ふつうの数なら内積は正の数になりますが, 複素数は負の値や複素数が結果になってしまうので, 共役複素数を使う\\
+\\
+の2点がポイントです. これにより, ある角周波数成分 $\mathrm{e}^{i\omega t}$と元関数f(t)の内積を求める際に$\mathrm{e}^{-i\omega t}$を用いるわけです. まあ, やってるのは普通に内積です.\\
+\\
 \\
 内積とは, 「どれだけ似ているか」の指標でしたね. つまりここで, 元関数は角周波数($\omega$)の三角関数とどれだけ似ているかを見ているわけです！！\\
 そしてその結果を $-\infty$ から$\infty$ までの範囲で積分 ... 足し算しています.\\
@@ -1157,7 +1210,7 @@ F(\omega) = \int_{-\infty}^{\infty} (f(t)\cos\omega t - f(t)i\sin\omega t)
 実際には, 式(\ref{eq:furier})によって無限の周波数成分を抜き出し, それぞれの振幅を求める事で, 元関数(t)はそれぞれの周波数をそれぞれの振幅倍したsin波の足し合わせで出来てるね！と解釈します.\\
 例えば, 「タスク1をやらせた時の被験者君は5 -- 7Hzくらいの脳波がよくでているね！」「タスク2の時には大して強くないね。てことはタスク1と5 --7Hzの脳波には何か関係がありそうだね！！」といった具合です. 論文にもそのまんま書かれています.
 \\
-人はこれを周波数分解といい, これを使った解析が周波数解析と呼ばれる種々の解析になります！！（上の「」に入ってるのも周波数解析による解釈）
+人はこれを周波数分解といい, これを使った解析が周波数解析だとかスペクトル解析と呼ばれる種々の解析になります！！（上の「」に入ってるのも周波数解析による解釈）
 \section{wavelet 変換}
 \subsection{フーリエ変換の弱点}
 万能に思えるフーリエ変換ですが, 実は弱点があります.

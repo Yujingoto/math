@@ -60,8 +60,10 @@
 \contentsline {subsection}{\numberline {3.1.4}オイラーの公式の有用性}{33}
 \contentsline {section}{\numberline {3.2}フーリエ変換}{34}
 \contentsline {subsection}{\numberline {3.2.1}脳波とは}{35}
-\contentsline {subsection}{\numberline {3.2.2}フーリエ変換}{36}
-\contentsline {subsection}{\numberline {3.2.3}フーリエ変換の実用}{37}
-\contentsline {section}{\numberline {3.3}wavelet 変換}{37}
-\contentsline {subsection}{\numberline {3.3.1}フーリエ変換の弱点}{37}
-\contentsline {subsection}{\numberline {3.3.2}morlet wavelet}{37}
+\contentsline {subsection}{\numberline {3.2.2}フーリエ級数展開}{36}
+\contentsline {subsection}{\numberline {3.2.3}複素フーリエ級数}{36}
+\contentsline {subsection}{\numberline {3.2.4}フーリエ変換}{37}
+\contentsline {subsection}{\numberline {3.2.5}フーリエ変換の実用}{38}
+\contentsline {section}{\numberline {3.3}wavelet 変換}{39}
+\contentsline {subsection}{\numberline {3.3.1}フーリエ変換の弱点}{39}
+\contentsline {subsection}{\numberline {3.3.2}morlet wavelet}{39}

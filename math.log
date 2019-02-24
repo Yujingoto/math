@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.7.2-170924-2.6 (utf8.sjis) (TeX Live 2017/W32TeX) (preloaded format=platex 2017.12.7)  24 FEB 2019 18:04
+This is e-pTeX, Version 3.14159265-p3.7.2-170924-2.6 (utf8.sjis) (TeX Live 2017/W32TeX) (preloaded format=platex 2017.12.7)  25 FEB 2019 02:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -254,18 +254,18 @@ Package amsmath Warning: Cannot use `split' here;
 
 LaTeX Warning: Reference `basics' on page 34 undefined on input line 1088.
 
-[34] [35] [36] [37] (./math.aux)
+[34] [35] [36] [37] [38] [39] (./math.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 1818 strings out of 493629
- 20971 string characters out of 6150213
+ 1823 strings out of 493629
+ 21060 string characters out of 6150213
  87103 words of memory out of 5000000
- 5401 multiletter control sequences out of 15000+600000
+ 5406 multiletter control sequences out of 15000+600000
  26232 words of font info for 102 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
  27i,15n,26p,460b,226s stack positions out of 5000i,500n,10000p,500000b,80000s
 
-Output written on math.dvi (38 pages, 121688 bytes).
+Output written on math.dvi (40 pages, 126856 bytes).
