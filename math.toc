@@ -1,69 +1,73 @@
-\contentsline {chapter}{\numberline {第1章}はじめに}{3}
-\contentsline {section}{\numberline {1.1}本書の目的}{3}
-\contentsline {subsection}{\numberline {1.1.1}本書のカバーする内容}{3}
-\contentsline {chapter}{\numberline {第2章}基礎を学ぶ}{5}
-\contentsline {section}{\numberline {2.1}掛け算}{5}
-\contentsline {subsection}{\numberline {2.1.1}掛け算とは何か}{5}
-\contentsline {subsubsection}{数ってなぁに？}{5}
-\contentsline {subsubsection}{単一の数スカラー}{5}
-\contentsline {subsubsection}{複数の数からなる積}{6}
-\contentsline {subsubsection}{ベクトルの積}{6}
-\contentsline {subsubsection}{sin cos そして直交}{7}
-\contentsline {subsubsection}{ベクトルの積再訪, 外積}{8}
-\contentsline {subsubsection}{内積と外積の意味}{8}
-\contentsline {subsubsection}{ドット積}{9}
-\contentsline {subsubsection}{複素数の積}{9}
+\contentsline {section}{\numberline {0.1}本書の目的}{2}
+\contentsline {section}{\numberline {0.2}本書のカバーする内容}{3}
+\contentsline {chapter}{\numberline {第1章}基礎を学ぶ}{4}
+\contentsline {section}{\numberline {1.1}掛け算}{4}
+\contentsline {subsection}{\numberline {1.1.1}掛け算とは何か}{4}
+\contentsline {subsubsection}{数ってなぁに？}{4}
+\contentsline {subsubsection}{単一の数スカラー}{4}
+\contentsline {subsubsection}{複数の数からなる積}{5}
+\contentsline {subsubsection}{ベクトルの積}{5}
+\contentsline {subsubsection}{sin cos そして直交}{6}
+\contentsline {subsubsection}{ベクトルの積再訪, 外積}{7}
+\contentsline {subsubsection}{内積と外積の意味}{7}
+\contentsline {subsubsection}{ドット積}{8}
+\contentsline {subsubsection}{複素数の積}{8}
 \contentsline {subsubsection}{複素数の逆数}{9}
-\contentsline {subsubsection}{複素平面の掛け算の意味}{10}
-\contentsline {subsubsection}{大正義オイラーの公式}{10}
+\contentsline {subsubsection}{複素平面の掛け算の意味}{9}
+\contentsline {subsubsection}{大正義オイラーの公式}{9}
 \contentsline {subsubsection}{行列とは何か}{10}
-\contentsline {subsubsection}{行列の内積}{11}
-\contentsline {subsubsection}{ベクトルの内積の拡張としての内積}{11}
-\contentsline {subsubsection}{連立方程式としての行列}{11}
-\contentsline {subsubsection}{行列の積の回転の性質}{12}
+\contentsline {subsubsection}{行列の内積}{10}
+\contentsline {subsubsection}{ベクトルの内積の拡張としての内積}{10}
+\contentsline {subsubsection}{連立方程式としての行列}{10}
+\contentsline {subsubsection}{行列の積の回転の性質}{11}
 \contentsline {subsubsection}{最後に}{12}
-\contentsline {section}{\numberline {2.2}三角関数 }{13}
-\contentsline {subsection}{\numberline {2.2.1}三角比とは}{13}
-\contentsline {subsection}{\numberline {2.2.2}三角比の公式}{13}
-\contentsline {subsection}{\numberline {2.2.3}三角関数}{14}
-\contentsline {subsection}{\numberline {2.2.4}加法定理}{14}
-\contentsline {subsection}{\numberline {2.2.5}正弦と余弦}{15}
-\contentsline {subsection}{\numberline {2.2.6}関数の内積}{16}
-\contentsline {subsection}{\numberline {2.2.7}関数の直行性}{17}
-\contentsline {subsection}{\numberline {2.2.8}直交性}{17}
-\contentsline {subsection}{\numberline {2.2.9}フーリエ変換への一歩}{18}
-\contentsline {subsection}{\numberline {2.2.10}大正義オイラーの利用}{18}
-\contentsline {section}{\numberline {2.3}複素数}{18}
-\contentsline {subsection}{\numberline {2.3.1}虚数}{19}
-\contentsline {subsection}{\numberline {2.3.2}虚数の性質}{19}
-\contentsline {subsection}{\numberline {2.3.3}複素数}{20}
-\contentsline {subsection}{\numberline {2.3.4}数の大幅な拡張}{20}
-\contentsline {subsection}{\numberline {2.3.5}複素数平面}{21}
-\contentsline {subsection}{\numberline {2.3.6}極形式}{22}
-\contentsline {subsection}{\numberline {2.3.7}大正義オイラー再び}{22}
-\contentsline {subsection}{\numberline {2.3.8}複素数の掛け算}{22}
-\contentsline {subsection}{\numberline {2.3.9}戻り学習}{23}
-\contentsline {subsection}{\numberline {2.3.10}まとめ}{23}
-\contentsline {section}{\numberline {2.4}微分・積分}{23}
-\contentsline {subsection}{\numberline {2.4.1}極限とは}{24}
-\contentsline {subsection}{\numberline {2.4.2}ε-δ論法}{24}
-\contentsline {subsection}{\numberline {2.4.3}微小な変化率}{25}
-\contentsline {subsection}{\numberline {2.4.4}三角関数の微分}{26}
-\contentsline {subsection}{\numberline {2.4.5}ネイピア数}{26}
-\contentsline {subsection}{\numberline {2.4.6}積分}{27}
-\contentsline {subsubsection}{足し算としての積分}{28}
-\contentsline {chapter}{\numberline {第3章}応用数学}{30}
-\contentsline {section}{\numberline {3.1}オイラーの公式}{30}
-\contentsline {subsection}{\numberline {3.1.1}オイラーの公式を翻訳する}{30}
-\contentsline {subsection}{\numberline {3.1.2}マクローリン展開}{31}
-\contentsline {subsection}{\numberline {3.1.3}指数関数と三角関数のマクローリン展開}{32}
-\contentsline {subsection}{\numberline {3.1.4}オイラーの公式の有用性}{33}
-\contentsline {section}{\numberline {3.2}フーリエ変換}{34}
-\contentsline {subsection}{\numberline {3.2.1}脳波とは}{35}
-\contentsline {subsection}{\numberline {3.2.2}フーリエ級数展開}{36}
-\contentsline {subsection}{\numberline {3.2.3}複素フーリエ級数}{36}
-\contentsline {subsection}{\numberline {3.2.4}フーリエ変換}{37}
-\contentsline {subsection}{\numberline {3.2.5}フーリエ変換の実用}{38}
-\contentsline {section}{\numberline {3.3}wavelet 変換}{39}
-\contentsline {subsection}{\numberline {3.3.1}フーリエ変換の弱点}{39}
-\contentsline {subsection}{\numberline {3.3.2}morlet wavelet}{39}
+\contentsline {section}{\numberline {1.2}三角関数 }{12}
+\contentsline {subsection}{\numberline {1.2.1}三角比とは}{12}
+\contentsline {subsection}{\numberline {1.2.2}三角比の公式}{12}
+\contentsline {subsection}{\numberline {1.2.3}三角関数}{13}
+\contentsline {subsection}{\numberline {1.2.4}加法定理}{13}
+\contentsline {subsection}{\numberline {1.2.5}正弦と余弦}{14}
+\contentsline {subsection}{\numberline {1.2.6}関数の内積}{15}
+\contentsline {subsection}{\numberline {1.2.7}関数の直行性}{16}
+\contentsline {subsection}{\numberline {1.2.8}直交性}{16}
+\contentsline {subsection}{\numberline {1.2.9}フーリエ変換への一歩}{17}
+\contentsline {subsection}{\numberline {1.2.10}大正義オイラーの利用}{17}
+\contentsline {section}{\numberline {1.3}複素数}{17}
+\contentsline {subsection}{\numberline {1.3.1}虚数}{18}
+\contentsline {subsection}{\numberline {1.3.2}虚数の性質}{18}
+\contentsline {subsection}{\numberline {1.3.3}複素数}{19}
+\contentsline {subsection}{\numberline {1.3.4}数の大幅な拡張}{19}
+\contentsline {subsection}{\numberline {1.3.5}複素数平面}{20}
+\contentsline {subsection}{\numberline {1.3.6}極形式}{21}
+\contentsline {subsection}{\numberline {1.3.7}大正義オイラー再び}{21}
+\contentsline {subsection}{\numberline {1.3.8}複素数の掛け算}{21}
+\contentsline {subsection}{\numberline {1.3.9}戻り学習}{22}
+\contentsline {subsection}{\numberline {1.3.10}まとめ}{22}
+\contentsline {section}{\numberline {1.4}微分・積分}{22}
+\contentsline {subsection}{\numberline {1.4.1}極限とは}{23}
+\contentsline {subsection}{\numberline {1.4.2}ε-δ論法 }{23}
+\contentsline {subsection}{\numberline {1.4.3}微小な変化率}{24}
+\contentsline {subsection}{\numberline {1.4.4}三角関数の微分}{25}
+\contentsline {subsection}{\numberline {1.4.5}ネイピア数}{25}
+\contentsline {subsection}{\numberline {1.4.6}積分}{26}
+\contentsline {subsubsection}{足し算としての積分}{27}
+\contentsline {section}{\numberline {1.5}統計学}{28}
+\contentsline {subsection}{\numberline {1.5.1}基本統計量}{28}
+\contentsline {subsection}{\numberline {1.5.2}相関と共分散}{29}
+\contentsline {subsubsection}{相関と散布図}{29}
+\contentsline {subsubsection}{共分散}{30}
+\contentsline {chapter}{\numberline {第2章}応用数学}{32}
+\contentsline {section}{\numberline {2.1}オイラーの公式 }{32}
+\contentsline {subsection}{\numberline {2.1.1}オイラーの公式を翻訳する}{32}
+\contentsline {subsection}{\numberline {2.1.2}マクローリン展開}{33}
+\contentsline {subsection}{\numberline {2.1.3}指数関数と三角関数のマクローリン展開}{34}
+\contentsline {subsection}{\numberline {2.1.4}オイラーの公式の有用性}{35}
+\contentsline {section}{\numberline {2.2}フーリエ変換}{36}
+\contentsline {subsection}{\numberline {2.2.1}脳波とは}{37}
+\contentsline {subsection}{\numberline {2.2.2}フーリエ級数展開}{38}
+\contentsline {subsection}{\numberline {2.2.3}複素フーリエ級数}{38}
+\contentsline {subsection}{\numberline {2.2.4}フーリエ変換}{39}
+\contentsline {subsection}{\numberline {2.2.5}フーリエ変換の実用}{40}
+\contentsline {section}{\numberline {2.3}wavelet 変換}{41}
+\contentsline {subsection}{\numberline {2.3.1}フーリエ変換の弱点}{41}
+\contentsline {subsection}{\numberline {2.3.2}morlet wavelet}{41}
