@@ -4,6 +4,7 @@
 \usepackage{bm}
 \usepackage{graphicx}
 \usepackage{ascmac}
+\usepackage{float}
 %
 \setlength{\textheight}{40\baselineskip}
 \addtolength{\textheight}{\topskip}
@@ -402,7 +403,14 @@ y = -\frac{5x}{8} + \frac{8}{3}
 こんなやつですね！\\
 \\
 sinが縦, cosが横, そしてtanが傾きを表しているので, 基本的な直角三角形であればその場ですぐ計算できますね？\\
-\\
+
+\begin{figure}[H]
+\label{im:trigonometry}
+  \centering
+  \includegraphics[width=120mm,bb=0 0 287 170]{figures/trigonometry.png}
+  \caption{三角比のイメージ図}
+\end{figure}
+
 \subsection{三角比の公式}
 三角比には, いくつか公式があります. ここを暗記で片づけるのは阿呆のする事です. いったん確認してみましょう.
 \begin{eqnarray}
@@ -444,6 +452,13 @@ $\tan x$ は一寸特殊で, 三角形の斜辺の傾きを表すという性質
 \end{eqnarray}
 こうなっているのです！！やばいですね！！！
 \\
+
+\begin{figure}[H]
+\label{im:sincos}
+  \centering
+  \includegraphics[width=120mm,bb=0 0 601 301]{figures/sincos.jpg}
+  \caption{sin / cosの図}
+\end{figure}
 
 \subsection{加法定理\label{addition_theorem}}
 これはオイラーの公式を用いる事で, 覚えていなくてもその場で導出できます. (オイラーの証明(参照: \ref{euler})) みててください.　オイラーの公式より
@@ -537,6 +552,14 @@ f_3(x) = 16,40,76, 124, 184
 こいつはバンドパスフィルターなどに使われていて, たとえば速くて細かい挙動をする信号でもゆるやかなカーブを描く低周波関数と掛け合わせることで, 丸くなった新しい関数を定義できるって寸法ですね！！\\
 \\
 ちょいと雑ですが, 畳み込みとはこの考え方を使って関数をいじいじするやつです！！\\
+
+\begin{figure}[H]
+\label{im:convolution}
+  \centering
+  \includegraphics[width=120mm,bb=0 0 350 276]{figures/Convolution.png}
+  \caption{畳み込みのイメージ (OriginLabより)}
+\end{figure}
+
 \subsection{関数の直行性}
 話をもどします. ベクトルにおいて内積が0になるとどうなっていましたか？\\
 そう, 直交です！！！\\
@@ -551,7 +574,14 @@ sinとcosは直交する関数なんですね！！！すごい！！\\
 そりゃそうですよねー. 複素数や直交座標系と同じノリです.\\
 \\
 つまり...全ての(周期)関数は, 異なる振幅, 周波数の三角関数の足し合わせによって表す事ができるのです！！！\\
-\\
+
+\begin{figure}[H]
+\label{im:furier}
+  \centering
+  \includegraphics[width=120mm,bb=0 0 974 643]{figures/furier.png}
+  \caption{フーリエ変換の気持ち (宇宙一分かりやすいフーリエ変換より)}
+\end{figure}
+
 \subsection{フーリエ変換への一歩}
 前項での内容を式に表すとこうなります. よく見てください.
 \begin{eqnarray}
@@ -605,7 +635,7 @@ f(x) = a_0 + \sum_{n=1}^\infty {a_n \sin(nt) + b_n\cos(nt)}
 平方して負の値になる数は存在しない. これは中学で習う事ですがこれを厳密に言うと, 「従来の数には存在しない」と解釈したわけです.\\
 \\
 そこで, 平方して負の値になる数を考え, これを虚数と名付けました.\\
-実数の単位が1なら, 虚数の単位は1iとなります. 虚数も0の平方にマイナスをつけようとしたところで0なので, 実数と虚数は0で直角に交わる事になります.\\
+実数の単位が1なら, 虚数の単位は1iとなります. 虚数も0の平方にマイナスをつけようとしたところで0なので, 実数と虚数は0で直交する事になります.\\
 \\
 これが虚数の定義ですね！！ 高校数学では「存在しない数」などと習いますがこれは誤解を招きます. 虚数の意義とは「y軸」を定義できる事にこそあるのです！！！\\
 存在しない数があったから, 虚数と名付けたのではなく, 実数と直交性を持った数 = 虚数として使えそうな定義はないものかと考えた時に, 平方すると　-1 になる数, を考え付いたわけです.
@@ -634,6 +664,13 @@ f(x) = a_0 + \sum_{n=1}^\infty {a_n \sin(nt) + b_n\cos(nt)}
 このように, 実数部分と虚数部分の足し合わせによって, 複素平面（二次元）上の数を表現した数を複素数といいます.\\
 \\
 こいつのうれしさは, 直交座標や行列のように複数の数の集まりではなく, ひとつの数として扱える点です！！！\\
+
+\begin{figure}[H]
+\label{im:imagine}
+  \centering
+  \includegraphics[width=100mm,bb=0 0 300 272]{figures/gauss.png}
+  \caption{虚数軸 (高校数学の美しい物語より)}
+\end{figure}
 
 \subsection{数の大幅な拡張}
 複素数の定義が分かったところで, これが実際にどうやって影響してくるのかについて考えます. 一次元が二次元に拡張されたわけですからその恩恵は計り知れません. \\
@@ -682,6 +719,14 @@ z = x + yi
 \begin{eqnarray}
 \overline{z} = x - yi
 \end{eqnarray}
+
+\begin{figure}[H]
+\label{im:complex}
+  \centering
+  \includegraphics[width=100mm,bb=0 0 220 279]{figures/Complex.png}
+  \caption{複素平面 (wikipediaより)}
+\end{figure}
+
 \subsection{極形式}
 複素数 z は x + yi のような表記の仕方以外に, もう一つの表し方ができます.\\
 \\
@@ -698,6 +743,13 @@ z = x + iy = r(\cos \varphi + i\sin \varphi)
 \end{eqnarray}
 
 $r\sin\varphi$ で導出される数は実数(y)になっているため i をかける事を忘れないように.\\
+
+\begin{figure}[H]
+\label{im:polar}
+  \centering
+  \includegraphics[width=120mm,bb=0 0 406 246]{figures/polar.png}
+  \caption{極形式 (はてなフォトライフより)}
+\end{figure}
 
 \subsection{大正義オイラー再び}
 式(\ref{eq:kyoku})の最右辺をよく見てください. どこかで見た式ですね！！！\\
@@ -718,7 +770,7 @@ z_1 * z_2 = (x_1 + iy_1)(x_2 + iy_2)\\
 \end{eqnarray}
 
 こうなっているのです！！！\\
-複素数の掛け算は絶対値をかけた上の回転を表す. 自明でしたね！！！
+複素数の掛け算は絶対値をかけた上の回転を表すのですね！！
 \subsection{戻り学習}
 ここで再び, 虚数とは何か, 何故平方すると-1になるのかを考えます.\\
 任意の複素数を考えます. ここでは面倒なので $ 3 + 0i$ としましょうか.
@@ -815,7 +867,7 @@ f(x)とbの間の距離が任意の正の数εより狭い範囲において, �
 \lim_{x \to a} f(x)
 \end{eqnarray}
 このうち, f(x)が二次以上の関数の場合は $|x-a|$の値が大きければ大きい程グラフの形を無視して串刺しにする線が引かれ, 小さい程グラフの縁の角度に近い線が引かれていきます.\\
-\\
+
 そしてこの値が一点に集中したとき, つまり$|x-a|$が0となったとき, それは点aにおける接線の式になるのでした.\\
 \\
 これはつまり, 超微小で見た変化率＝接線を求めているという事で, この操作をする事を微分と言います.\\
@@ -824,6 +876,14 @@ f(x)とbの間の距離が任意の正の数εより狭い範囲において, �
 「あたりまえだろお前高校数学やったか？」と思っただろ！！やってねえんだよ！！\\
 \\
 実際この微分の捉え方, よく理解できている人は多くないように思えます. かみしめてください.
+
+\begin{figure}[H]
+\label{im:sessen}
+  \centering
+  \includegraphics[width=120mm,bb=0 0 700 525]{figures/sessen.png}
+  \caption{局所的な微小変化率 = 接線}
+\end{figure}
+
 \subsection{三角関数の微分}
 上記の性質が分かっていれば, 簡単な公式達です. 覚えるまでもありません.
 \begin{eqnarray}
@@ -850,7 +910,13 @@ e = \lim_{x\to 0} (1+x)^\frac{1}{x} = \lim_{x \to \infty} (1+\frac{1}{x})^x
 まぁここは良いです. 大事なのは指数関数を微分しても値が変わらないという性質の確認だけです.\\
 \\
 さて, 一般に正の1以上の数を底とする指数関数は, 第一象限で二次関数的な上がり方をし, (0,1)を通って, 第二象限ではx軸に漸近しつつ徐々に横ばいな形をとりますね？\\
-\\
+\begin{figure}[H]
+\label{im:sisuu}
+  \centering
+  \includegraphics[width=120mm,bb=0 0 919 919]{figures/sisuu.jpg}
+  \caption{指数関数}
+\end{figure}
+
 こいつを, x軸方向に様々な点で接線ぽいのを引き, 傾きを推測してみてください. \\
 \\
 面白い事に, こうやって求めた傾きの値をy成分として新しくグラフを書いた f(x)' も指数関数の形をしているのです！！\\
@@ -866,7 +932,7 @@ e = \lim_{x\to 0} (1+x)^\frac{1}{x} = \lim_{x \to \infty} (1+\frac{1}{x})^x
 \mathrm{e}^{i\theta} = \cos\theta + i\sin\theta \\
 F(x)=\frac{1}{\sqrt{2\pi \sigma^2}}\int_{-\infty}^{\infty}\exp{\left\{-\frac{(x-\mu)^2}{2\sigma^2}\right\}}\ \mathrm{d}x
 \end{eqnarray}
-書くのが面倒なのでいかついのは１個だけにします. ガウス関数ですね. 統計とか信号処理やるときにでてきます. あとは言わずもがなのオイラーの公式です.\\
+書くのが面倒なのでいかついのは１個だけにします. ガウス関数ですね. 統計とか信号処理やるときにでてきます. 上は言わずもがなのオイラーの公式です.\\
 \subsection{積分}
 さて, 微分がわかったとこで積分の気持ちです. パパっといきます.\\
 まず, 計算の上でいえる事としては, 微分の逆の操作をするという事です.
