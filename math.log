@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.7.2-170924-2.6 (utf8.sjis) (TeX Live 2017/W32TeX) (preloaded format=platex 2017.12.7)  27 MAR 2019 00:45
+This is e-pTeX, Version 3.14159265-p3.7.2-170924-2.6 (utf8.sjis) (TeX Live 2017/W32TeX) (preloaded format=platex 2017.12.7)  27 MAR 2019 19:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -266,31 +266,49 @@ File: figures/sessen.png Graphic file (type eps)
  <figures/sessen.png> [29]
 File: figures/sisuu.jpg Graphic file (type eps)
  <figures/sisuu.jpg> [30] [31]
-[32] [33] [34] [35] [36]
-第 2 章
-[37
+[32] [33]
+File: figures/hist.png Graphic file (type eps)
+ <figures/hist.png> [34]
+File: figures/z-hist.png Graphic file (type eps)
+ <figures/z-hist.png> [35]
+File: figures/scatter1.png Graphic file (type eps)
 
-] [38] [39]
+<figures/scatter1.png> [36]
+File: figures/scatter2.png Graphic file (type eps)
+ <figures/scatter2.png> [37]
+File: figures/predict.png Graphic file (type eps)
+ <figures/predict.png>
+[38]
+File: figures/kyoubunnsann.png Graphic file (type eps)
+ <figures/kyoubunnsann.png> [39] [40]
+第 2 章
+[41
+
+] [42]
+File: figures/exp.png Graphic file (type eps)
+ <figures/exp.png>
+File: figures/sine.png Graphic file (type eps)
+ <figures/sine.png> [43]
+File: figures/cosine.png Graphic file (type eps)
+ <figures/cosine.png>
+[44]
 
 Package amsmath Warning: Cannot use `split' here;
-(amsmath)                trying to recover with `aligned' on input line 1192.
+(amsmath)                trying to recover with `aligned' on input line 1256.
 
-[40]
-
-LaTeX Warning: Reference `basics' on page 41 undefined on input line 1248.
-
-[41] [42] [43] [44] [45] [46] (./math.aux)
-
-LaTeX Warning: There were undefined references.
-
- ) 
+[45] [46] [47]
+File: figures/topomap.png Graphic file (type eps)
+ <figures/topomap.png> [48]
+File: figures/eeg.jpg Graphic file (type eps)
+ <figures/eeg.jpg> [49] [50] [51]
+[52] [53] (./math.aux) ) 
 Here is how much of TeX's memory you used:
- 1920 strings out of 493629
- 22287 string characters out of 6150213
- 87491 words of memory out of 5000000
- 5487 multiletter control sequences out of 15000+600000
+ 1952 strings out of 493629
+ 22714 string characters out of 6150213
+ 88642 words of memory out of 5000000
+ 5509 multiletter control sequences out of 15000+600000
  26232 words of font info for 102 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
  27i,15n,26p,460b,226s stack positions out of 5000i,500n,10000p,500000b,80000s
 
-Output written on math.dvi (47 pages, 144240 bytes).
+Output written on math.dvi (54 pages, 147004 bytes).
