@@ -1,9 +1,9 @@
-This is e-pTeX, Version 3.14159265-p3.7.2-170924-2.6 (utf8.sjis) (TeX Live 2017/W32TeX) (preloaded format=platex 2017.12.7)  28 MAR 2019 01:16
+This is e-pTeX, Version 3.14159265-p3.7.2-170924-2.6 (utf8.sjis) (TeX Live 2017/W32TeX) (preloaded format=platex 2017.12.7)  3 APR 2019 16:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**./math.tex
-(./math.tex
+**./advanced.tex
+(./advanced.tex
 pLaTeX2e <2017/10/28>+3 (based on LaTeX2e <2017-04-15>)
 Babel <3.15> and hyphenation patterns for 84 language(s) loaded.
 (c:/w32tex/share/texmf-dist/tex/platex/base/jreport.cls
@@ -160,12 +160,8 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \float@box=\box51
 \@float@everytoks=\toks23
 \@floatcapt=\box52
-) (./math.aux
-
-LaTeX Warning: Label `im:sincos' multiply defined.
-
-)
-\openout1 = `math.aux'.
+) (./advanced.aux)
+\openout1 = `advanced.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
 LaTeX Font Info:    ... okay on input line 28.
@@ -184,7 +180,8 @@ LaTeX Font Info:    ... okay on input line 28.
 LaTeX Font Info:    Checking defaults for JT1/mc/m/n on input line 28.
 LaTeX Font Info:    ... okay on input line 28.
 LaTeX Font Info:    Try loading font information for U+msa on input line 29.
- (c:/w32tex/share/texmf-dist/tex/latex/amsfonts/umsa.fd
+
+(c:/w32tex/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 29.
@@ -198,131 +195,73 @@ LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <20.74> not available
 (Font)              Font shape `JT1/gt/m/n' tried instead on input line 32.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <20.74> not available
 (Font)              Font shape `JY1/gt/m/n' tried instead on input line 32.
- (./math.toc
+ (./advanced.toc
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <10.95> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 3.
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 1.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <10.95> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 3.
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 1.
+)
+\tf@toc=\write3
+\openout3 = `advanced.toc'.
+
 
 [1
 
-])
-\tf@toc=\write3
-\openout3 = `math.toc'.
-
+]
+第 1 章
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <14.4> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 35.
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 38.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <14.4> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 35.
- [2]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 55.
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 38.
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <12> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 43.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <12> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 43.
+[2
+
+] [3]
+File: figures/exp.png Graphic file (type eps)
+ <figures/exp.png>
+File: figures/sine.png Graphic file (type eps)
+ <figures/sine.png> [4]
+File: figures/cosine.png Graphic file (type eps)
+ <figures/cosine.png> [5]
+
+Package amsmath Warning: Cannot use `split' here;
+(amsmath)                trying to recover with `aligned' on input line 169.
+
+[6] [7]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 210.
+
  (c:/w32tex/share/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 55.
- [3]
-第 1 章
-LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <12> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 65.
-LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <12> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 65.
-[4
-
-] [5] [6] [7]
-
-Package amsmath Warning: Cannot use `split' here;
-(amsmath)                trying to recover with `aligned' on input line 208.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 210.
 
 
-Package amsmath Warning: Cannot use `split' here;
-(amsmath)                trying to recover with `aligned' on input line 229.
+LaTeX Warning: Reference `basics' on page 8 undefined on input line 225.
 
-[8] [9] [10] [11]
-File: figures/trigonometry.png Graphic file (type eps)
- <figures/trigonometry.png> [12] [13]
-File: figures/sincos.jpg Graphic file (type eps)
- <figures/sincos.jpg>
-
-Package amsmath Warning: Cannot use `split' here;
-(amsmath)                trying to recover with `aligned' on input line 475.
-
-[14]
-File: figures/sines.png Graphic file (type eps)
- <figures/sines.png> [15] [16]
-File: figures/Convolution.png Graphic file (type eps)
- <figures/Convolution.png> [17]
-File: figures/furier.png Graphic file (type eps)
-
-<figures/furier.png> [18] [19] [20] [21]
-File: figures/gauss.png Graphic file (type eps)
- <figures/gauss.png> [22]
-File: figures/Complex.png Graphic file (type eps)
-
-<figures/Complex.png> [23] [24]
-File: figures/polar.png Graphic file (type eps)
- <figures/polar.png>
-
-Package amsmath Warning: Cannot use `split' here;
-(amsmath)                trying to recover with `aligned' on input line 777.
-
-[25] [26]
-File: figures/ed.jpg Graphic file (type eps)
- <figures/ed.jpg> [27] [28]
-File: figures/sessen.png Graphic file (type eps)
- <figures/sessen.png> [29] [30]
-File: figures/sisuu.jpg Graphic file (type eps)
-
-<figures/sisuu.jpg> [31] [32]
-File: figures/int.jpg Graphic file (type eps)
- <figures/int.jpg> [33]
-File: figures/hist.png Graphic file (type eps)
- <figures/hist.png>
-[34] [35]
-File: figures/z-hist.png Graphic file (type eps)
- <figures/z-hist.png> [36]
-File: figures/scatter1.png Graphic file (type eps)
- <figures/scatter1.png> [37]
-File: figures/scatter2.png Graphic file (type eps)
-
-<figures/scatter2.png> [38]
-File: figures/predict.png Graphic file (type eps)
- <figures/predict.png> [39]
-File: figures/kyoubunnsann.png Graphic file (type eps)
-
-<figures/kyoubunnsann.png> [40] [41]
-第 2 章
-[42
-
-] [43]
-File: figures/exp.png Graphic file (type eps)
- <figures/exp.png>
-File: figures/sine.png Graphic file (type eps)
- <figures/sine.png> [44]
-File: figures/cosine.png Graphic file (type eps)
- <figures/cosine.png>
-[45]
-
-Package amsmath Warning: Cannot use `split' here;
-(amsmath)                trying to recover with `aligned' on input line 1280.
-
-[46] [47] [48]
+[8]
 File: figures/topomap.png Graphic file (type eps)
- <figures/topomap.png> [49]
+ <figures/topomap.png> [9]
 File: figures/eeg.jpg Graphic file (type eps)
- <figures/eeg.jpg> [50] [51] [52]
-[53] [54] (./math.aux)
+ <figures/eeg.jpg> [10] [11] [12] [13] [14]
+(./advanced.aux)
 
-LaTeX Warning: There were multiply-defined labels.
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 1959 strings out of 493629
- 22799 string characters out of 6150213
- 88707 words of memory out of 5000000
- 5514 multiletter control sequences out of 15000+600000
+ 1881 strings out of 493629
+ 21858 string characters out of 6150213
+ 88417 words of memory out of 5000000
+ 5452 multiletter control sequences out of 15000+600000
  26232 words of font info for 102 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
- 27i,15n,26p,460b,226s stack positions out of 5000i,500n,10000p,500000b,80000s
+ 27i,12n,26p,348b,226s stack positions out of 5000i,500n,10000p,500000b,80000s
 
-Output written on math.dvi (55 pages, 147848 bytes).
+Output written on advanced.dvi (15 pages, 38412 bytes).
