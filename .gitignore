@@ -1,0 +1,7 @@
+# ignore ファイル
+*.exe
+*.log
+*.aux
+*.synctex.gz
+*.toc
+
