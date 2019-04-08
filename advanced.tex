@@ -22,7 +22,7 @@
 \newcommand{\grad}{\mathrm{grad}\,}  %グラディエント
 \newcommand{\rot}{\mathrm{rot}\,}  %ローテーション
 %
-\title{脳を学ぶ上で重要な数学シリーズ}
+\title{脳を学ぶ上で重要な数学シリーズ 応用編}
 \author{後藤 優仁}
 \date{\today}
 \begin{document}
@@ -32,7 +32,8 @@
 \tableofcontents
 
 
-\chapter{応用数学}
+\chapter{信号処理}
+
 さて, 基礎を学んだところで, ここからはいよいよ理工系の学生, 脳というブラックボックスに挑む学生として学ぶべき, 高度な数学に挑戦していきます.\\ 
 わくわくしますね！！！\\
 \section{オイラーの公式 \label{euler}}
@@ -334,7 +335,7 @@ F(\omega) = \int_{-\infty}^{\infty} f(t)(\cos\omega t - i\sin\omega t)
 おお、結構読めてきたんじゃないですかね.\\
 分配法則が分からない輩のために, 更に式(\ref{eq:furierkai})を変形します.\\
 \begin{eqnarray}
-F(\omega) = \int_{-\infty}^{\infty} (f(t)\cos\omega t - f(t)i\sin\omega t)
+F(\omega) = \int_{-\infty}^{\infty} f(t)(\cos\omega t - f(t)i\sin\omega t)
 \label{eq:furierkaikai}
 \end{eqnarray}
 もう完璧ですね. ここまで解してあげれば赤ちゃんでも噛み砕けそうです！！噛み砕けない人は乳歯が生えていないのでしょう. かわいそうに...\\
@@ -347,6 +348,8 @@ F(\omega) = \int_{-\infty}^{\infty} (f(t)\cos\omega t - f(t)i\sin\omega t)
 次に, sin成分が負($\mathrm{e}^{-i\omega t}$)になっている理由です. 内積とは「似ている度」の指標ですね. 普通の数字やベクトルでしたら正の値になりますが, 今回のように虚数や複素数の場合は内積の結果が複素数の形をとってしまう事になります.\\
 それだと解釈に困りますね？どうにかして虚数成分は消えた感じの結果が欲しいわけです. 虚数成分を消す...共役複素数を使えばいいですね！！！\\
 \\
+実際, 自分自身との内積の正しい定義は「共役複素数をかける」です. 今までは実数で考えていたので, 気にする事はありませんでしたが複素数の場合はこの方法に則る必要があります.\\
+\\
 これにより, ある角周波数成分 $\mathrm{e}^{i\omega t}$と元関数f(t)の内積を求める際に$\mathrm{e}^{-i\omega t}$を用いるわけです. まあ, やってるのは普通に内積です.\\
 \\
 \\
@@ -356,6 +359,7 @@ F(\omega) = \int_{-\infty}^{\infty} (f(t)\cos\omega t - f(t)i\sin\omega t)
 \\
 こうして, 複雑怪奇な時間関数を周波数関数に変換（というか見方を変える）事によって, より解釈のしやすい形に変換するのがフーリエ変換の強みです.\\
 \\
+実際にはF(ω)のうち, 「xHzは成分が大きくて, yHzは成分が小さいね」といった事が分かるようになるわけです.
 \subsection{フーリエ変換の実用}
 実際には, 式(\ref{eq:furier})によって無限の周波数成分を抜き出し, それぞれの振幅を求める事で, 元関数(t)はそれぞれの周波数をそれぞれの振幅倍したsin波の足し合わせで出来てるね！と解釈します.\\
 例えば, 「タスク1をやらせた時の被験者君は5 -- 7Hzくらいの脳波がよくでているね！」「タスク2の時には大して強くないね。てことはタスク1と5 --7Hzの脳波には何か関係がありそうだね！！」といった具合です. 論文にもそのまんま書かれています.
@@ -365,4 +369,56 @@ F(\omega) = \int_{-\infty}^{\infty} (f(t)\cos\omega t - f(t)i\sin\omega t)
 \subsection{フーリエ変換の弱点}
 万能に思えるフーリエ変換ですが, 実は弱点があります.
 \subsection{morlet wavelet}
+
+
+
+
+
+
+
+
+
+\chapter{統計処理}
+\section{確率分布}
+\subsection{確率分布と確率密度関数}
+\subsection{一様分布/ベルヌーイ分布/2項分布/ポアソン分布}
+\subsubsection{一様分布}
+\subsubsection{ベルヌーイ分布}
+\subsubsection{2項分布}
+\subsubsection{ポアソン分布}
+\subsection{正規分布}
+\subsection{t分布}
+\subsection{F分布}
+\subsection{$\chi^2$分布}
+
+\section{統計的推定}
+ぼちぼち書く
+\subsection{サンプリングとは}
+\subsection{中心極限定理}
+\subsection{普遍分散}
+\subsection{点推定}
+\subsection{区間推定}
+\subsubsection{信頼度/信頼区間/100p\%点}
+
+\section{統計的検定}
+\subsection{仮説検定と有意差}
+\subsection{母平均の変化の検定}
+\subsubsection{母分散既知}
+\subsubsection{母分散未知}
+\subsubsection{十分に大きい標本の場合}
+\subsection{母比率の変化の検定}
+\subsection{母平均の違いの検定}
+\subsection{母分散の違いの検定}
+\subsection{母比率の違いの検定}
+\subsection{第一種/第二種の過誤}
+
+\section{分散分析}
+\subsection{分散分析とは}
+\subsubsection{因子と水準}
+\subsubsection{n元配置の分散分析}
+\subsubsection{分散分析の繰り返し}
+\subsection{一元配置の分散分析}
+\subsection{二元配置の分散分析}
+\subsection{繰り返しのある二元配置の分散分析}
+\section{回帰分析}
 \end{document}
