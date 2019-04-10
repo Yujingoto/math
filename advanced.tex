@@ -390,7 +390,7 @@ F(\omega) = \int_{-\infty}^{\infty} f(t)(\cos\omega t - f(t)i\sin\omega t)
 \subsubsection{一様分布}
 例えばサイコロを振った時に出る目の確立分布を考えると, 当然6つの事象それぞれがすべて$\frac{1}{6}$で表せるため, 確率分布をプロットすると以下のようになります.\\
 \begin{figure}[H]
-\label{im:exp}
+\label{im:uniform}
   \centering
   \includegraphics[width=120mm,bb=0 0 432 288]{figures/uniform.png}
   \caption{サイコロの確立分布(一様分布)}
@@ -408,10 +408,98 @@ f(x) = \frac{1}{6} (0 \leq X \leq 6)
 \begin{eqnarray}
 X = [x_1, x_2, x_3, x_4, x_5, x_6]
 \end{eqnarray}
-のような感じです. 
+のような感じです. \\
+\\
+平均E(X)及び分散V(X)は
+
+\begin{eqnarray}
+E(X) = \frac{a+b}{2}\\
+V(X) = \frac{(b-a)^2}{12}
+\end{eqnarray}
+
+です. 興味ないので証明とかやりません. 僕も知らない.
 \subsubsection{ベルヌーイ分布}
+ベルヌーイ分布は, 1か0かです. ある事が起きるか起きないか, 成功するかしないかなどの2値分類ですね. 超簡単です！！\\
+
+\begin{figure}[H]
+\label{im:bernoulli}
+  \centering
+  \includegraphics[width=120mm,bb=0 0 432 288]{figures/bernoulli.png}
+  \caption{ベルヌーイ分布}
+\end{figure}
+今回は1:1の図になっていますが, もちろん1:5くらいの割合になる事もあります. たとえばサイコロで1が出るか出ないかとか. 以上.\\
+\\
+関数はこんな感じかな
+\begin{eqnarray}
+f(x)=
+  \left\{
+    \begin{array}{l}
+      p \qquad \qquad \qquad (x = 1) \\
+      q(=1-p)  \qquad (x=0)
+    \end{array}
+  \right.
+\end{eqnarray}
+
+平均E(X)及び分散V(X)は
+
+\begin{eqnarray}
+E(X) = p\\
+V(X) = pq
+\end{eqnarray}
+
+です. 興味ないので証明とかやりません. 僕も知らない.
 \subsubsection{2項分布}
+２項分布は「同じことを何回も繰り返した時, ある事柄が何回おこるか」の確立分布です. こいつは式を見れば早いですね.
+
+\begin{eqnarray}
+\label{eq:binomial}
+f(x) = {}_n\mathrm{C}_x p^x(1-p)^{n-x}
+\end{eqnarray}
+
+式(\ref{eq:binomial})の右辺左側にある${}_n\mathrm{C}_x p^x$は, 確率pで起こる事象Aが, 全体nのうちx回でたという意味で, 右側の$(1-p)^{n-x}$は確率(1-p)で, Aが起きなかった回数が(n-x)回出たという意味です.\\
+これらを掛け合わせているので, 何回当たって何回外れたかを表す式ですね.
+
+\begin{figure}[H]
+\label{im:bernoulli}
+  \centering
+  \includegraphics[width=120mm,bb=0 0 432 288]{figures/binomial.png}
+  \caption{ベルヌーイ分布}
+\end{figure}
+
+平均E(X)及び分散V(X)は
+
+\begin{eqnarray}
+E(X) = np\\
+V(X) = np(1-p)
+\end{eqnarray}
+
+です. 興味ないので証明とかやりません. 僕も知らない.
+
 \subsubsection{ポアソン分布}
+ポアソン分布は「稀な事象が一定時間内にどれくらい起きるか」です.\\
+たとえば, ある月にある地域で起きた交通死亡事故の件数とかです. 修羅の国やグンマ―, あるいは名古屋でもない限り, 普通は0か多くて2件とかですよね.\\
+\\
+確率密度関数は以下です.
+\begin{eqnarray}
+f(x) = \frac{\lambda^x}{x!}e^{-\lambda}
+\end{eqnarray}
+
+平均E(X)及び分散V(X)は
+
+\begin{eqnarray}
+E(X) = \lambda\\
+V(X) = \lambda
+\end{eqnarray}
+
+です. こいつの場合, 平均も分散も同じ定数$\lambda$なので, こいつの値だけで形が決まります. $\lambda$がどんな値なのか, どうやって決まるのかは知りません. 使う事があれば足します.\\
+
+\begin{figure}[H]
+\label{im:poisson}
+  \centering
+  \includegraphics[width=120mm,bb=0 0 432 288]{figures/poisson.png}
+  \caption{ポアソン分布}
+\end{figure}
+
 \subsection{正規分布}
 \subsection{t分布}
 \subsection{F分布}
