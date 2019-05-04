@@ -319,7 +319,7 @@ f(t) = \sum_{\omega = -\infty}^\infty F_\omega \mathrm{e}^{i\omega t}
 \subsection{フーリエ変換} 
 実際に式を見てみましょう.\\
 \begin{eqnarray}
-F(\omega) = \int_{-\infty}^{\infty} f(t)\mathrm{e}^{-i\omega t}
+F(\omega) = \int_{-\infty}^{\infty} f(t)\mathrm{e}^{-i\omega t} dt
 \label{eq:furier}
 \end{eqnarray}
 
@@ -329,13 +329,13 @@ F(\omega) = \int_{-\infty}^{\infty} f(t)\mathrm{e}^{-i\omega t}
 オイラーの公式にマイナスをかけたやつです. つまり $ \cos\omega t  - i\sin\omega t $ ですね. \\
 式(\ref{eq:furier})は以下の式に変形できそうです.\\
 \begin{eqnarray}
-F(\omega) = \int_{-\infty}^{\infty} f(t)(\cos\omega t - i\sin\omega t)
+F(\omega) = \int_{-\infty}^{\infty} f(t)(\cos\omega t - i\sin\omega t) dt
 \label{eq:furierkai}
 \end{eqnarray}
 おお、結構読めてきたんじゃないですかね.\\
 分配法則が分からない輩のために, 更に式(\ref{eq:furierkai})を変形します.\\
 \begin{eqnarray}
-F(\omega) = \int_{-\infty}^{\infty} f(t)(\cos\omega t - f(t)i\sin\omega t)
+F(\omega) = \int_{-\infty}^{\infty} f(t)(\cos\omega t - f(t)i\sin\omega t) dt
 \label{eq:furierkaikai}
 \end{eqnarray}
 もう完璧ですね. ここまで解してあげれば赤ちゃんでも噛み砕けそうです！！噛み砕けない人は乳歯が生えていないのでしょう. かわいそうに...\\
@@ -501,6 +501,132 @@ V(X) = \lambda
 \end{figure}
 
 \subsection{正規分布}
+\subsubsection{正規分布とは}
+さて本題です. 数ある確率分布の中でも抜きんでて重要な分布, 正規分布, またの名をガウス分布です. 世の中の多くの事象がこの分布に従っていて, また従っていると仮定して統計的処理がされています. 今後の統計学の基礎になるのでしっかり理解しましょう.\\
+\\
+正規分布は, 平均E(X)が母集団の平均μと等しく, 分散V(X)も母集団の分散$\sigma ^2$と等しくなる分布で, 確率密度関数は以下になります.
+
+\begin{eqnarray}
+\label{eq:normal}
+f(x) = \frac{1}{\sqrt{2\pi\sigma^2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
+\end{eqnarray}
+
+いや, うん. 分かる. やべえよな. ただまぁ, なんでこんな殺意高めな式になるのかは正規分布のグラフを見れば理解できます. 母集団の平均が50, 標準偏差20の正規分布だとこうなります.
+
+\begin{figure}[H]
+\label{im:normal}
+  \centering
+  \includegraphics[width=120mm,bb=0 0 432 288]{figures/normal.png}
+  \caption{正規分布}
+\end{figure}
+
+定義通り, 確率変数の平均も50, 分散も400(20の二乗)になっていますね！！これが正規分布です. 綺麗ですね.\\
+\\
+\subsubsection{確率密度関数の導出}
+さて, 式(\ref{eq:normal})の解説です. まずややこしいとこを全て消し飛ばし, 以下のように変形しましょう. 
+
+\begin{eqnarray}
+\label{eq:normal2}
+f(x) = e^{-x^2}
+\end{eqnarray}
+
+\begin{figure}[H]
+\label{im:normal}
+  \centering
+  \includegraphics[width=120mm,bb=0 0 432 288]{figures/normal2.png}
+  \caption{式(\ref{eq:normal2})の図}
+\end{figure}
+
+この関数の説明はいりませんね？ 指数関数の二乗の負版です.\\
+まず, 世の中の多くの事象は平均値を取る確率が一番大きく, 平均値から離れるにつれその値を取る確率は小さくなることが知られています. んで, これをどう数式で表現すれば良いかと悩んだ末考えだされたのが正規分布関数だと思ってください.\\
+そうすると, とりあえず釣り鐘型の関数が欲しいという事で式(\ref{eq:normal2})を考えました. 実際これでほぼ完成です.\\
+ただ, これは任意定数がないため平均が0, 分散(幅)も一定ですね. これでは実用できません. そこで任意定数を導入し, 平均値と分散を可変にします. 平均値, つまりこのグラフの頂点の位置を動かすのは簡単ですね？\\
+
+\begin{eqnarray}
+\label{eq:normal3}
+f(x) = e^{-(x-\mu)^2}
+\end{eqnarray}
+
+です. 高校数学でやりましたね.\\
+\\
+次に, 分散...つまりこの釣り鐘の幅というか広がり方を変えます. \\
+
+\begin{eqnarray}
+\label{eq:normal4}
+f(x) = e^{-\frac{(x-\mu)^2}{\sigma^2}}
+\end{eqnarray}
+
+平均に比べて一寸難解かもしれません. σ, つまり標準偏差で割る事で, σの値が小さければ鋭く, 大きければ扁平なグラフになりますね？\\
+\\
+ただ, σは正負が定まらないため, 二乗して分散の形にする事で符号を一定にするわけです. \\
+\\
+ともあれ ... これで, 母平均と母分散によって形を変える釣り鐘型分布が完成です！！めでたい！！\\
+
+\begin{figure}[H]
+\label{im:normal}
+  \centering
+  \includegraphics[width=120mm,bb=0 0 432 288]{figures/normal4.png}
+  \caption{式(\ref{eq:normal4})の図.(平均3, 分散10の場合)}
+\end{figure}
+
+え？式(\ref{eq:normal})と違うじゃないかって？\\
+せっかちだなぁ......余裕がない人間はモテないぜ？\\
+\\
+ん？僕ですか？別に同期や後輩が軒並み揃って国内/国際学会に行ってたり,  ペーパーがアクセプトされてたりするからって全然焦ってないですよ？もう余裕すぎてこんな同人誌書いてるくらいですもん. \\
+\\
+うん. これ書いたら暫く更新やめます.
+\\
+\\
+まあ, グラフの形は実際これで完成なのです. ただ, 今我々が求めていたのは正規分布の「確率密度関数」でしたね？\\
+\\
+確率の密度なのですから, 当然合計して1にならないといけないわけで, 先程の式(\ref{eq:normal4})ではその点がダメなのです. ちゃんと全確率点での値を足して1になるように正規化する必要があります.\\
+\\
+つーわけで積分方程式を解きましょ...っとその前に, 出てくる計算結果を綺麗にするために式(\ref{eq:normal4})に細工をし, $\sigma^2$を$2\sigma^2$にしておきます. 2が付きましたが, グラフの性質自体は変わりませんね？\\
+\\
+では積分方程式.
+\begin{eqnarray}
+\int_{-\infty}^{\infty} c e^{-\frac{(x-\mu)^2}{2\sigma^2}} dx= 1
+\end{eqnarray}
+を解きます...出来たものがこちらです.
+
+\begin{eqnarray}
+\label{eq:c}
+c = \frac{1}{\sqrt{2\pi\sigma^2}}
+\end{eqnarray}
+
+式(\ref{eq:c})で得られたcを改めて式(\ref{eq:normal4}の変形版)に代入すると
+
+\begin{eqnarray}
+f(x) = \frac{1}{\sqrt{2\pi\sigma^2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
+\end{eqnarray}
+
+が出てきましたね！良かった良かった. 以上が正規分布の確率密度関数の導出工程でした. フーリエなんかに比べれば雑魚ですね！ワンパンでした！\\
+
+\subsubsection{100p\%点}
+次. 正規分布を学ぶ意味は, この概念があるからといっても過言じゃない重要な性質です. 正規分布は平均が丁度真ん中で, 広がり方は分散によって定義される左右対称な特殊な分布でしたね？\\\\
+つまり, 平均周辺程高確率で観測され, 裾野ほど「レア」な事象というわけです.\\\\
+この性質を利用して, 正規分布には「100p\%点」と呼ばれる指標を導入する事が出来ます. これは「その点以上(以下)の部分の確率の合計がpになる境界」を指します. x軸の正方向なら上側, 負方向なら下側, 両方を指すなら両側100p\%点です. \\\\
+言葉だとややこしいですが, グラフで見れば一瞬で分かります.
+
+
+\begin{figure}[H]
+\label{im:upper}
+  \centering
+  \includegraphics[width=120mm,bb=0 0 432 288]{figures/upper_p.png}
+  \caption{正規分布の上側5\%点}
+\end{figure}
+
+\begin{figure}[H]
+\label{im:bilateral}
+  \centering
+  \includegraphics[width=120mm,bb=0 0 432 288]{figures/bilateral_p.png}
+  \caption{正規分布の両側5\%点}
+\end{figure}
+
+上側5\%に比べ, 両側5\%は左右に領域が分散した分上側の領域が狭くなってるのに注意です. \\
+\\
+だいたい, 正規分布でよく用いられるのは上下両側の5\%と1\%点です. 何に使うのかはあとで説明するので, ひとまず概念だけ覚えておいてください.
+
 \subsection{t分布}
 \subsection{F分布}
 \subsection{$\chi^2$分布}
