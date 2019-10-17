@@ -60,6 +60,9 @@
 \section{掛け算とは何か}
 掛け算とはとても難しいものです.\\
 何故なら, 足し算は複雑な空間でも, 大抵は普通にこなすことが出来ますが, 掛け算はユークリッド空間をほんの少し離れてしまっただけで難解になってしまうからです. \\
+しかし，足し算と掛け算は数学の基礎であると同時に，すべてに通じて必要になる重要な概念です．まず，最初に「数学はあまり得意でないけど，掛け算くらいできますｗｗ」というフレンズの自信を粉みじんにします．\\
+\\
+最初はこの章に書いてあることは理解できないでしょう． よくわからない人，安心してください．僕も分からなかった．だからこのbasic.pdfの2章以降をじっくりと読み，脳になじませてから戻ってくるなり，advancedに進むなりしてください. 逆にこの章が自明に思える人は，basic.pdfを読むのはかなり楽になる事でしょう.\\
 \\
 逆に言うと足し算では違いが分からない様々な空間も, 掛け算で考えると全く異なる空間であった事が理解できるとも言えます. ベクトルや行列の事です.\\
 ちなみに, 割り算になると難しすぎて頭が爆発します. 逆行列の考え方の事です. \\
@@ -365,8 +368,8 @@ y = -\frac{5}{8}x + \frac{8}{3}
   =
   \left(
   \begin{array}{c}
-  \cos x + \cos y\\
-  \sin x + \sin y
+  \cos (x + y)\\
+  \sin (x + y)
   \end{array}
   \right)
 \]
@@ -464,7 +467,7 @@ $\tan x$ は一寸特殊で, 三角形の斜辺の傾きを表すという性質
 指数法則より,
 \begin{eqnarray}
 \begin{split}
-\mathrm{e}^{i(\alpha + \beta)} &= \mathrm{e}^i\alpha + \mathrm{e}^i\beta \\ &= (\cos \alpha + i\sin\alpha)(\cos\beta + i\sin\beta) \\
+\mathrm{e}^{i(\alpha + \beta)} &= \mathrm{e}^{i\alpha} + \mathrm{e}^{i\beta} \\ &= (\cos \alpha + i\sin\alpha)(\cos\beta + i\sin\beta) \\
 &= (\cos\alpha\cos\beta - \sin\alpha\sin\beta)\pm i(\sin\alpha\cos\beta + \cos\alpha\sin\beta)
 \end{split}
 \label{eq:kahou}
