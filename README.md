@@ -9,9 +9,9 @@
   
 
 ## 見方
-basic.pdf -> 基本数学
-advanced.pdf -> 応用
-words.pdf -> 本編で流した言葉の定義集
+basic.pdf -> 基本数学  
+advanced.pdf -> 応用  
+words.pdf -> 本編で流した言葉の定義集  
 
 ## 更新記録
 2018/09/30 執筆開始. かけざんの章を追記.  
