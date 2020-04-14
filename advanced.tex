@@ -1,4 +1,5 @@
-\documentclass[11pt,a4paper]{jreport}
+%\documentclass[11pt,a4paper]{jreport}                    % fir platex
+\documentclass[11pt,a4paper,uplatex]{ujreport} 	% for uplatex
 %
 \usepackage{amsmath,amssymb}
 \usepackage{bm}
@@ -44,7 +45,7 @@
 \subsection{オイラーの公式を翻訳する}
 改めて, オイラーの公式を眺めてみましょう.\\
 \begin{eqnarray}
-\mathrm{e}^{i\theta} = \cos x + i\sin y
+\mathrm{e}^{i\theta} = \cos\theta + i\sin\theta
 \end{eqnarray}
 うーん, 美しいですね.\\
 \\
@@ -61,8 +62,6 @@
 \\
 私はここで脳がオーバーヒートを起こし, 拒絶反応を起こしたものです.\\
 \\
-指数関数が三角関数で表せるのは, オイラーの公式が成り立つ事が分かったからだ. つまりは結果論でとらえていいでしょう.(いやまぁ, 本当は違うけども) \\
-三角関数の足し合わせとは, 複素数の事だ！！(つまり cos と isin です)\\
 \\
 どうしても分からないのは無視しよう！！！\\
 \\
@@ -77,7 +76,7 @@
 \\
 オイラーの公式は, このマクローリン展開さえ分かれば一瞬で導出する事が可能です.\\
 \\
-テイラー展開とマクローリン展開の違いは, テイラー展開の限定された特殊形がマクローリン展開です. なのでマクローリン展開だけここでは扱います.\\
+はじめに，テイラー展開とマクローリン展開の違いは, テイラー展開の限定された特殊形がマクローリン展開です. なのでマクローリン展開だけここでは扱います.\\
 \begin{eqnarray}
 f(x) = \sum_{k=0}^\infty f^{(k)} (0) \frac{x^k}{k!} = f(0) + f'(0)x + \frac{f''(0)}{2!}x^2 + \frac{f'''(0)}{3!}x^3 ...
 \end{eqnarray}
@@ -85,9 +84,9 @@ f(x) = \sum_{k=0}^\infty f^{(k)} (0) \frac{x^k}{k!} = f(0) + f'(0)x + \frac{f''(
 これがマクローリン展開です.\\
 元関数f(x)を多項式で近似するわけですね.\\
 \\
-そしてここで使われる多項式が, fのx=0の時の高階微分係数から定まっているわけです！！！\\
+ここで使われる多項式は, 元関数fのx=0の時の高階微分係数から定まっています．\\
 \\
-こいつの凄いのは, 局所的なある一点での振る舞いだけをみれば元の関数がわかるって事ですね！！！\\
+こいつの凄いのは, 局所的なある一点での振る舞いだけをみれば元の関数がわかるって事です！！\\
 テイラー展開とは, この時のxの値が0じゃなくてどこでもいいってやつで, マクローリン展開はx=0に限ったやつの事です.\\
 \\
 x=0の時に最も元関数っぽい一次関数, 二次関数, 三次関数...と∞に足し合わす事で元関数を表そうって事です！！！\\
@@ -172,7 +171,7 @@ x=0の時に最も元関数っぽい一次関数, 二次関数, 三次関数...�
 ちょっといい感じですね.\\
 次に, 分母が奇数の時にiが残ってしまっているので, 奇数に対応しているsinの方にもiをかけてみましょう！\\
 \begin{eqnarray}
-i\sin x = \sum_{k=0}^{\infty}(-1)^k \frac{x^{2k + 1}}{(2k + 1)!} = \frac{ix}{1!} - \frac{ix^3}{3!} + \frac{ix^5}{5!} - \frac{ix^7}{7!} +  ...
+i\sin x = \sum_{k=0}^{\infty}(-1)^k \frac{ix^{2k + 1}}{(2k + 1)!} = \frac{ix}{1!} - \frac{ix^3}{3!} + \frac{ix^5}{5!} - \frac{ix^7}{7!} +  ...
 \end{eqnarray}
 問題なさそうですね！改めてcosと足してみます！！\\
 \begin{eqnarray}
@@ -273,7 +272,7 @@ i\sin x = \sum_{k=0}^{\infty}(-1)^k \frac{x^{2k + 1}}{(2k + 1)!} = \frac{ix}{1!}
 \\
 このうち, 元関数f(t)を単純な三角関数の足し合わせに分解するまでをフーリエ級数展開と言い, 式では以下のようになります. 
 \begin{eqnarray}
-f(t) = a_0 + \sum_{\omega=1}^\infty {(a_\omega \sin(\omega t) + b_\omega \cos(\omega t))}
+f(t) = a_0 + \sum_{\omega=1}^\infty {(a_\omega \cos(\omega t) + b_\omega \sin(\omega t))}
 \label{eq:fourierkyusu}
 \end{eqnarray}
 式(\ref{eq:fourierkyusu})の意味はこうです. 「元関数f(t)を, 1から無限の角周波数のsin, cos波の足し合わせとして表現する」 そのまんまですね！\\
@@ -305,7 +304,7 @@ f(t) = a_0 + \sum_{\omega=1}^\infty {(a_\omega \frac{\mathrm{e}^{i\omega t}+\mat
 \end{eqnarray}
 この式を同類項を抜き出して整理すると
 \begin{eqnarray}
-f(t) = a_0 + \sum_{\omega=1}^\infty {(\frac{a_\omega - ib_\omega}{2}\mathrm{e}^{i\omega t})} + \sum_{\omega=1}^\infty {(\frac{a_\omega + ib\omega}{2}\mathrm{e}^{i\omega t})}
+f(t) = a_0 + \sum_{\omega=1}^\infty {(\frac{a_\omega - ib_\omega}{2}\mathrm{e}^{i\omega t})} + \sum_{\omega=1}^\infty {(\frac{a_\omega + ib\omega}{2}\mathrm{e}^{-i\omega t})}
 \label{eq:complexfourierkai}
 \end{eqnarray}
 となり, 更に$\mathrm{e}^{-i\omega t}$において$\omega$を1から$\infty$まで足すのと, $\mathrm{e}^{i\omega t}$において$-\infty$から-1まで足すのは同義なため(図を書けばわかる), この3項をうまくくっつける事で
