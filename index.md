@@ -1,4 +1,4 @@
-## Welcome to GitHub Pages
+## 脳波解析のための数学シリーズ
 
 You can use the [editor on GitHub](https://github.com/Yujingoto/math/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 
