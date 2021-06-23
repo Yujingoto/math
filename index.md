@@ -13,15 +13,11 @@
 　本稿はテーマごと，いくつかのフォルダに分かれています．  
 　それぞれのフォルダには，本体のpdf，pdfを作成するtexファイル(筆者用が主な意図．tex書式の参考にしたい人は自由にダウンロードしてください)，それから文中で登場する各種処理のプログラムでの実装ファイルが格納されています．MATLAB環境があれば，自分のローカルで実際に手を動かしてみると理解をより早く進める事が出来るでしょう．（未実装！てへぺろ！）  
 
-・基礎数学  
-ほげほげほげほげほげほげほげほげほげほげほげほげほｇへおｈごえｈごえｈごえｈごえｈごえｈごえｈごえいｇじゃ；ヶｊふぁ；おいえｆｊ；ｋｌｓだ
 - [基礎数学](https://github.com/Yujingoto/math/tree/master/Basic)  
-
-・解析数学  
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  解析数学や統計数学を勉強していくには，複素数や三角関数，四則演算など最低限必要な数学的知識が多く存在します．高校までの数学で学んでいる人もいると思いますが，ほとんどの人は「なんの役に立つんだ」と思いながら勉強していた事でしょう．まずはこれらの数学が何の役に立つのかを考えつつ，一緒に勉強しなおしてみましょう．
 - [解析数学](https://github.com/Yujingoto/math/tree/master/Analysis)
-- [統計](https://github.com/Yujingoto/math/tree/master/Statistics)
-- [発展](https://github.com/Yujingoto/math/tree/master/Advanced)
+- [統計数学](https://github.com/Yujingoto/math/tree/master/Statistics)
+- [発展数学](https://github.com/Yujingoto/math/tree/master/Advanced)
 ## フォルダわけ
 Basic -> 基本数学．高校数学から大学1.2年の数学くらいまで．  
 Analysis -> 脳波解析の数学．最低限ここまで出来れば卒論・修論くらいならいけると思います．  
