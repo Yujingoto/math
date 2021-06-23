@@ -1,3 +1,5 @@
 theme: jekyll-theme-hacker
 plugins:
  - jekyll-sitemap
+title: 脳波解析のための数学シリーズ
+description: 初学者のスムーズな勉強を助けたい
