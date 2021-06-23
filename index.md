@@ -14,9 +14,11 @@
 　それぞれのフォルダには，本体のpdf，pdfを作成するtexファイル(筆者用が主な意図．tex書式の参考にしたい人は自由にダウンロードしてください)，それから文中で登場する各種処理のプログラムでの実装ファイルが格納されています．MATLAB環境があれば，自分のローカルで実際に手を動かしてみると理解をより早く進める事が出来るでしょう．（未実装！てへぺろ！）  
 
 ・基礎数学  
-ほげほげほげほげほげほげほげほげほげほげほげほげほｇへおｈごえｈごえｈごえｈごえｈごえｈごえｈごえいｇじゃ；ヶｊふぁ；おいえｆｊ；ｋｌｓだ  
+ほげほげほげほげほげほげほげほげほげほげほげほげほｇへおｈごえｈごえｈごえｈごえｈごえｈごえｈごえいｇじゃ；ヶｊふぁ；おいえｆｊ；ｋｌｓだ
 - [基礎数学](https://github.com/Yujingoto/math/tree/master/Basic)  
 
+・解析数学  
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 - [解析数学](https://github.com/Yujingoto/math/tree/master/Analysis)
 - [統計](https://github.com/Yujingoto/math/tree/master/Statistics)
 - [発展](https://github.com/Yujingoto/math/tree/master/Advanced)
