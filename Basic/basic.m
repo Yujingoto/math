@@ -7,17 +7,41 @@ y = [4 5 6];
 dot(x,y)
 
 %% Listing 2.1.
-t = (0:0.0005: 5)';
-plot(sin(2*pi*1*t))
+sp=0.0005;
+x = (0:sp: 2*pi)';
+plot(sin(x), 'LineWidth', 2)
 hold on
-plot(cos(2*pi*1*t))
+plot(cos(x) ,'LineWidth', 2)
+xticks((0:pi/2: 2*pi)/sp)
+xticklabels({0, '1/2π','π','3/2π','2π'})
+xlabel('Phase(π)','FontName','Arial', 'FontSize', 18)
+xlim([0 2*pi/sp])
+legend("sin(x)","cos(x)",'FontSize', 14)
+saveas(gcf, 'C:\Users\goto\Desktop\git\math\figures\sincos.png')
 hold off
+
 
 %% Listing 2.2.
 syms x;
 int(cos(x), [0 2*pi]);
 int(sin(x), [0 2*pi]);
 int((2*(sin(3*x))*(3*cos(10*x))), [0 2*pi])
+
+
+%% 様々なsin波の図
+sp = 0.005;
+x = (-2*pi:sp: 2*pi)';
+plot(sin(x), 'LineWidth', 2)
+hold on
+plot(2*sin(x) ,'LineWidth', 2)
+plot(sin(2*x) , 'LineWidth', 2)
+xticks(0:pi/sp: length(x))
+xticklabels({'-2π', '-π','0','π','2π'})
+xlabel('Phase(π)','FontName','Arial', 'FontSize', 18)
+xlim([0 length(x)])
+legend("sin(x)","2sin(x)", "sin(2x)",'FontSize', 14)
+saveas(gcf, 'C:\Users\goto\Desktop\git\math\figures\sines.png')
+hold off
 
 %% Lisiting 3.1.
 3*1i + 5*1i;
@@ -48,7 +72,7 @@ K = [1 2 3 4 5];
 sum(K);
 
 %% Listing 4.5.
-x = cos(3* [0:0.1:20]);
+x = cos(3* (0:0.1:20));
 y = [zeros(1,100) ones(1,20) zeros(1,81)];
 z = conv(x,y);
 subplot(2,1,1);
@@ -74,7 +98,7 @@ std(x);
 %% Listing 5.2.
 x= [1 2 3 4];
 for i=x
-    x([i]) = ((x([i]) - mean(x)) /std(x));
+    x([i]) = ((x([i]) - mean(x)) /std(x)); %#ok<*NBRAK>
 end
 
 z = normalize(x); % 関数使うとこう
