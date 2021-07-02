@@ -1,5 +1,5 @@
-\documentclass[11pt,a4paper]{jreport}
-%\documentclass[11pt,a4paper,uplatex]{ujreport}
+%\documentclass[11pt,a4paper]{jreport}
+\documentclass[11pt,a4paper,uplatex]{ujreport}
 %
 \usepackage{amsmath,amssymb}
 \usepackage{bm}
@@ -56,7 +56,7 @@
 
 \newpage
 \section{本書の目的}
-　本書は，主に脳波を用いた神経科学者を志す諸君のため，脳波解析に特化した数学の入門資料となることを望んで作成するものです．神経科学は学際的な学問領域であるため，数学的素養のある人間は勿論，高校以降数学に長らく触れていなかったもの，あるいは高校数学も物理も身を入れて学んでいない者と様々なバックグラウンドの人間が流入します．自分のような半端者と異なり医者なども多いが，彼らもやはり同様に数学的な知識については疎い事は往々にしてあります．ここで言う知識とは，単に計算が出来たり，定理を暗記している事ではありません．数学を言語的に解釈し，「つまり○○をしている」「○○に使える」といった発想が出来る事をさします．よって，この意味でも「数学くらいできるし」という考えの人も半分程度はつまずくはずです．本書の目的は，そんな諸君のため厳密な数学の議論は数学書に譲りつつ，各種数学的処理の「気持ち」の理解を提供する事にあります．本書の記述にもやもやしたものを感じる人はきっと，著者よりも数学的素養，素質のある人でしょう．申し訳ないが気になったところは適宜専門の数学書を参照されたい．\\
+本書は，主に脳波を用いた神経科学者を志す諸君のため，脳波解析に特化した数学の入門資料となることを望んで作成するものです．神経科学は学際的な学問領域であるため，数学的素養のある人間は勿論，高校以降数学に長らく触れていなかったもの，あるいは高校数学も物理も身を入れて学んでいない者と様々なバックグラウンドの人間が流入します．自分のような半端者と異なり医者なども多いが，彼らもやはり同様に数学的な知識については疎い事は往々にしてあります．ここで言う知識とは，単に計算が出来たり，定理を暗記している事ではありません．数学を言語的に解釈し，「つまり○○をしている」「○○に使える」といった発想が出来る事をさします．よって，この意味でも「数学くらいできるし」という考えの人も半分程度はつまずくはずです．本書の目的は，そんな諸君のため厳密な数学の議論は数学書に譲りつつ，各種数学的処理の「気持ち」の理解を提供する事にあります．本書の記述にもやもやしたものを感じる人はきっと，著者よりも数学的素養，素質のある人でしょう．申し訳ないが気になったところは適宜専門の数学書を参照されたい．\\
 　電気生理的な神経科学では，脳波という特殊な時系列データを解釈するために種々の数学的手段を用います．誹りを恐れず大雑把に，大きく，大きく分類するなればこれらは三種に分けられるでしょう．一つ目は信号処理，あるいは解析学．その基礎となるのが波の分解，周波数分解であり，またこの背景には偉大なオイラーの公式があります．オイラーの公式を理解すれば，一つ目の課題はほぼクリアしたと言っても良いはずです．実際，オイラーの公式と，あとは畳み込み積分させ理解していれば脳波解析に苦労することはなくなるはずです．\\
 　二つ目の分野は統計です．解析的手段によって得られた脳波の特徴量を，被験者間，タスク間，時間...様々な条件で比較し，どんな条件の時にどこにどんな違いが現れるのか，その違いは大事なものなのか...そんな議論をするために必要な学習です．これがなければ，解析して得られたデータなどたいていの場合は何の役にも立たちません．あとはまぁ，脳もなにかしらの統計的学習をしているよねという議論はよくなされているし，最近だとFree Energy Principleもそうですが脳の従っているなんらかのルールを記述するような研究をかじっていくにはどうしても必要な知識になります．やっぱベイズは大事ですよねえ，ベイズ．筆者も勉強しなければと思う次第です．\\
 三つ目，簡単に言えば「その他」になります(怒られそう)．つまりこれらは，必ずしも全員に必要なものではないが，脳を理解するため，特に今後の脳神経科学研究においては必要になってくるであろう数学群で，自由エネルギーやら統合情報量やらに代表されるような脳の仕組みに関する理論や，グラフ理論や力学，情報学といった新しい脳情報解析に利用される数学などです．必要になった時に学べば良いと思いますが，やはりこうした議論を何も理解していない者とそうでない者とには今後大きく差がつくであろうし，日々勉強する事は大切であるように思います．本書は解析や統計に関する記述を優先的に補充していきますが，それ以外の数学については筆者の好みで足していこうと思います．(2021.5.15)\\
@@ -106,7 +106,7 @@
 スカラー数の掛け算は僕たちが直感的にやっている
 \begin{eqnarray}
 \label{eq:kakezan}
-3 × 5 = 15
+3 \times 5 = 15
 \end{eqnarray}
 
 の事です.
@@ -200,21 +200,17 @@ dot(x,y)
 
 \begin{screen}
 内積の定義
-\begin{eqnarray}
-\begin{split}
-\mathbf{a}\cdot\mathbf{b} &= a_1b_1 + a_2b_2\\
+\begin{align}
+  \mathbf{a}\cdot\mathbf{b} &= a_1b_1 + a_2b_2\\
 &= |\mathbf{a}||\mathbf{b}|cos\theta 
-\end{split}
-\end{eqnarray}
+\end{align}
 
 内積の取る値
-\begin{eqnarray}
-\begin{split}
-\mathbf{a}\cdot \mathbf{b} &> 0 \qquad (ベクトルの向きが似てる時)\\
-&=0 \qquad (ベクトルが直行している時)\\
-&<0 \qquad (ベクトルの向きが離れている時)
-\end{split}
-\end{eqnarray}
+\begin{align}
+\mathbf{a}\cdot \mathbf{b} &> 0 \qquad \text{(ベクトルの向きが似てる時)}\\
+&=0 \qquad \text{(ベクトルが直行している時)}\\
+&<0 \qquad \text{(ベクトルの向きが離れている時)}
+\end{align}
 
 \end{screen}
 
@@ -222,13 +218,11 @@ dot(x,y)
 
 \subsection{ドット積}
 　ベクトルの掛け算のうち, ドット積だとか点乗積と呼ばれるものがあります．ドット積とは, 同じ長さの数列の各要素を掛け合わせ, その値を足し合わせて一つの値として出力したものです.\\
-\begin{eqnarray}
-\begin{split}
+\begin{align}
 a = {a_1,a_2,a_3,a_4}\\
 b={b_1,b_2,b_3,b_4}\\
-a・b = a_1b_1 + a_2b_2 + a_3b_3 + a_4b_4
-\end{split}
-\end{eqnarray}
+a\cdot b = a_1b_1 + a_2b_2 + a_3b_3 + a_4b_4
+\end{align}
 \\
 そう, つまり内積の事ですね．\\
 　ドット積は実質(ユークリッド空間では)内積と同じ扱いをされます.\\
@@ -240,12 +234,10 @@ a・b = a_1b_1 + a_2b_2 + a_3b_3 + a_4b_4
 上記ベクトルと同様, 複素平面上では $\mathstrut r (\cos x + \mathstrut i\sin x)$ というものを考えます.\\
 上記同様, 一般的な積を考えてみましょう.\\
 
-\begin{eqnarray}
-\begin{split}
+\begin{align}
 \mathstrut r_1(\cos x + \mathstrut i\sin x)\mathstrut r_2(\cos y + \mathstrut i\sin y)\\
 = \mathstrut r_1\mathstrut r_2(\cos x\cos y - \sin x\sin y + \mathstrut i\sin x \cos y + \mathstrut i\cos x\sin y)
-\end{split}
-\end{eqnarray}
+\end{align}
 
 上記は加法定理より
 \begin{eqnarray}
@@ -382,14 +374,15 @@ hold off
 \label{eq:aplusb}
 \end{eqnarray}
 指数法則より,
-\begin{eqnarray}
-\begin{split}
+\begin{align}
 \mathrm{e}^{i(\alpha + \beta)} &= \mathrm{e}^{i\alpha} + \mathrm{e}^{i\beta} \\ &= (\cos \alpha + i\sin\alpha)(\cos\beta + i\sin\beta) \\
 &= (\cos\alpha\cos\beta - \sin\alpha\sin\beta)\pm i(\sin\alpha\cos\beta + \cos\alpha\sin\beta)
-\end{split}
 \label{eq:kahou}
-\end{eqnarray}
+\end{align}
+
 ここで再び式(\ref{eq:aplusb})と見比べると, 式(\ref{eq:kahou})の実部がcos, 虚部がsinの加法になっている事が分かります. ここから三角関数の加法定理は
+
+
 \begin{eqnarray}
 \sin (\alpha + \beta) = (\sin\alpha\cos\beta + \cos\alpha\sin\beta)\\
 \cos (\alpha + \beta) = (\cos\alpha\cos\beta - \sin\alpha\sin\beta)
@@ -409,7 +402,7 @@ $r_1\sin mx $と $r_2\cos nx $です.\\
 ここで$r_1$, $r_2$は振幅, mとnは角周波数を示していますので, 異なる周波数の三角関数になっています.\\
 
 \begin{figure}[H]
-\label{im:sincos}
+\label{im:sines}
   \centering
   \includegraphics[width=360mm,bb=0 0 1700 300]{../figures/sines.png}
   \caption{様々なsin波の図}
@@ -476,9 +469,9 @@ sinとcosは直交する関数なんですね！！！すごい！！\\
 前項での内容を式に表すとこうなります. よく見てください.
 \begin{eqnarray}
 f(x) = \sum_{n=1}^\infty ({a_n \sin(\omega t) + b_n\cos(\omega t)}
-\label{eq:sum})
+\label{eq:sum1})
 \end{eqnarray}
-ここで, 式(\ref{eq:sum})はすべてsin,cosの値が0になる角度の際に吐き出される値も0になるものですが, 実世界においてはそううまくはいかず, そもそもこの関数の背景にある信号の影響によって基準値が上昇します. 電気回路系で言うなら直流電源などです．そこで式(\ref{eq:sum})を改造します.
+ここで, 式(\ref{eq:sum1})はすべてsin,cosの値が0になる角度の際に吐き出される値も0になるものですが, 実世界においてはそううまくはいかず, そもそもこの関数の背景にある信号の影響によって基準値が上昇します. 電気回路系で言うなら直流電源などです．そこで式(\ref{eq:sum1})を改造します.
 
 \begin{eqnarray}
 f(x) = a_0 + \sum_{n=1}^\infty ({a_n \sin(nt) + b_n\cos(nt)}
@@ -539,7 +532,7 @@ f(x) = a_0 + \sum_{n=1}^\infty ({a_n \sin(nt) + b_n\cos(nt)}
 掛け算になると一寸難しくなり, 虚数同士をかけると数字同士の積にマイナスをつける必要があります. それが虚数の性質でしたね！\\
 \begin{eqnarray}
 \label{eq:imkake}
-3i ×5i = (3×5)i^2 = 15 ×-1 = -15
+3i \times 5i = (3\times 5)i^2 = 15 \times -1 = -15
 \end{eqnarray}
 
 
@@ -674,15 +667,13 @@ z = x + iy = r(\cos\varphi + i\sin \varphi) = r \mathrm{e}^{i\varphi}
 
 \section{複素数の掛け算}
 さて, 複素数を $r\mathrm{e}^{i\varphi}$ で表せたところで, 複素数の掛け算を改めて考えます.\\
-\begin{eqnarray}
-\begin{split}
+\begin{align}
 z_1 z_2\\
 & = (x_1 + iy_1)(x_2 + iy_2) = (x_1 x_2 - y_1 y_2) + i(x_1 y_2 +x_2 y_1)\\
 &= r_1(\cos\theta_1 + i\sin\theta_1)r_2(\cos\theta_2 + i\sin\theta_2)\\
 &= r_1r_2\mathrm{e}^{i\theta_1} \mathrm{e}^{i\theta_2}\\
 &= r_1r_2\mathrm{e}^{i(\theta_1 + \theta_2)}
-\end{split}
-\end{eqnarray}
+\end{align}
 
 こうなっているのです！！！\\
 複素数の掛け算は絶対値をかけた上の回転を表すのですね！！
@@ -729,7 +720,7 @@ i(3 + 0i) = 3i(\cos 0 + i\sin 0) = 3i(1+0) = 3i\\
 \end{eqnarray}
 この意味するところは, 関数f(x)のxを限りなく０に近付けた時の関数の返す値という事になります. つまり f(x) が 2x とかであれば
 \begin{eqnarray}
-\lim_{x\to0} 2x ≒ 0
+\lim_{x\to0} 2x \fallingdotseq 0
 \end{eqnarray}
 になります. しかしここでxは限りなく0に近い値なので実質的にはこの式が返す値も0と見做せるので, 等号は成り立ち, 点々は外れます.
 \begin{eqnarray}
@@ -754,11 +745,11 @@ i(3 + 0i) = 3i(\cos 0 + i\sin 0) = 3i(1+0) = 3i\\
 \end{eqnarray}
 \end{screen}
 
-のように定義されます. 有名なε-δ論法というやつです.\\
+のように定義されます. 有名な$\varepsilon - \delta $論法というやつです.\\
 \\
 この式の意味はこうです．\\
 \\
-「任意の正の数εに対し, ある適当な正の数δが存在し, $ 0 < |x − a| < δ$ を満たす全ての実数 xに対し、 $|f(x) − b| < ε$が成り立つ」\\
+任意の正の数$\varepsilon $に対し, ある適当な正の数$\delta$が存在し, $0<|x-a|<\delta$ を満たす全ての実数xに対し，$|f(x)-b|<\varepsilon$ が成り立つ.\\
 \\
 f(x)とbの間の距離が任意の正の数εより狭い範囲において, 必ず対応するxの値が存在しているといった具合で, 「お前がどんなに頑張ろうと俺はその上をいく」みたいなやつです. これが連続値の定義になるわけですね.
 
@@ -787,7 +778,7 @@ f'(x) =\lim_{dx \rightarrow 0} \frac{f(x+dx) - f(x)}{dx}
 $x$をdxだけ動かしたときの$y$の変化率ですね．思い出してほしいのは中学数学で二点間の傾きを求める式です．関数の時にやりましたよね．
 
 \begin{eqnarray}
-傾き = \frac{yの変化量}{xの変化量} = \frac{f(x_2) - f(x_1)}{x_2 - x_1}
+\text{傾き} = \frac{y\text{の変化量}}{x\text{の変化量}} = \frac{f(x_2) - f(x_1)}{x_2 - x_1}
 \end{eqnarray}
 
 ってやつです．これを，$x$の変化量を限りなく小さくした版が式(\ref{eq:prime})です．良いでしょうか．つまりその一点での傾き，接戦を求める式になっているわけですね．高校の時に微分とは接戦を求める操作であるなんて習いました．ちょっとその説明は良くない気がして，あくまで接戦を求める操作にもなるってだけで本質は「関数の局所的な微小変化率を求める事」です．\\
@@ -899,32 +890,26 @@ f'(x) =\lim_{dx \rightarrow 0} \frac{f(x+dx) - f(x)}{dx}
 
 計算上は，結局のところ偏微分する変数以外は定数扱いするだけです．なのでたとえば
 
-\begin{eqnarray}
+\begin{align}
 f(x,y) = x^3 + 2y^2\\
-\begin{split}
 \frac{\partial f}{\partial x} &= \lim_{dx \rightarrow 0} \frac{\{(x+dx)^3 + 2y^2\} - (x^3 + 2y^2)}{dx}\\
 &= 3x^2
-\end{split}
-\end{eqnarray}
+\end{align}
 
 となります．$y$について偏微分すると$4y$ですね．
-\begin{eqnarray}
-\begin{split}
+\begin{align}
 df &= f(x+dx, y+dy) - f(x,y)\\
 &= 
-\end{split}
-\end{eqnarray}
+\end{align}
 
 簡単ですね．さらに，偏微分が分かれば全微分も簡単です．早速定義していきます．
 
-\begin{eqnarray}
+\begin{align}
 \label{eq:all-partial}
 y = f(x,y) \nonumber \\
-\begin{split}
 df &= f(x+dx, y+dy) - f(x,y)\\ 
 &= \frac{\partial f}{\partial x}dx + \frac{\partial f}{\partial y}dy
-\end{split}
-\end{eqnarray}
+\end{align}
 
 となります．
 
@@ -938,7 +923,7 @@ df &= f(x+dx, y+dy) - f(x,y)\\
 \begin{screen}
 微分
 \begin{eqnarray}
-f'(x) =\lim_{dx \rightarrow 0} \frac{f(x+dx) - f(x)}{dx}　\qquad \text{常微分}\nonumber \\
+f'(x) =\lim_{dx \rightarrow 0} \frac{f(x+dx) - f(x)}{dx} \qquad \text{常微分} \nonumber \\
 \frac{\partial f}{\partial x} = \lim_{dx \rightarrow 0} \frac{f(x+dx, y) - f(x, y)}{dx} \qquad \text{偏微分}\nonumber \\
 df = \frac{\partial f}{\partial x}dx + \frac{\partial f}{\partial y}dy \qquad \text{全微分} \nonumber
 \end{eqnarray}
@@ -1005,17 +990,17 @@ int(fx, [a b])
 
 
 \begin{eqnarray}
-\label{eq:sum}
+\label{eq:sum2}
 \sum_{k=1}^{n} k
 \end{eqnarray}
 
-\begin{lstlisting}[caption=\ref{eq:sum}のコード,label=sc:sum,  keepspaces=true]
+\begin{lstlisting}[caption=\ref{eq:sum2}のコード,label=sc:sum,  keepspaces=true]
 K = [k1 k2 k3 ... kn]    // 数列の定義．実際は数字とか好きなのいれてください．
 sum(K)
 \end{lstlisting}
 
 
-この式(\ref{eq:sum}), コード(\ref{sc:sum})では, kに入る数字は1からnまでの整数になります. 無限小の幅による微小面積を考えるときにこれでは, 全く意味がないですよね.\\
+この式(\ref{eq:sum2}), コード(\ref{sc:sum})では, kに入る数字は1からnまでの整数になります. 無限小の幅による微小面積を考えるときにこれでは, 全く意味がないですよね.\\
 \\
 そこで∫を使うと, 整数に限らずすべての数を足し合わせる事が出来るのです！！\\
 素晴らしいですね！！！足し算のアップデートです！！！\\
