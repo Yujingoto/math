@@ -1,4 +1,6 @@
-\documentclass[11pt,a4paper]{jsarticle}                    % fir platex
+%\documentclass[11pt,a4paper]{jsarticle}                    
+\documentclass[11pt,a4paper,uplatex]{ujreport}
+% fir platex
 %\documentclass[11pt,a4paper,uplatex]{ujreport} 	% for uplatex
 %
 \usepackage{amsmath,amssymb}
@@ -59,6 +61,7 @@
 %
 \tableofcontents
 
+\newpage
 \section{はじめに}
 さて，この数学シリーズの中でもこのadvancedはかなり異質で，筆者が脳神経科学を研究する上で関わっていった様々な (あまり一般的ではない) 議論を展開するために必要になった数学的知識をまとめる場です．筆者は脳活動の非線形ダイナミクスの機能的な役割を研究しています．脳は多数の非線形素子が結合した大自由度の力学系とみなすことができ，多様なダイナミクスを示します．計算論的神経科学の観点で，神経系が示す同期，自発活動，誘発活動ダイナミクス，ノイズ誘発同期，...といった様々な現象を捉え，その情報処理メカニズムの解明を試みています．\\
 \\
@@ -178,7 +181,7 @@ H = - sum(x .* log(px));
 次に山を持たせた分布で見てみます．
 
 \begin{figure}[H]
-\label{im:ent2}
+\label{im:ent3}
   \centering
   \includegraphics[width=200mm, bb=0 0 600 400]{../figures/dis_entropy3.png}
   \caption{適当につくった山あり分布}
@@ -223,7 +226,7 @@ KL距離の性質ですが，まず$\mathbb{D}_{KL}(p||q) \geq 0$です．距離
 それから，対数なのでKLDは以下のような表記のこともあります．一緒です．logの計算の性質を思い出してください．割り算は引き算です(?)
 
 \begin{eqnarray}
-\label{eq:KLD}
+\label{eq:KLD-inv}
   \mathbb{D}_{KL}(p||q) =  \int p(x) log \frac{p(x)}{q(x)} dx
 \end{eqnarray}
 \\
@@ -294,14 +297,14 @@ I_\lambda(Q||P) := \int \{ (\frac{Q(x)}{P(x)})^{\lambda} -1 \}Q(x) dx   \qquad \
 エントロピーは式(\ref{eq:entropy2})に示す量でしたが，これを条件付き確率$p(x,y)$に拡張して考えます．今xが既知である場合，同時分布$p(x,y)$についてyを特定するための情報は$-log p(y|x)$なので（これはいいよね？条件付き確率です），その合計は
 
 \begin{eqnarray}
-\label{eq:cond_entropy}
+\label{eq:cond_entropy1}
 H(y|x) = - \iint p(y,x) log p(y|x) dy dx
 \end{eqnarray}
 
 で表され，これは条件付きエントロピーといいます\cite{prml}\cite{dist}．さらにこれを使えば
 
 \begin{eqnarray}
-\label{eq:cond_entropy}
+\label{eq:cond_entropy2}
 H(x,y) = H(y|x) + H(x)
 \end{eqnarray}
 
@@ -429,13 +432,11 @@ p (\mathbf{y}) = \Pi_{i=1}^N p(y_i) \qquad \text{周辺分布}
 
 と表せます．この時，式(\ref{eq:ICA1})が0になるのは$p(y_1, y_2,...,y_N) =\Pi_{i=1}^N p(y_i) $が成り立つ，つまり独立な信号源として仮定した$\mathbf{y}$がちゃんと独立である時になります．よって最小化しましょう．\\
 
-\begin{eqnarray}
+\begin{align}
 \label{eq:ICA2}
-\begin{split}
-\mathbf{\hat W} &= \argmin_{\mathbf{W}} \mathbb{D}_{KL}(\mathbf{y}|\mathbf{W})\\
+\mathbf{\hat W} &= \argmin_{\mathbf{W}} \mathbb{D}_{KL}(\mathbf{y}|\mathbf{W}) \nonumber \\
 &= \argmin_{\mathbf{W}} \int p(\mathbf{y}|\mathbf{W}) log \frac{p(\mathbf{y}|\mathbf{W})}{\Pi_{i=1}^N p(y_i|\mathbf{W})} d\mathbf{y}
-\end{split}
-\end{eqnarray}
+\end{align}
 
 式(\ref{eq:ICA1})が0になるように分離行列$\mathbf{W}$を逐次更新していけばいいわけですね．最小化する逐次更新の仕方はいくつかあって，最有力?なのが勾配法を用いるものです．勾配法についてまだちゃんと勉強できていないので今は式だけ．
 
