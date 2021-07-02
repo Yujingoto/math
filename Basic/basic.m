@@ -17,7 +17,6 @@ xticklabels({0, '1/2π','π','3/2π','2π'})
 xlabel('Phase(π)','FontName','Arial', 'FontSize', 18)
 xlim([0 2*pi/sp])
 legend("sin(x)","cos(x)",'FontSize', 14)
-saveas(gcf, 'C:\Users\goto\Desktop\git\math\figures\sincos.png')
 hold off
 
 
@@ -40,7 +39,6 @@ xticklabels({'-2π', '-π','0','π','2π'})
 xlabel('Phase(π)','FontName','Arial', 'FontSize', 18)
 xlim([0 length(x)])
 legend("sin(x)","2sin(x)", "sin(2x)",'FontSize', 14)
-saveas(gcf, 'C:\Users\goto\Desktop\git\math\figures\sines.png')
 hold off
 
 %% Lisiting 3.1.
