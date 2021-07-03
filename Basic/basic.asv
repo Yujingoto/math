@@ -87,14 +87,6 @@ plot(z);
 xlim([0 400]);
 title("Filterd signal");
 
-
-
-%% 平均50, 標準偏差10の1000個のランダムデータの生成
-a = 15;
-b = 170;
-y = a.*randn(1000,1) + b;
-
-histogram(y)
 %% Listing 5.1.
 x = [1 2 3 4];
 mean(x);
@@ -108,9 +100,6 @@ for i=x
 end
 
 z = normalize(x); % 関数使うとこう
-
-%plot
-histogram(normalize(y))
 
 %% Listing 5.3.
 % 正の相関あり
@@ -132,16 +121,13 @@ scatter(x1,y1, 'filled');
 nexttile
 scatter(x2,y2, 'filled');
 nexttile
-scatter(x3,y3, 'filled');
+scatter(x,y, 'filled');
 
 %% Listing 5.4.
 x = [0:0.1:10]+ rand(1,101);
 y = [0:0.1:10];
 mdl = fitlm(x,y);
-scatter(x,y, 'o', 'filled');
-title('単回帰','FontName','Arial', 'FontSize', 18)
-xlim([0 11]);
-ylim([0 11]);
+scatter(x,y);
 hold on;
 plot(mdl);
 hold off;
@@ -153,23 +139,8 @@ Sxy = (sum((x - mean(x)).*(y - mean(y))))/length(x);
 cov(x,y); %関数を使うとこう(共分散行列)
 
 %% Listing 5.6.
-
-a = -3;
-b = 3;
-r = (b-a).*rand(51,1) + a;  % 乱数
-
-x = -5:0.2:5;
-y = [-5:0.2:5]+r';
-
-% 散布図
-scatter(x,y, 'filled')
-xlabel('x','FontName','Arial', 'FontSize', 18)
-ylabel('y','FontName','Arial', 'FontSize', 18)
-ax = gca;
-ax.XAxisLocation = 'origin';
-ax.YAxisLocation = 'origin';
-xticks(-10:5:10)
-yticks(-10:5:10)
+x = [0:0.1:10]+ rand(1,101);
+y = [0:0.1:10];
 
 % ひ，ひぇぇ...
 cov(x,y) / (std(x) * std(y));

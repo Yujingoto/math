@@ -1,5 +1,4 @@
-%\documentclass[11pt,a4paper]{jreport}
-\documentclass[11pt,a4paper,uplatex]{ujreport}
+\documentclass[11pt,a4paper]{ujreport}
 %
 \usepackage{amsmath,amssymb}
 \usepackage{bm}
@@ -7,7 +6,6 @@
 \usepackage{ascmac}
 \usepackage{float}
 \usepackage{listings,jvlisting}
-%\usepackage[dvipdfmx]{hyperref}
 
 %ここからソースコードの表示に関する設定
 \lstset{
@@ -149,7 +147,7 @@
 \begin{figure}[H]
 \label{im:vector}
   \centering
-  \includegraphics[width=120mm,bb=0 0 582 467]{../figures/vector.png}
+  \includegraphics[width=15cm]{../figures/vector.eps}
   \caption{2次元ベクトルの例}
 \end{figure}
 
@@ -182,7 +180,7 @@ dot(x,y)
 \begin{figure}[H]
 \label{im:shadow}
   \centering
-  \includegraphics[width=120mm,bb=0 0 687 618]{../figures/shadow.png}
+  \includegraphics[width=15cm]{../figures/shadow.eps}
   \caption{ベクトルbのベクトルaに対する正射影}
 \end{figure}
 
@@ -302,7 +300,7 @@ sinが縦, cosが横, そしてtanが傾きを表しているので, 基本的�
 \begin{figure}[H]
 \label{im:trigonometry}
   \centering
-  \includegraphics[width=120mm,bb=0 0 287 170]{../figures/trigonometry.png}
+  \includegraphics[width=15cm]{../figures/trigonometry.eps}
   \caption{三角比のイメージ図}
 \end{figure}
 
@@ -363,7 +361,7 @@ hold off
 \begin{figure}[H]
 \label{im:sincos}
   \centering
-  \includegraphics[width=360mm,bb=0 0 1700 300]{../figures/sincos.png}
+  \includegraphics[width=15cm]{../figures/sincos.eps}
   \caption{sin / cosの図}
 \end{figure}
 
@@ -404,7 +402,7 @@ $r_1\sin mx $と $r_2\cos nx $です.\\
 \begin{figure}[H]
 \label{im:sines}
   \centering
-  \includegraphics[width=360mm,bb=0 0 1700 300]{../figures/sines.png}
+  \includegraphics[width=15cm]{../figures/sines.eps}
   \caption{様々なsin波の図}
 \end{figure}
 
@@ -461,7 +459,7 @@ sinとcosは直交する関数なんですね！！！すごい！！\\
 \begin{figure}[H]
 \label{im:furier}
   \centering
-  \includegraphics[width=120mm,bb=0 0 974 643]{../figures/furier.png}
+  \includegraphics[width=15cm]{../figures/furier.eps}
   \caption{フーリエ変換の気持ち (宇宙一分かりやすいフーリエ変換より)}
 \end{figure}
 
@@ -561,7 +559,7 @@ f(x) = a_0 + \sum_{n=1}^\infty ({a_n \sin(nt) + b_n\cos(nt)}
 \begin{figure}[H]
 \label{im:imagine}
   \centering
-  \includegraphics[width=100mm,bb=0 0 300 272]{../figures/gauss.png}
+  \includegraphics[width=15cm]{../figures/gauss.eps}
   \caption{虚数軸 (高校数学の美しい物語より)}
 \end{figure}
 
@@ -620,8 +618,8 @@ z = x + yi
 \begin{figure}[H]
 \label{im:complex}
   \centering
-  \includegraphics[width=100mm,bb=0 0 220 279]{../figures/Complex.png}
-  \caption{複素平面 (wikipediaより)}
+  \includegraphics[width=10cm]{../figures/Complex.eps}
+  \caption{複素平面}
 \end{figure}
 MATLABではそれぞれ，以下のようにして求める事が出来ます．
 
@@ -654,7 +652,7 @@ $r\sin\varphi$ で導出される数は実数(y)になっているため i を�
 \begin{figure}[H]
 \label{im:polar}
   \centering
-  \includegraphics[width=120mm,bb=0 0 406 246]{../figures/polar.png}
+  \includegraphics[width=15cm]{../figures/polar.eps}
   \caption{極形式 (はてなフォトライフより)}
 \end{figure}
 
@@ -756,7 +754,7 @@ f(x)とbの間の距離が任意の正の数εより狭い範囲において, �
 \begin{figure}[H]
 \label{im:ed}
   \centering
-  \includegraphics[width=120mm,bb=0 0 510 487]{../figures/ed.jpg}
+  \includegraphics[width=10cm]{../figures/ed.eps}
   \caption{ε-δ論法. aの左側は連続だが右は連続じゃない}
 \end{figure}
 
@@ -786,7 +784,7 @@ $x$をdxだけ動かしたときの$y$の変化率ですね．思い出してほ
 \begin{figure}[H]
 \label{im:sessen}
   \centering
-  \includegraphics[width=120mm,bb=0 0 700 525]{../figures/sessen.png}
+  \includegraphics[width=10cm]{../figures/sessen.eps}
   \caption{局所的な微小変化率 = 接線？}
 \end{figure}
 
@@ -832,7 +830,7 @@ e = \lim_{x\to 0} (1+x)^\frac{1}{x} = \lim_{x \to \infty} (1+\frac{1}{x})^x
 \begin{figure}[H]
 \label{im:sisuu}
   \centering
-  \includegraphics[width=120mm,bb=0 0 919 919]{../figures/sisuu.jpg}
+  \includegraphics[width=8cm]{../figures/sisuu.eps}
   \caption{指数関数}
 \end{figure}
 
@@ -977,7 +975,7 @@ int(fx, [a b])
 \begin{figure}[H]
 \label{im:integral}
   \centering
-  \includegraphics[width=120mm,bb=0 0 480 259]{../figures/int.jpg}
+  \includegraphics[width=15cm]{../figures/int.eps}
   \caption{積分と面積の関係}
 \end{figure}
 
@@ -994,7 +992,7 @@ int(fx, [a b])
 \sum_{k=1}^{n} k
 \end{eqnarray}
 
-\begin{lstlisting}[caption=\ref{eq:sum}のコード,label=sc:sum,  keepspaces=true]
+\begin{lstlisting}[caption=\ref{eq:sum2}のコード,label=sc:sum,  keepspaces=true]
 K = [k1 k2 k3 ... kn]    // 数列の定義．実際は数字とか好きなのいれてください．
 sum(K)
 \end{lstlisting}
@@ -1117,7 +1115,7 @@ h(t) = \int^{\infty}_{-\infty} f(\tau) g(t - \tau) d\tau=
 \begin{figure}[H]
 \label{im:convolution}
   \centering
-  \includegraphics[width=120mm,bb=0 0 350 276]{../figures/Convolution.png}
+  \includegraphics[width=10cm]{../figures/Convolution.eps}
   \caption{畳み込みのイメージ (OriginLabより)}
 \end{figure}
 
@@ -1146,7 +1144,7 @@ title('Filterd signal')
 \begin{figure}[H]
 \label{im:conv2}
   \centering
-  \includegraphics[width=300mm,bb=0 0 1400 400]{../figures/conv.png}
+  \includegraphics[width=10cm]{../figures/conv.eps}
   \caption{コード(\ref{sc:conv})の図}
 \end{figure}
 
@@ -1165,11 +1163,12 @@ title('Filterd signal')
 \\
 さて, まずは冗談じゃなく小学生でも知ってる統計学から始めましょう.\\
 
+はじめに，アンケートである学校の男子1000人の平均身長を聞いてみたとしましょうか．
 \begin{figure}[H]
 \label{im:histgram}
   \centering
-  \includegraphics[width=120mm,bb=0 0 432 288]{../figures/hist.png}
-  \caption{平均50, 標準偏差10の1000個のランダムデータ}
+  \includegraphics[width=10cm]{../figures/hist.eps}
+  \caption{アンケートした架空の男子高校生の身長(平均170, 標準偏差15)}
 \end{figure}
 
 複数の数値データ$x_i = [x_1, x_2, x_3, ...]$が得られた際, とりあえず平均と分散, ついで標準偏差を求めたくなるのは人間の性ですね.\\
@@ -1233,8 +1232,8 @@ z = normalize(x)        // 関数使うとこう
 \begin{figure}[H]
 \label{im:z-hist}
   \centering
-  \includegraphics[width=120mm,bb=0 0 432 288]{../figures/z-hist.png}
-  \caption{正規化した, 同じ条件の図(\ref{im:histgram}}
+  \includegraphics[width=10cm]{../figures/z-hist.eps}
+  \caption{正規化した, 同じ条件の図(\ref{im:histgram})}
 \end{figure}
 
 まぁ, 勿論こんな事しないでそのまま眺めるだけでも十分だったりしますが.
@@ -1243,7 +1242,7 @@ z = normalize(x)        // 関数使うとこう
 次もよくつかわれる基礎です. 2つ以上の変数を持つデータ(たとえばAさん,Bさん ... の身長と体重)の性質を検証する術です. \\
 \subsection{相関と散布図}
 相関は非常に簡単です. 
-\begin{lstlisting}[caption=図(\ref{im:scatter1}\ref{im:scatter2})のコード,label=sc:scatter]
+\begin{lstlisting}[caption=図(\ref{im:scatter})のコード,label=sc:scatter]
 // 正の相関あり
 x = [0:0.1:10]+ rand(1,101)
 y = [0:0.1:10]
@@ -1265,20 +1264,13 @@ scatter(x,y)
 　逆に, 右肩上がりの斜めに点が集まるという事は, 一方が上がると他方も上がる, 比例に似た関係にあると言えます. 逆に右肩下がりの場合, 一方が上がると他方が下がる関係ですね！！\\
 
 \begin{figure}[H]
-\label{im:scatter1}
+\label{im:scatter}
   \centering
-  \includegraphics[width=120mm,bb=0 0 432 288]{../figures/scatter1.png}
-  \caption{左: 正の相関図 右: 負の相関図}
+  \includegraphics[width=15cm]{../figures/scatter.eps}
+  \caption{左: 正の相関図 中： 負の相関図 右: 相関なし}
 \end{figure}
 
-\begin{figure}[H]
-\label{im:scatter2}
-  \centering
-  \includegraphics[width=120mm,bb=0 0 432 288]{../figures/scatter2.png}
-  \caption{相関なし}
-\end{figure}
-
-前者を正の相関, 後者を負の相関があるといいます.散布図を描いた時の見た目でなんとなくデータ間の関係が分かるわけです. 見た目ではっきり分かるほど点が線状に並ぶ程, 相関が強いと表現されます(図\ref{im:scatter1} はかなり強い). 逆に見た目で何も分からん場合(図\ref{im:scatter2})は, データ間には相関がないと言えます. \\
+前者を正の相関, 後者を負の相関があるといいます.散布図を描いた時の見た目でなんとなくデータ間の関係が分かるわけです. 見た目ではっきり分かるほど点が線状に並ぶ程, 相関が強いと表現されます(図\ref{im:scatter}左, 中はかなり強い). 逆に見た目で何も分からん場合(図\ref{im:scatter}右)は, データ間には相関がないと言えます. \\
 　非常に便利なので, アンケートデータとか取ったらとりあえずプロットしてみると良いです. 
 \\
 \subsection{回帰}
@@ -1293,12 +1285,12 @@ scatter(x,y)
 \begin{figure}[H]
 \label{im:predict}
   \centering
-  \includegraphics[width=120mm,bb=0 0 432 288]{../figures/predict.png}
+  \includegraphics[width=10cm]{../figures/predict.eps}
   \caption{AIエンジニアわい迫真の単回帰分析}
 \end{figure}
 
 
-\begin{lstlisting}[caption=単回帰のコード,label=sc:scatter]
+\begin{lstlisting}[caption=単回帰のコード,label=sc:regression]
 x = [0:0.1:10]+ rand(1,101)
 y = [0:0.1:10]
 mdl = fitlm(x,y)
@@ -1308,7 +1300,9 @@ plot(mdl)
 hold off
 \end{lstlisting}
 
-良い感じですね．たしかにそれっぽいところに線が引かれています．では次に，PCが何をやったのか自分たちで数学をやってみましょう．先程一瞬でてきた最小二乗法とは，予測値$\hat y_i$と実測値$y_i$の差の全データでの二乗和を最小化する方法を意味し，今回の場合に利用すると以下の計算になります．
+良い感じですね．たしかにそれっぽいところに線が引かれています．でもMATLABのこのコード使い方がいまいち分からなかったのでtitleとかいじれなくてモヤモヤしてます... \\
+
+では次に，PCが何をやったのか自分たちで数学をやってみましょう．先程一瞬でてきた最小二乗法とは，予測値$\hat y_i$と実測値$y_i$の差の全データでの二乗和を最小化する方法を意味し，今回の場合に利用すると以下の計算になります．
 
 \begin{eqnarray}
 \argmin_{a,b} L = \sum_{i=1}^n \{ y_i - (bx_i + a) \}^2
@@ -1343,8 +1337,8 @@ b = \frac{\sum x_i y_i - n \bar{x} \bar{y}}{\sum x_i^2 - n\bar{x}^2}
 \begin{figure}[H]
 \label{im:co-var}
   \centering
-  \includegraphics[width=120mm,bb=0 0 432 288]{../figures/kyoubunnsann.png}
-  \caption{適当な散布図. どの象限に点が多いかで共分散の値が決まる(高校数学の美しい物語より)}
+  \includegraphics[width=10cm]{../figures/covar.eps}
+  \caption{適当な散布図. どの象限に点が多いかで共分散の値が決まる}
 \end{figure}
 
 この２つを合わせる事で, 共分散は次のような性質を持ちます.\\
@@ -1365,7 +1359,14 @@ Sxy = (sum((x - mean(x)).*(y - mean(y))))/length(x)
 cov(x,y)  // 関数を使うとこう(共分散行列)
 \end{lstlisting}
 共分散は，式(\ref{eq:covar})にもあるように$S_{xy}$などに求められるものです．2つの行列の場合，この組み合わせで４つ共分散が計算される事になります．つまり$S_{xy}, S_{xx}, S_{yy}, S_{yx}$です．これらを並べたものが共分散行列と言います．関数covはこれを求めるものです．\\
-いうまでもなく，$S_{xx} = var(x)$です．
+いうまでもなく，$S_{xx} = var(x)$です．図(\ref{im:co-var})の共分散行列を求めると，以下の結果が出ます．高いですね．
+
+\begin{eqnarray}
+\begin{matrix}
+  1.0000 & 0.8555\\
+  0.8555 & 1.0000\\
+\end{matrix}
+\end{eqnarray}
 
 \subsection{相関係数}
 ただ, 共分散は分散と違い, かけている変数の単位が違うため, 数字自体に意味はない事に注意が必要です. 例えばmmとmgで算出したときと, kmとkgで算出したときとでは同じデータなのに共分散の値が大きく変わってしまいますし, 単純に平方根を取ったところで違う単位系の積になってるので読み取れる情報がありません.\\
@@ -1377,7 +1378,7 @@ cov(x,y)  // 関数を使うとこう(共分散行列)
 r_{xy} = \frac{S_{xy}}{S_x S_y} = \frac{\frac{\sum_{i=1}^{n} (x_i - \bar{x})(y_i - \bar{y})}{n}}{\sqrt{\frac{\sum_{i=1}^{n} (x_i - \bar{x})^2}{n}} \sqrt{\frac{\sum_{i=1}^{n} (y_i - \bar{y})^2}{n}}}
 \end{eqnarray}
 
-\begin{lstlisting}[caption=単回帰のコード,label=sc:scatter]
+\begin{lstlisting}[caption=共分散行列,label=sc:co-var]
 x = [0:0.1:10]+ rand(1,101)
 y = [0:0.1:10]
 

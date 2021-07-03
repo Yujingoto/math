@@ -64,7 +64,7 @@
 \newpage
 \section{はじめに}
 さて，この数学シリーズの中でもこのadvancedはかなり異質で，筆者が脳神経科学を研究する上で関わっていった様々な (あまり一般的ではない) 議論を展開するために必要になった数学的知識をまとめる場です．筆者は脳活動の非線形ダイナミクスの機能的な役割を研究しています．脳は多数の非線形素子が結合した大自由度の力学系とみなすことができ，多様なダイナミクスを示します．計算論的神経科学の観点で，神経系が示す同期，自発活動，誘発活動ダイナミクス，ノイズ誘発同期，...といった様々な現象を捉え，その情報処理メカニズムの解明を試みています．\\
-\\
+
 　こうした作業には，信号処理は勿論，非線形ダイナミクス（つまり力学系），情報理論，複雑系，機械学習...多種多様な数学的，理論的知識が求められます．この勉強については終わりがなく，本当に役に立つのかも分かりません．ただ確実に言えるのは，\\
 \\
 「○○をやっている時の脳は△△領域で～～ ms後に × Ｈｚの波が同期している！！」
@@ -164,7 +164,7 @@ H = - sum(x .* log(px));
 \begin{figure}[H]
 \label{im:ent1}
   \centering
-  \includegraphics[width=200mm, bb=0 0 600 400]{../figures/dis_entropy1.png}
+  \includegraphics[width=15cm]{../figures/dis_entropy1.eps}
   \caption{0.1が10この一様分布}
 \end{figure}
 
@@ -173,7 +173,7 @@ H = - sum(x .* log(px));
 \begin{figure}[H]
 \label{im:ent2}
   \centering
-  \includegraphics[width=200mm, bb=0 0 600 400]{../figures/dis_entropy2.png}
+  \includegraphics[width=15cm]{../figures/dis_entropy2.eps}
   \caption{0.01が100この一様分布}
 \end{figure}
 
@@ -183,7 +183,7 @@ H = - sum(x .* log(px));
 \begin{figure}[H]
 \label{im:ent3}
   \centering
-  \includegraphics[width=200mm, bb=0 0 600 400]{../figures/dis_entropy3.png}
+  \includegraphics[width=15cm]{../figures/dis_entropy3.eps}
   \caption{適当につくった山あり分布}
 \end{figure}
 
@@ -475,5 +475,4 @@ p (\mathbf{y}) = \Pi_{i=1}^N p(y_i) \qquad \text{周辺分布}
  \bibitem{dist} yumaloop. ``Kullback-Leibler Divergenceについてまとめる'' https://yul.hatenablog.com/entry/2019/01/07/152738
  \bibitem{kitano} Katunori Kitano. ``Transfer entropyを用いた神経回路の解析'' Annual Review 神経 2017 I．Basic Neuroscience.
 \end{thebibliography}
-
 \end{document}
