@@ -156,7 +156,7 @@ fs = 100;                                % sample frequency (Hz)
 t = 0:1/fs:10-1/fs;                      % 10 second span time vector
 x = (1.3)*sin(2*pi*15*t) ...             % 15 Hz component
   + (1.7)*sin(2*pi*40*(t-2)) ...         % 40 Hz component
-  + 2.5*randn(size(t)); ...              % Gaussian noise;
+  + 2.5*randn(size(t)) ...;                  % Gaussian noise;
 
 segment1 = x(1:length(x)/5);
 segment2 = x(length(x)/5+1: 2*length(x)/5);
@@ -166,79 +166,37 @@ segment5 = x(4*length(x)/5+1:length(x));
 
 subplot(2,5,1:5)
 plot(x)
-ylim([-10 10])
 xlabel('time(t)','FontName','Arial')
 title('EEG like signal' ,'FontName', 'Arial', 'FontSize', 12)
 
 subplot(2,5,6)
 plot(segment1)
-ylim([-10 10])
 xlabel('time(t)','FontName','Arial')
 title('segment1' ,'FontName', 'Arial', 'FontSize', 12)
 
 subplot(2,5,7)
 plot(segment2)
-ylim([-10 10])
 xlabel('time(t)','FontName','Arial')
 title('segment2' ,'FontName', 'Arial', 'FontSize', 12)
 
 subplot(2,5,8)
 plot(segment3)
-ylim([-10 10])
 xlabel('time(t)','FontName','Arial')
 title('segment3' ,'FontName', 'Arial', 'FontSize', 12)
 
 subplot(2,5,9)
 plot(segment4)
-ylim([-10 10])
 xlabel('time(t)','FontName','Arial')
 title('segment4' ,'FontName', 'Arial', 'FontSize', 12)
 
 subplot(2,5,10)
 plot(segment5)
-ylim([-10 10])
 xlabel('time(t)','FontName','Arial')
 title('segment5' ,'FontName', 'Arial', 'FontSize', 12)
 
-%% window-tapered fourier
+%%
 
-w = gausswin(length(x)/5)';
 
-subplot(2,5,1:5)
-plot(x)
-ylim([-10 10])
-xlabel('time(t)','FontName','Arial')
-title('EEG like signal' ,'FontName', 'Arial', 'FontSize', 12)
-
-subplot(2,5,6)
-plot(w.*segment1)
-ylim([-10 10])
-xlabel('time(t)','FontName','Arial')
-title('window1' ,'FontName', 'Arial', 'FontSize', 12)
-
-subplot(2,5,7)
-plot(w.*segment2)
-ylim([-10 10])
-xlabel('time(t)','FontName','Arial')
-title('window2' ,'FontName', 'Arial', 'FontSize', 12)
-
-subplot(2,5,8)
-plot(w.*segment3)
-ylim([-10 10])
-xlabel('time(t)','FontName','Arial')
-title('window3' ,'FontName', 'Arial', 'FontSize', 12)
-
-subplot(2,5,9)
-plot(w.*segment4)
-ylim([-10 10])
-xlabel('time(t)','FontName','Arial')
-title('window4' ,'FontName', 'Arial', 'FontSize', 12)
-
-subplot(2,5,10)
-plot(w.*segment5)
-ylim([-10 10])
-xlabel('time(t)','FontName','Arial')
-title('window5' ,'FontName', 'Arial', 'FontSize', 12)
 %%
 y = fft(x);
 
