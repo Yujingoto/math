@@ -284,15 +284,77 @@ plot(w.*segment5)
 ylim([-10 10])
 xlabel('time(t)','FontName','Arial')
 title('window5' ,'FontName', 'Arial', 'FontSize', 12)
-%%
-y = fft(x);
+%% Time frequency analysis
 
-n = length(x);          % number of samples
-F0 = fftshift(y);         % shift y values
-y0 = (-n/2:n/2-1)*(fs/n); % 0-centered frequency range
-power0 = abs(F0).^2/n;    % 0-centered power
+fs = 1000;
+long = 5;
+t = 0:1/fs:long;
+f1 = 1;
+f2 = 5;
+f3 = 8;
+f4 = 10;
+f5 = 50;
+f6 = 200;
 
-plot(y0,power0)
-xlim([0 max(y0)])
-xlabel('Frequency')
-ylabel('Power')
+s1 = 0.5*sin(2*pi*f1*t);
+s2 = sin(2*pi*f2*t);
+s3 = 1.3*sin(2*pi*f3*t);
+s4 = 0.5*sin(2*pi*f4*t);
+s5 = sin(2*pi*f5*t);
+s6 = 1.3*sin(2*pi*f6*t);
+
+S1 = [s1 s2 s3];
+S2 = [s4 s5 s6];
+
+subplot(2,2,1)
+plot(S1)
+xlim([0 3*length(t)])
+xlabel('Time(s)' ,'FontName', 'Arial', 'FontSize', 12)
+xticks(0:length(t):3*length(t))
+xticklabels(0:5:15)
+
+subplot(2,2,2)
+plot(S2)
+xlim([0 3*length(t)])
+xlabel('Time(s)' ,'FontName', 'Arial', 'FontSize', 12)
+xticks(0:length(t):3*length(t))
+xticklabels(0:5:15)
+
+subplot(2,2,3)
+%pspectrum(S, fs, 'spectrogram', 'Leakage', 1, 'OverlapPercent', 0, ...
+%'MinThreshold', -10, 'FrequencyLimits', [0, 10]);
+
+spectrogram(S1,128,120,128,fs,'yaxis','MinThreshold',-30)
+ylim([0 10])
+
+subplot(2,2,4)
+%pspectrum(S, fs, 'spectrogram', 'Leakage', 1, 'OverlapPercent', 0, ...
+%'MinThreshold', -10, 'FrequencyLimits', [0, 10]);
+
+spectrogram(S2,128,120,128,fs,'yaxis','MinThreshold',-30)
+ylim([0 250])
+
+%% pspectrum(wavelet transform?)
+subplot(2,2,1)
+plot(S1)
+xlim([0 3*length(t)])
+xlabel('Time(s)' ,'FontName', 'Arial', 'FontSize', 12)
+xticks(0:length(t):3*length(t))
+xticklabels(0:5:15)
+
+subplot(2,2,2)
+plot(S2)
+xlim([0 3*length(t)])
+xlabel('Time(s)' ,'FontName', 'Arial', 'FontSize', 12)
+xticks(0:length(t):3*length(t))
+xticklabels(0:5:15)
+
+subplot(2,2,3)
+pspectrum(S1, fs, 'spectrogram', 'Leakage', 1, 'OverlapPercent', 0, ...
+'MinThreshold', -10, 'FrequencyLimits', [0, 10]);
+
+ylim([0 10])
+
+subplot(2,2,4)
+pspectrum(S2, fs, 'spectrogram', 'Leakage', 1, 'OverlapPercent', 0, ...
+'MinThreshold', -30, 'FrequencyLimits', [0, 250]);
