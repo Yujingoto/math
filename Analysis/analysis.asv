@@ -334,7 +334,7 @@ subplot(2,2,4)
 spectrogram(S2,128,120,128,fs,'yaxis','MinThreshold',-30)
 ylim([0 250])
 
-%%
+%% pspectrum(wavelet transform?)
 subplot(2,2,1)
 plot(S1)
 xlim([0 3*length(t)])
@@ -357,4 +357,210 @@ ylim([0 10])
 
 subplot(2,2,4)
 pspectrum(S2, fs, 'spectrogram', 'Leakage', 1, 'OverlapPercent', 0, ...
-'MinThreshold', -10, 'FrequencyLimits', [0, 10]);
+'MinThreshold', -30, 'FrequencyLimits', [0, 250]);
+
+%% 1/10 cycle of 1Hz
+fs = 1000;
+t = 0:1/fs:3;
+
+f = sin(2*pi*t);
+
+subplot(1,2,1)
+plot(f)
+xticklabels(0:1:3)
+xlim([0 3000])
+xlabel('Time(s)' ,'FontName', 'Arial', 'FontSize', 12)
+
+subplot(1,2,2)
+plot(f)
+xticks([0 100])
+xticklabels([0 0.1])
+xlabel('Time(s)', 'FontName', 'Arial', 'FontSize', 12)
+xlim([0 100])
+
+%% Wavelet
+frequencies=[2 5 10];
+
+% initialize wavelet family
+wavelet_family = zeros(3,length(time));
+ 
+% Loop through frequencies and make a family of wavelets.
+for fi=1:num_wavelets
+
+    % note that you can also do this on one line:
+    wavelet_family(fi,:) = exp(2*1i*pi*frequencies(fi).*time) .* exp(-time.^2./(2*(6/(2*pi*frequencies(fi)))^2));
+end
+
+% Plot a few wavelets
+subplot(1,3,1)
+plot(time,real(wavelet_family(1,:))', 'LineWidth', 1.5) 
+title('Frequency 1(2Hz)', 'FontName','Arial','FontSize', 12)
+xlabel('Time(s)', 'FontName','Arial','FontSize', 12)
+
+subplot(1,3,2)
+plot(time,real(wavelet_family(2,:))', 'LineWidth', 1.5) 
+title('Frequency 2(5Hz)',  'FontName','Arial','FontSize', 12)
+xlabel('Time(s)', 'FontName','Arial','FontSize', 12)
+
+subplot(1,3,3)
+plot(time,real(wavelet_family(3,:))', 'LineWidth', 1.5) 
+title('Frequency 3(10Hz)', 'FontName','Arial', 'FontSize', 12)
+xlabel('Time(s)', 'FontName','Arial','FontSize', 12)
+
+%% morlet wavelet
+fs = 1000;
+t  = -1:1/fs:1;
+s     = 6/(2*pi*10);
+
+wavelet = exp(1i*2*pi*10*t) .* exp(-t.^2./(2*s^2)); 
+
+figure
+subplot(221)
+plot(t,real(wavelet))
+xlabel('Time (s)'), ylabel('real axis')
+title('real part of wavelet')
+
+subplot(222)
+plot(t,imag(wavelet))
+xlabel('Time (s)'), ylabel('imaginary axis')
+title('imaginary part of wavelet') 
+ 
+subplot(223)
+plot(real(wavelet),imag(wavelet))
+ylabel('real axis'), zlabel('imag axis')
+title('real and imaginary part of wavelet')
+
+subplot(224)
+plot(t,real(wavelet),'b')
+hold on
+plot(t,imag(wavelet),'r:')
+legend({'real part';'imaginary part'})
+%% Frequency Analysis
+fs = 1000;
+t = 0:1/fs:10-1/fs;                      % 10 second span time vector
+x = (1.3)*sin(2*pi*15*t) ...             % 15 Hz component
+  + (1.7)*sin(2*pi*40*t) ...         % 40 Hz component
+  + 2.5*randn(size(t)); ...              % Gaussian noise;
+
+n = length(x);          % number of samples
+fourier = zeros(1,fs/2);
+
+for fi=1:length(fourier)
+    fourier(fi) = sum(x.*exp(-1i*2*pi*fi*t));
+end
+
+subplot(2,2,[1 2])
+plot(x)
+
+subplot(2,2,3)
+plot(abs(fourier)*2/n)
+xlim([0 50])
+title('Handmade', 'FontName','Arial', 'FontSize', 15)
+
+subplot(2,2,4)
+y = fft(x);
+f = (0:length(x)-1)*(fs/n);     % frequency range
+plot(f, abs(y)*2/n)
+xlim([0 50])
+title('MATLAB fft', 'FontName','Arial', 'FontSize', 15)
+
+%% morlet wavelet transform
+% https://jp.mathworks.com/help/wavelet/ug/cwt-based-time-frequency-analysis.html
+% がいいと思う．CWT関数．手で実装するのは出来るんだけど結構めんどう
+
+%% filter, power, phase, envelope
+fs = 100;
+t = -2*pi:1/fs:2*pi;
+n = length(t);
+%x = exp(1i*t) + exp(1i*5*t) + exp(1i*20*t);
+x = exp(1i*5*t);
+am = [0:0.001:1 1:0.005:2.275];
+f = x.*am;
+
+subplot(2,4,[1 2])
+plot(real(x))
+xlim([0 n])
+title('real(x)', 'FontName','Arial', 'FontSize', 12)
+
+subplot(2,4,[3 4])
+plot(real(f))
+xlim([0 n])
+title('real(f)  ...(modulated x)', 'FontName','Arial', 'FontSize', 12)
+
+subplot(2,4,5)
+plot(angle(x))
+xlim([0 n])
+title('angle(x)', 'FontName','Arial', 'FontSize', 12)
+
+subplot(2,4,6)
+plot(round(abs(x)))
+xlim([0 n])
+title('abs(x)', 'FontName','Arial', 'FontSize', 12)
+
+subplot(2,4,7)
+plot(angle(f))
+xlim([0 n])
+title('angle(f)', 'FontName','Arial', 'FontSize', 12)
+
+subplot(2,4,8)
+plot(abs(f))
+xlim([0 n])
+title('abs(f)', 'FontName','Arial', 'FontSize', 12)
+
+%% signum function
+x = -3:0.1:3;
+plot(x, sign(x), 'LineWidth', 1.5)
+title('Signum function', 'FontName','Arial', 'FontSize', 15)
+
+%% hilbert
+fs = 100;
+t = -pi:1/fs:pi;
+n = length(t);
+x1 = cos(5*t);
+x2 = x1 + cos(t) + cos(20*t);
+y1 = fft(x1);
+y2 = fft(x2);
+
+posF = 2:floor(n/2)+mod(n,2);
+negF = ceil(n/2)+1+~mod(n,2):n;
+
+% 負の周波数はいらない
+yhilbert1(negF) = 0*y1(negF);
+yhilbert2(negF) = 0*y2(negF);
+
+% 正の周波数expと負の周波数exp (iがけした) を足したものを新しい正の周波数に
+yhilbert1(posF) = (y1(posF) + y1(negF)) + 1i*(-1i*(y1(posF) - y1(negF)));
+%yhilbert(posF) = (y(posF) + y(negF)) + 1i*(-1i*(y(posF) - y(negF)));
+
+
+% つまりは単純に二倍
+%yhilbert(posF) = 2*y(posF);
+yhilbert2(posF) = 2*y2(posF);
+
+H1 = ifft(yhilbert1);
+H2 = ifft(yhilbert2);
+
+subplot(3,2,1)
+plot(t, x1)
+title('sine wave', 'FontName','Arial', 'FontSize', 15)
+
+subplot(3,2,2)
+plot(t, x2)
+title('combined sine wave', 'FontName','Arial', 'FontSize', 15)
+
+subplot(3,2,3)
+plot(t, real(H1), t, imag(H1))
+title('Handmade HT', 'FontName','Arial', 'FontSize', 15)
+
+subplot(3,2,4)
+plot(t, real(H2), t, imag(H2))
+title('Handmade HT', 'FontName','Arial', 'FontSize', 15)
+subplot()
+
+subplot(3,2,5)
+plot(t, real(hilbert(x1)), t, imag(hilbert(x1)))
+title('Hilbert function', 'FontName','Arial', 'FontSize', 15)
+
+subplot(3,2,6)
+plot(t, real(hilbert(x2)), t, imag(hilbert(x2)))
+title('Hilbert function', 'FontName','Arial', 'FontSize', 15)
