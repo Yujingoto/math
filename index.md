@@ -10,16 +10,16 @@
 　本稿はテーマごと，いくつかのフォルダに分かれています．  
 　それぞれのフォルダには，本体のpdf，pdfを作成するtexファイル(筆者のバックアップが主な意図．tex書式の参考にしたい人は自由にダウンロードしてください)，それから文中で登場する各種処理のプログラムでの実装ファイルが格納されています．MATLAB環境があれば，自分のローカルで実際に手を動かしてみると理解をより早く進める事が出来るでしょう．（未実装！てへぺろ！）  
 
-- [基礎数学](https://github.com/Yujingoto/math/tree/master/Basic)  
+- [基礎数学](https://github.com/Yujingoto/math/tree/master/Basic/basic.pdf)  
   解析数学や統計数学を勉強していくには，複素数や三角関数，微分積分，畳み込みなど最低限必要な数学的知識が多く存在します．高校までの数学で学んでいる人もいると思いますが，ほとんどの人は「なんの役に立つんだ」と思いながら勉強していた事でしょう．まずはこれらの数学が何の役に立つのかを考えつつ，一緒に勉強しなおしてみましょう．  
 
-- [解析数学](https://github.com/Yujingoto/math/tree/master/Analysis)  
+- [解析数学](https://github.com/Yujingoto/math/tree/master/Analysis/analysis.pdf)  
   オイラーの公式から入り，フーリエ変換，ウェーブレット変換，ヒルベルト変換...脳波を解析するのによく使う数学的処理について学びます．これらを使って簡単に周波数解析，時間周波数解析にもチャレンジしましょう．  
 
-- [統計数学](https://github.com/Yujingoto/math/tree/master/Statistics)  
+- [統計数学](https://github.com/Yujingoto/math/tree/master/Statistics/statistics.pdf)  
   統計は科学をやる以上はほぼすべての人が学ぶ必要のある領域です．データが従う代表的な分布について学び，それらを使ったt検定などの統計的検定について学びましょう．また，データの母数を推定する最尤推定やベイズ確率を用いたMAP推定，ベイズ推定に予測といった少々発展的な内容にも触れます．  
 
-- [発展数学](https://github.com/Yujingoto/math/tree/master/Advanced)  
+- [発展数学](https://github.com/Yujingoto/math/tree/master/Advanced/advanced.pdf)  
   うまくフォルダわけは出来ませんが，情報理論や力学といった背景を主にした，脳活動を捉える様々な理論的研究だったりで出現する数学を虫食い的にまとめていきます．ようは筆者が研究や趣味のために勉強した計算論的神経科学系の話題です．一番信用ならないけど興味あったら覗いてみて．今のところはエントロピー，KLDといった話が載っています．  
 
 ## おことわり
