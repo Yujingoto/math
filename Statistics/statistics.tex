@@ -77,10 +77,12 @@ setpagesize=false,
 まずは簡単な分布から見て, 徐々に複雑なものを見ていきます. 今回は脳の数学であまり使わない気がするやつらはまとめて雑に確認します.\\
 \subsection{一様分布}
 例えばサイコロを振った時に出る目の確立分布を考えると, 当然6つの事象それぞれがすべて$\frac{1}{6}$で表せるため, プロットすると以下のようになります.\\
+
+
 \begin{figure}[H]
 \label{im:uniform}
   \centering
-  \includegraphics[width=120mm,bb=0 0 432 288]{../figures/uniform.png}
+  \includegraphics[width=15cm]{../figures/uniform.eps}
   \caption{サイコロの確立分布(一様分布)}
 \end{figure}
 
@@ -169,7 +171,7 @@ f(x) =
 \begin{figure}[H]
 \label{im:bernoulli}
   \centering
-  \includegraphics[width=120mm,bb=0 0 432 288]{../figures/bernoulli.png}
+  \includegraphics[width=15cm]{../figures/bernouli.eps}
   \caption{ベルヌーイ分布}
 \end{figure}
 
@@ -208,10 +210,10 @@ f(x) = {}_n\mathrm{C}_x p^x(1-p)^{n-x}
 これらを掛け合わせているので, 何回当たって何回外れたかを表す式ですね.
 
 \begin{figure}[H]
-\label{im:bernoulli}
+\label{im:bino}
   \centering
-  \includegraphics[width=120mm,bb=0 0 432 288]{../figures/binomial.png}
-  \caption{ベルヌーイ分布}
+  \includegraphics[width=15cm]{../figures/binomial.eps}
+  \caption{二項分布}
 \end{figure}
 
 平均$\mathbb{E}(X)$及び分散$\mathbb{V}(X)$は
@@ -246,7 +248,7 @@ f(x) = \frac{\lambda^x}{x!}e^{-\lambda}
 \begin{figure}[H]
 \label{im:poisson}
   \centering
-  \includegraphics[width=120mm,bb=0 0 432 288]{../figures/poisson.png}
+  \includegraphics[width=15cm]{../figures/poisson.eps}
   \caption{ポアソン分布}
 \end{figure}
 
@@ -269,7 +271,7 @@ f(x) = \frac{1}{\sqrt{2\pi\sigma^2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 \begin{figure}[H]
 \label{im:normal}
   \centering
-  \includegraphics[width=120mm,bb=0 0 432 288]{../figures/normal.png}
+  \includegraphics[width=120mm]{../figures/normal.eps}
   \caption{正規分布}
 \end{figure}
 
@@ -404,7 +406,7 @@ f(x) = k(1 + \frac{x^2}{\alpha})^{-\frac{\alpha+1}{2}}
 \begin{figure}[H]
 \label{im:student}
   \centering
-  \includegraphics[width=120mm,bb=0 0 432 288]{../figures/student.png}
+  \includegraphics[width=120mm]{../figures/student.eps}
   \caption{自由度の異なるt分布と標準正規分布}
 \end{figure}
 
@@ -431,8 +433,8 @@ f(x) = \frac{kx^{\frac{m}{2}-1}}{\{1 + (\frac{m}{n})x\}^{\frac{m+n}{2}}}
 \begin{figure}[H]
 \label{im:f_dist}
   \centering
-  \includegraphics[width=120mm,bb=0 0 432 288]{../figures/f_dist.png}
-  \caption{自由度3.10のF分布}
+  \includegraphics[width=120mm]{../figures/f_dist.eps}
+  \caption{自由度5, 3のF分布}
 \end{figure}
 
 恒例の平均値と分散です. こいつらも殺意高めだけど覚える必要は今のところ皆無だと思ってます.
@@ -442,7 +444,8 @@ f(x) = \frac{kx^{\frac{m}{2}-1}}{\{1 + (\frac{m}{n})x\}^{\frac{m+n}{2}}}
 \mathbb{V}(X) = \frac{2n^2 (m+n-2)}{m(n-2)^2(n-4)}
 \end{align}
 
-\section{$\chi^2$分布}
+\section{$\chi^2$ 分布}
+
 ラスト. $\chi^2$分布です. こいつも重要です. 我々は結果を理論に落とし込む時, なんらかの数式に近似したり回帰したりするわけですが, 実際問題理論と観測値が完全に一致するなんていう事はまれで, 様々な要因で若干の誤差が生じます. その誤差が「誤差」なのか「理論の誤り」なのかを評価する時に使うのがこの分布とそれに基づく検定です. \\
 \\
 式はこちらです. 
@@ -455,7 +458,7 @@ f(x) = k\chi^{\frac{\alpha}{2}-1}e^{-\frac{\chi}{2}}
 
 さて, 例によってここの$\alpha$は自由度, kは定数です.\\
 
-幸い, どこの説明を見てもこの式は使わないと言われているので覚えなくていいでしょう.\\
+幸い, どこの説明を見てもこの式自体は使わないと言われているので覚えなくていいでしょう.\\
 \\
 
 平均値と分散です.
@@ -470,8 +473,8 @@ f(x) = k\chi^{\frac{\alpha}{2}-1}e^{-\frac{\chi}{2}}
 \begin{figure}[H]
 \label{im:chi}
   \centering
-  \includegraphics[width=120mm,bb=0 0 432 288]{../figures/kai.png}
-  \caption{自由度の異なる$\chi^2$分布}
+  \includegraphics[width=120mm]{../figures/chi2.eps}
+  \caption{自由度4の$\chi^2$分布}
 \end{figure}
  
 こいつは結構F分布に似てますね. ただ注意が必要なのは, F分布は標本分散の比に関する分布ですが$\chi^2$分布は標本分散そのものの分布です.
@@ -754,12 +757,12 @@ nの値，つまり得られた標本の数($\bar{X}は\sum X_i/n$)が多くな�
 \begin{screen}
   \textbf{母平均}
   \begin{align}
-    \mu = \int_-\infty^\infty x f(x) dx \qquad \text{(連続)}\\
+    \mu = \int_{-\infty}^{\infty} x f(x) dx \qquad \text{(連続)}\\
     \mu = \sum_{i=1}^N x_i f(x_i) \qquad \text{(離散)}
   \end{align}  
   \textbf{母分散}
   \begin{align}
-    \sigma^2 = \int_-\infty^\infty (x-\mu)^2f(x)dx \qquad \text{(連続)}\\
+    \sigma^2 = \int_{-\infty}^{\infty} (x-\mu)^2f(x)dx \qquad \text{(連続)}\\
     \sigma^2 = \sum_{i=1}^N (x_i-\mu)^2 f(x_i) \qquad \text{(離散)}
   \end{align}
 \end{screen}
@@ -920,6 +923,12 @@ $\bar{X}$は$\mu$とは違います．勿論期待値は$\mu$ですが，実際�
 
 これらのために，同一の対象を観測していても，常に誤差が生じるわけですが，これらは平均0，分散$\sigma^2$の正規分布に従い，測定の精度によってこの分散の値は変わるというのがガウスが提唱した誤差理論です．\\
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=18cm]{../figures/gauss-error.eps}
+  \caption{ガウスの誤差理論}
+\end{figure}
+
 大事なのは，一般に何かを観測する際には誤差が生じ，それはガウス分布，つまり正規分布に従うという事です．\\
 
 これに，対象のもつ真の値という意味で$\mu$を加えると，$X_1...X_n$の確率分布になり，これは$N(\mu, \sigma^2)$に従います．つまり
@@ -982,7 +991,13 @@ $X_i$は勿論，$N(\mu, \frac{\sigma^2}{n})$によって生成されます．�
   \label{eq:z}
 \end{align}
 
-となり，これは$N(0,1)$に従います．しつこいようですが，標準化とは平均0，分散1になるよう変換する作業です．\\
+となり，これは$N(0,1)$に従います．しつこいようですが，標準化とは平均0，分散1になるよう変換する作業です．なのでこの$N(0,1)$を標準正規分布とよぶのでした．\\
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=15cm]{../figures/std-normal.eps}
+  \caption{標準正規分布}
+\end{figure}
 
 そもそも何故これをするかですが，そのままの分布だと考えている問題によって毎度平均も分散も違うのだからずれまくってしまいますよね．\\
 
@@ -1024,6 +1039,12 @@ $s^2$の式は
 \end{align}
 
 で定義される確率変数が従う分布は自由度kの$\chi^2$分布というのでした．こいつは標本分散を扱う議論には必ず出てくる重要な分布です．\\
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=12cm]{../figures/chi2.eps}
+  \caption{$\chi^2$分布}
+\end{figure}
 
 実際，これを使うと正規母集団から得られた$X_n$
 の標本分散を
@@ -1070,7 +1091,7 @@ $s^2$の式は
 
 となって，こちらも$\chi^2$分布に従う事が分かります．がしかし，こちらは母平均ではなく標本平均を用いた標準化のような事をしているため，標本分散の説明の時同様に自由度が一個減っているので，こいつの従う分布は$\chi^2(n-1)$となります．\\
 
-こいつを使った検定が$\chi^2$検定です，多分．
+こいつを使った検定が$\chi^2$検定です．
 
 \subsection{母分散未知の時の標本平均の分布}
 次，母分散が未知の時の標本平均について考えます．\\
@@ -1157,6 +1178,12 @@ t検定は，t統計量を使った検定だという話を以前しました．
 \end{align}
 
 は自由度n-1のt分布に従うと言えますね！自由度がn-1なのは，$\chi^2$分布側の自由度がn-1だったからです．これは最初に確認したように，t統計量は母分散の変わりに標本分散を使っているから自由度が1つ落ちるんでしたね．\\\\
+
+\begin{figure}[H]
+  \centering
+  \includegraphics{../figures/student.eps}
+  \caption{スチューデントのt分布}
+\end{figure}
 
 これでt統計量についての説明は終わりです．
 
@@ -1289,6 +1316,12 @@ t検定は，t統計量を使った検定だという話を以前しました．
 
 がF(m-1, n-1)のＦ分布に従う事が分かります．2標本の分散の比の検定に使う統計量はこいつですね．検定はＦ検定．\\
 \\
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=12cm]{../figures/f_dist.eps}
+  \caption{F分布}
+\end{figure}
 
 ちなみに，母分散が等しい時は
 \begin{align}
@@ -1590,7 +1623,6 @@ $\theta$と$\delta$を使って表される損失関数，を考えられる$\th
     P_\theta(偽陰性)=\beta, \quad if \quad \theta \in \Theta_1
     \end{array}
   \right.
-  \label{eq:risk}
 \end{align}
 
 のリスク関数を
@@ -1610,7 +1642,7 @@ $\theta$と$\delta$を使って表される損失関数，を考えられる$\th
 と定義し直す事もできます．こうみると，検出力と偽陽性，偽陰性の関係がより理解できると思います．\\
 
 
-さて，こいつの有用性を考えてみましょう．てきとうに，また工場の不良品問題で考えます不良品率の閾値を$p_0=0.01$
+さて，こいつの有用性を考えてみましょう．てきとうに，また工場の不良品問題で考えます．不良品率の閾値を$p_0=0.01$
 として，20個の製品を検査してそのうち1個異常の不良品があったら帰無仮説を棄却するという検定を考えます．つまり
 
 \begin{align}
