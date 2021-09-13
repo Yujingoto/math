@@ -1,4 +1,4 @@
-\documentclass[11pt,a4paper,uplatex]{ujreport} 	% for uplatex
+\documentclass[11pt,a4paper]{ujreport} 	% for uplatex
 %
 \usepackage{amsmath,amssymb}
 \usepackage{bm}
@@ -175,7 +175,7 @@ f(x) =
   \caption{ベルヌーイ分布}
 \end{figure}
 
-今回は1:1の図になっていますが, もちろん1:5くらいの割合になる事もあります. たとえばサイコロで1が出るか出ないかとか. 以上.\\
+この図(\ref{im:bernoulli})では成功が1，失敗が0として成功率75\%の何かをやらせたときの確率分布です．今回は成功率くらいの割合になる事もあります. 他にも，たとえばサイコロで1が出るか出ないかとか，そんな問題もこの分布で考えられます．以上.\\
 \\
 
 関数はこんな感じかな
@@ -286,9 +286,9 @@ f(x) = e^{-x^2}
 \end{align}
 
 \begin{figure}[H]
-\label{im:normal}
+\label{im:normal2}
   \centering
-  \includegraphics[width=120mm,bb=0 0 432 288]{../figures/normal2.png}
+  \includegraphics[width=120mm]{../figures/normal2.eps}
   \caption{式(\ref{eq:normal2})の図}
 \end{figure}
 
@@ -323,9 +323,9 @@ f(x) = e^{-\frac{(x-\mu)^2}{\sigma^2}}
 　ともあれ ... これで, 母平均と母分散によって形を変える釣り鐘型分布が完成です！！めでたい！！\\
 
 \begin{figure}[H]
-\label{im:normal}
+\label{im:normal4}
   \centering
-  \includegraphics[width=120mm,bb=0 0 432 288]{../figures/normal4.png}
+  \includegraphics[width=120mm]{../figures/normal4.eps}
   \caption{式(\ref{eq:normal4})の図.(平均3, 分散10の場合)}
 \end{figure}
 
@@ -363,26 +363,32 @@ f(x) = \frac{1}{\sqrt{2\pi\sigma^2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 
 つまり, 平均の周辺であるほど高確率で観測され, 裾野ほど「レア」な事象というわけです.\\\\
 
-この性質を利用して, 正規分布には「100p\%点」と呼ばれる指標を導入する事が出来ます. これは「その点以上(以下)の部分の確率の合計がpになる境界」を指します. x軸の正方向なら上側, 負方向なら下側, 両方を指すなら両側100p\%点です. \\\\
+この性質を利用して, (標準)正規分布には「100p\%点」と呼ばれる指標を導入する事が出来ます. これは「その点以上(以下)の部分の確率の合計がpになる境界」を指します. x軸の正方向なら上側, 負方向なら下側, 両方を指すなら両側100p\%点です. \\\\
 
-言葉だとややこしいですが, グラフで見れば一瞬で分かります.
+こいつの便利な点ですが，まず標準正規分布とは異なる平均値や分散値を持っている正規分布を同じ土俵で比べるために平均0，分散１に揃える操作，標準化をした正規分布の事でした．\\
+
+なので標準正規分布において定義される100p\%点は，どんなデータであろうと正規分布に従っているのであれば対等に語れる点である事が分かります．\\
+
+これを使うからこそ，有名なt検定だとかを使った時にp値が0.05だ～とかそんな話ができるわけです．\\
+
+まあ言葉だとややこしいですが, グラフで見れば一瞬で分かります.
 
 
 \begin{figure}[H]
 \label{im:upper}
   \centering
-  \includegraphics[width=120mm,bb=0 0 432 288]{../figures/upper_p.png}
-  \caption{正規分布の上側5\%点}
+  \includegraphics[width=120mm]{../figures/oneside-t.eps}
+  \caption{正規分布の下側5\%点}
 \end{figure}
 
 \begin{figure}[H]
 \label{im:bilateral}
   \centering
-  \includegraphics[width=120mm,bb=0 0 432 288]{../figures/bilateral_p.png}
+  \includegraphics[width=120mm]{../figures/twoside-t.eps}
   \caption{正規分布の両側5\%点}
 \end{figure}
 
-上側5\%に比べ, 両側5\%は左右に領域が分散した分上側の領域が狭くなってるのに注意です. \\
+下側5\%に比べ, 両側5\%は左右に領域が分散した分上側の領域が狭くなってるのに注意です. \\
 \\
 
 だいたい, 正規分布でよく用いられるのは上下両側の5\%と1\%点です. 何に使うのかはあとで説明するので, ひとまず概念だけ覚えておいてください.
@@ -444,7 +450,7 @@ f(x) = \frac{kx^{\frac{m}{2}-1}}{\{1 + (\frac{m}{n})x\}^{\frac{m+n}{2}}}
 \mathbb{V}(X) = \frac{2n^2 (m+n-2)}{m(n-2)^2(n-4)}
 \end{align}
 
-\section{$\chi^2$ 分布}
+\section{χ二乗分布}
 
 ラスト. $\chi^2$分布です. こいつも重要です. 我々は結果を理論に落とし込む時, なんらかの数式に近似したり回帰したりするわけですが, 実際問題理論と観測値が完全に一致するなんていう事はまれで, 様々な要因で若干の誤差が生じます. その誤差が「誤差」なのか「理論の誤り」なのかを評価する時に使うのがこの分布とそれに基づく検定です. \\
 \\
@@ -708,6 +714,12 @@ nの値，つまり得られた標本の数($\bar{X}は\sum X_i/n$)が多くな�
 
 故に，人類の代表として20名とかずつ呼んできますよね．この時，全健常者や全患者の事を母集団と称し，呼び出してきた被験者を標本と言います．一応，標本は特定のデータではなくデータの集合である事を注意しておきます．筆者は最初それがごちゃごちゃになってました．被験者Ａさんは標本ではなく標本の要素です．\\
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=12cm]{../figures/sampling.eps}
+  \caption{母集団と標本の関係．母集団から代表していくつかのデータを抜き出したものを標本という．標本は無作為に偏りなく抽出する必要がある．図では3つ目の標本は若い男性だけを標本として抽出してしまっているため，データの偏りが強く良い標本の抽出とは言えない．ちなみに日本人の平均身長を140としてるのはマジでてきとーです．}
+\end{figure}
+
 母集団全体を調べる記述統計的な全数調査は不可能なので，我々がやるのは標本の特徴から母集団の特徴を推測する作業で，これを統計的推測と言います．\\
 
 この時，既に母集団が従う分布が特定されている場合，得られた標本から推定するのは母集団の平均や分散といったパラメータ，母数だけで済みます．たとえば正規分布に従うって分かっていれば平均と分散さえ分かれば分布が一意に定まりましたよね．そんな感じ．
@@ -731,6 +743,12 @@ nの値，つまり得られた標本の数($\bar{X}は\sum X_i/n$)が多くな�
 以降，特に断らない限り標本は母集団から非復元的に無作為抽出されたものを仮定して議論を進めます．\\
 
 ここまでは常識．で，ここから先を勉強していく上で簡単なように思えて重要な考え方があります．それが標本と標本分布です．\\
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=15cm]{../figures/sampling2.eps}
+  \caption{標本と標本分布．ここでは，得られた標本平均の標本分布をplotしている．}
+\end{figure}
 
 標本は母集団から無作為に選んできたいくつかの要素で構成されていました．まあ言ってみれば母集団の部分集合です．すると必然的に，その組み合わせは母集団の数をN，標本の要素数をnとすると
 
@@ -925,7 +943,7 @@ $\bar{X}$は$\mu$とは違います．勿論期待値は$\mu$ですが，実際�
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=18cm]{../figures/gauss-error.eps}
+  \includegraphics[width=15cm]{../figures/gauss-error.eps}
   \caption{ガウスの誤差理論}
 \end{figure}
 
@@ -1057,7 +1075,6 @@ $s^2$の式は
 
 \begin{align}
   \chi^2 = \frac{(n-1)s^2}{\sigma^2}
-  \label{eq:chi}
 \end{align}
 
 は自由度(n-1)の$\chi^2(n-1)$に従います．簡単に証明ぽい事をすると，まず標本を標準化すると
@@ -1362,7 +1379,6 @@ t検定は，t統計量を使った検定だという話を以前しました．
 と，普通に我々が行う思考はこんな感じですね．表が出る確率pは$p(表)=1/2$であると考えて，二項分布($Bi(10,1/2)$)の確率分布に従う事を仮説として，その中で与えられたデータ(表が出た回数)が分布のどのあたりにあるのかを考えるわけです．
 
 \begin{figure}[H]
-  \label{im:bino}
     \centering
     \includegraphics[width=120mm]{../figures/bino.eps}
     \caption{表が出る回数の二項分布}
@@ -1979,14 +1995,14 @@ p(Y=y_j | X=x_i) = \frac{n_{ij}}{c_i}
 
 \begin{align}
 p(X=x_i , Y=y_j) = p(Y=y_j | X=x_i)p(X=x_i)
-\label{eq:product}
+\label{eq:product1}
 \end{align}
 
 が言えます．つまり，$X=x_i , Y=y_j$の同時確率は$X=x_i$が観測された上での$Y=y_j$の確率であり，これらの乗算によって求められるという事です．一応計算しても，
 
 \begin{align}
 p(Y=y_j | X=x_i)p(X=x_i) = \frac{n_{ij}}{c_i}\frac{c_i}{N} = \frac{n_{ij}}{N}
-\label{eq:product}
+\label{eq:product2}
 \end{align}
 
 で式(\ref{eq:prob1})が確かに求められていますね．これが確率の乗法定理です．意味するところは，$X=x_i, Y=y_j$の同時確率は$X=x_i$の確率と，$X=x_i$の元での$Y=y_j$の条件付確率との積である，ということになります．

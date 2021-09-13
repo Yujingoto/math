@@ -29,6 +29,7 @@ xlabel('x', 'FontName', 'Arial', 'FontSize', 12)
 ylabel('p(x)', 'FontName', 'Arial', 'FontSize', 12)
 title('二項分布', 'FontSize', 15)
 
+
 %%　ポアソン分布
 x = 0:15;
 y = poisspdf(x,4);
@@ -47,10 +48,30 @@ xlabel('x', 'FontName', 'Arial', 'FontSize', 12)
 ylabel('p(x)', 'FontName', 'Arial', 'FontSize', 12)
 title('正規分布', 'FontSize', 15)
 
-%% 正規分布
+%% 負の指数関数分布
+x = -3:0.1:3;
+y = exp(-(x.^2));
+
+figure
+plot(x,y, 'LineWidth', 2)
+xlabel('x', 'FontName', 'Arial', 'FontSize', 12)
+ylabel('f(x)', 'FontName', 'Arial', 'FontSize', 12)
+title('e^{-x^2} のグラフ', 'FontSize', 15)
+
+%% 負の指数関数分布をずらす
+x = -3:0.1:9;
+y = exp(-((x-3).^2) / 10);
+
+figure
+plot(x,y, 'LineWidth', 2)
+xlabel('x', 'FontName', 'Arial', 'FontSize', 12)
+ylabel('f(x)', 'FontName', 'Arial', 'FontSize', 12)
+title('e^{-(x-\mu)^2 / \sigma^2} のグラフ', 'FontSize', 15)
+
+%% 標準正規分布
 x = -5:0.1:5;
 y = normpdf(x,0,1);
-plot(x,y)
+plot(x,y, 'LineWidth',2)
 xlabel('x', 'FontName', 'Arial', 'FontSize', 12)
 ylabel('p(x)', 'FontName', 'Arial', 'FontSize', 12)
 title('標準正規分布', 'FontSize', 15)
