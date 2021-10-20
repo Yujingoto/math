@@ -70,10 +70,10 @@ title('正規分布(連続)', 'FontSize', 15)
 x = -6:0.01:6;
 px = normpdf(x,0,1);
 qx = -4:0.01:4;
-qx1 = normpdf(x,qx(201),1);
-qx2 = normpdf(x,qx(401),1);
-qx3 = normpdf(x,qx(601),1);
-qx4 = normpdf(x,qx(801),1);
+qx1 = normpdf(x,qx(101),1);
+qx2 = normpdf(x,qx(301),1);
+qx3 = normpdf(x,qx(501),1);
+qx4 = normpdf(x,qx(701),1);
 
 kld = qx.^2/2;
 H1 = -sum(px .* log(px));
@@ -117,39 +117,19 @@ hold off
 
 subplot(2,4,5)
 grid on
-plot(qx,kld)
+plot(qx,kld, 'LineWidth', 1.5)
 hold on
-plot(qx(201),kld(201),'.', 'MarkerSize',15)
+plot(qx(101),kld(101),'.', 'MarkerSize',15)
 xlim([-4 4])
 ylabel('KL(p||q)',  'FontName', 'Arial', 'FontSize', 10)
 xlabel('\mu diff',  'FontName', 'Arial', 'FontSize', 10)
 hold off
 
-subplot(2,4,6)
+subplot(2,4,5)
 grid on
-plot(qx,kld)
+plot(qx,kld, 'LineWidth', 1.5)
 hold on
-plot(qx(401),kld(401),'.', 'MarkerSize',15)
-xlim([-4 4])
-ylabel('KL(p||q)',  'FontName', 'Arial', 'FontSize', 10)
-xlabel('\mu diff',  'FontName', 'Arial', 'FontSize', 10)
-hold off
-
-subplot(2,4,7)
-grid on
-plot(qx,kld)
-hold on
-plot(qx(601),kld(601),'.', 'MarkerSize',15)
-xlim([-4 4])
-ylabel('KL(p||q)',  'FontName', 'Arial', 'FontSize', 10)
-xlabel('\mu diff',  'FontName', 'Arial', 'FontSize', 10)
-hold off
-
-subplot(2,4,8)
-grid on
-plot(qx,kld)
-hold on
-plot(qx(801),kld(801),'.', 'MarkerSize',15)
+plot(qx(101),kld(101),'.', 'MarkerSize',15)
 xlim([-4 4])
 ylabel('KL(p||q)',  'FontName', 'Arial', 'FontSize', 10)
 xlabel('\mu diff',  'FontName', 'Arial', 'FontSize', 10)

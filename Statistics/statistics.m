@@ -30,7 +30,7 @@ ylabel('p(x)', 'FontName', 'Arial', 'FontSize', 12)
 title('二項分布', 'FontSize', 15)
 
 
-%%　ポアソン分布
+%% ポアソン分布
 x = 0:15;
 y = poisspdf(x,4);
 figure
