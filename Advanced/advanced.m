@@ -379,3 +379,35 @@ title('V4', 'FontName', 'Arial', 'FontSize', 12);
 xlim([0 350])
 
 sgtitle('Generated signals', 'FontName', 'Arial', 'FontSize', 15);
+
+
+
+%% Machine learning
+% uni normal dist
+x = 0:1:100;
+px = normpdf(x,80,5);
+figure
+plot(x,px)
+xlabel('x', 'FontName', 'Arial', 'FontSize', 12)
+ylabel('p(x)', 'FontName', 'Arial', 'FontSize', 12)
+legend('sub1', 'FontName', 'Arial', 'FontSize', 15)
+title('実験結果(ガウス分布)', 'FontSize', 15)
+
+%% mixed normal dist
+x = 0:1:100;
+mu = [80,50];
+sigma = [5,7];
+px1 = normpdf(x,mu(1),sigma(1));
+px2 = normpdf(x,mu(2),sigma(2));
+px = px1+px2;
+figure
+plot(x,px,'-k','LineWidth',1.2)
+
+hold on
+plot(x,px1, '--b')
+plot(x,px2, '--r')
+xlabel('x', 'FontName', 'Arial', 'FontSize', 12)
+ylabel('p(x)', 'FontName', 'Arial', 'FontSize', 12)
+legend('x','sub1', 'sub2', 'FontName', 'Arial', 'FontSize', 15)
+title('実験結果(混合ガウス分布)', 'FontSize', 15)
+hold off

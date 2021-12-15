@@ -1,4 +1,4 @@
-\documentclass[11pt,a4paper,uplatex]{ujreport}
+\documentclass[11pt,a4paper]{ujreport}
 %
 \usepackage{amsmath,amssymb}
 \usepackage{bm}
@@ -250,7 +250,7 @@ p(x,y) = p(x)p(y)
 この二つの関係から，「xとyの確率をかける操作をしたものに対して何らかの処理をしたものが，何らかの処理をしたxとyの和になっている」ので，関数$h(・)$は対数をとっている事が分かり（ほら，掛け算って対数だと足し算じゃん？），
 
 \begin{eqnarray}
-h(x) = -log p(x)
+h(x) = -\log p(x)
 \end{eqnarray}
 
 がいえます．log (x)は単調増加で，確率p(x)は常に0から1の範囲をとるため，$h(x)$の値を常に正にするため符号を反転させている事に注意です．ここで対数の底に2を採用するのが情報理論での一般の使い方で，その場合は$h(x)$の単位はbitになるようです．\\
@@ -258,11 +258,11 @@ h(x) = -log p(x)
 これを使って，信号のサイズ，情報量(bit)を算出してるわけですね．あとデータの圧縮なんかにも関係するぽいですがそこまでは知らないし触れませんし触れられません．\\
 \\
 
-次に，この値を分布全体に適用する事を考えます．つまり，確率分布そのものが与える情報量です．その指標として，確率変数$x$の分布$p(x)$に関して$h(x)=-log p(x)$の期待値をとることで，情報量の平均を定義します．確率変数の期待値の一般的な計算です．これも分からなければやはりstatisticsに行ってください．\\
+次に，この値を分布全体に適用する事を考えます．つまり，確率分布そのものが与える情報量です．その指標として，確率変数$x$の分布$p(x)$に関して$h(x)=-\log p(x)$の期待値をとることで，情報量の平均を定義します．確率変数の期待値の一般的な計算です．これも分からなければやはりstatisticsに行ってください．\\
 
 \begin{eqnarray}
 \label{eq:entropy}
-H[x] = - \Sigma_{x} p(x) log p(x)
+H[x] = - \Sigma_{x} p(x) \log p(x)
 \end{eqnarray}
 
 式(\ref{eq:entropy})に定義する量をシャノンエントロピーといいます\cite{prml}．意外と簡単ですね．もっと難しいと思ってました．\\
@@ -272,7 +272,7 @@ H[x] = - \Sigma_{x} p(x) log p(x)
 
 \begin{eqnarray}
 \label{eq:entropy2}
-H[x] = - \int p(x) log p(x) dx
+H[x] = - \int p(x) \log p(x) dx
 \end{eqnarray}
 
 言うまでもないと思いますが，$ \Sigma_{x} p(x)$ も$ \int p(x)$も1です．\\
@@ -285,7 +285,7 @@ H[x] = - \int p(x) log p(x) dx
 \begin{lstlisting}[caption=エントロピーの計算,label=sc:ent1]
 x = [0.1:0.1:1];
 px = zeros(1,10)+0.1;
-H = - sum(px .* log(px));
+H = - sum(px .* \log(px));
 
 \end{lstlisting}
 
@@ -325,7 +325,7 @@ H = - sum(px .* log(px));
   \caption{二項分布のエントロピーの例}
 \end{figure}
 
-エントロピーは1.876．一様分布に比べるとかなり小さく，ポアソン分布より小さいです．本当はもっと山の位置動かしたり急峻にさせてみたりと比較したいですが，飽きたので結論．(離散)エントロピーは確率分布$p(x)$が一様分布に近付く程大きくなり，一様分布の時に最大になります．$p(x) * log(p(x))$なのでまあ，考えればそうかなって感じ．証明は結構めんどくさいぽいです．\\
+エントロピーは1.876．一様分布に比べるとかなり小さく，ポアソン分布より小さいです．本当はもっと山の位置動かしたり急峻にさせてみたりと比較したいですが，飽きたので結論．(離散)エントロピーは確率分布$p(x)$が一様分布に近付く程大きくなり，一様分布の時に最大になります．$p(x) * \log(p(x))$なのでまあ，考えればそうかなって感じ．証明は結構めんどくさいぽいです．\\
 
 この性質から，状態の予測が困難であるほどエントロピーが高い事になるので，不確かさ(Uncertainty)の指標として用いられる事が多い理由がわかるかと思います．\\
 \\
@@ -371,11 +371,11 @@ H = - sum(px .* log(px));
 さて，このエントロピーがどんな事に使えるのか考えていきます．エントロピーは分布の特徴を表す量になっていたわけなので，これを使うと二つの分布の比較，なんてことも出来ることになります．直観的には，全く同じ特徴の分布同士ならそのエントロピーに差はないし，違う分布なら差がある，という感じです．\\
 \\
 
-式にしてみましょう．まず，微分エントロピー($- \int p(x) log p(x)$)は確率変数xの分布$p(x)$の元での期待値でした．なら，ここで新しい分布$q(x)$を考えたとき，仮にこの分布が同一($p(x) = q(x)$)であれば，
+式にしてみましょう．まず，微分エントロピー($- \int p(x) \log p(x)$)は確率変数xの分布$p(x)$の元での期待値でした．なら，ここで新しい分布$q(x)$を考えたとき，仮にこの分布が同一($p(x) = q(x)$)であれば，
 
 \begin{eqnarray}
 \label{eq:KL1}
-  \int p(x) log q(x)dx - \int p(x) log p(x)dx= 0
+  \int p(x) \log q(x)dx - \int p(x) \log p(x)dx= 0
 \end{eqnarray}
 が成り立つ事になります．同じ分布の元で考えた同じ確率変数の期待値だから，当たり前です．分布$p(x)$の元で見た$q(x)$の期待値が，分布$p(x)$の元で見た$p(x)$の期待値と等しい，ということです．逆にこの分布が異なるものであるほど，この計算の結果は大きな値を取る事になります．\\
 \\
@@ -384,8 +384,8 @@ H = - sum(px .* log(px));
 
 \begin{eqnarray}
 \label{eq:KLD}
-  \mathbb{D}_{KL}(p||q) = - \int p(x) log q(x)dx - (-\int p(x) log p(x)dx)\\
-  = -\int p(x) log \frac{q(x)}{p(x)} dx
+  \mathbb{D}_{KL}(p||q) = - \int p(x) \log q(x)dx - (-\int p(x) \log p(x)dx)\\
+  = -\int p(x) \log \frac{q(x)}{p(x)} dx
 \end{eqnarray}
 
 一寸ややこしく見えますが，基本的には式(\ref{eq:KL1})をlogについて整理しただけです．\\簡単ですね.\\
@@ -408,7 +408,7 @@ KL距離の性質ですが，まず$\mathbb{D}_{KL}(p||q) \geq 0$です．距離
 
 \begin{eqnarray}
 \label{eq:KLD-inv}
-  \mathbb{D}_{KL}(p||q) =  \int p(x) log \frac{p(x)}{q(x)} dx
+  \mathbb{D}_{KL}(p||q) =  \int p(x) \log \frac{p(x)}{q(x)} dx
 \end{eqnarray}
 \\
 留意してください．\\
@@ -451,7 +451,7 @@ KL距離の性質ですが，まず$\mathbb{D}_{KL}(p||q) \geq 0$です．距離
 どうなんでしょう？今後の課題になってます．\\
 \\
 
-余談ですが，式(\ref{eq:KLD})の右辺第一項，$- \int p(x) log q(x)dx$は交差エントロピー$H(p,q)$とも言います．分布$p(x)$の元で見た$q(x)$の期待値なので，$p(x)$の分布を想定したとき，$q(x)$がどれだけ予測しにくいかとも捉えられます．\\
+余談ですが，式(\ref{eq:KLD})の右辺第一項，$- \int p(x) \log q(x)dx$は交差エントロピー$H(p,q)$とも言います．分布$p(x)$の元で見た$q(x)$の期待値なので，$p(x)$の分布を想定したとき，$q(x)$がどれだけ予測しにくいかとも捉えられます．\\
 \\
 
 これだけでも，交差エントロピー$H(p,q)$は正解値と推定値の比較なんかの用途で使えるようです．\\
@@ -480,18 +480,18 @@ L_2(Q||P) := \int\{ Q(x) - P(x)\}^2 dx   \qquad \qquad  \text{$L_2$ノルム}\\
 I_K(Q||P) := \int \{ \sqrt{Q(x)} - \sqrt{P(x)} \}^2 dx    \qquad \qquad  \text{ヘリンジャー距離}\\
 \mathbb{D}(Q||P) := \int f(\frac{Q(x)}{P(x)}) Q(x)dx   \qquad \qquad  \text{f-ダイバージェンス}\\
 I_\lambda(Q||P) := \int \{ (\frac{Q(x)}{P(x)})^{\lambda} -1 \}Q(x) dx   \qquad \qquad  \text{一般化情報量}\\
-\mathbb{D}_{KL}(Q||P) := \int log(\frac{Q(x)}{P(x)})Q(x) dx   \qquad \qquad  \text{KL情報量}
+\mathbb{D}_{KL}(Q||P) := \int \log(\frac{Q(x)}{P(x)})Q(x) dx   \qquad \qquad  \text{KL情報量}
 \end{eqnarray}
 \end{screen}
 どれがどんな時にどう使われるとかは調べてないです，でもこれでいくと上３つはよく見る気がする．でもまあ全体的に似てるポイですね．なんとなく哲学というか考え方はどれも似たりよったりな気がします．
 
 
 \section{条件付きエントロピー}
-エントロピーは式(\ref{eq:entropy2})に示す量でしたが，これを条件付き確率$p(x,y)$に拡張して考えます．今xが既知である場合，同時分布$p(x,y)$についてyを特定するための情報は$-log p(y|x)$なので（これはいいよね？条件付き確率です），その合計は
+エントロピーは式(\ref{eq:entropy2})に示す量でしたが，これを条件付き確率$p(x,y)$に拡張して考えます．今xが既知である場合，同時分布$p(x,y)$についてyを特定するための情報は$-\log p(y|x)$なので（これはいいよね？条件付き確率です），その合計は
 
 \begin{eqnarray}
 \label{eq:cond_entropy1}
-H(y|x) = - \iint p(y,x) log p(y|x) dy dx
+H(y|x) = - \iint p(y,x) \log p(y|x) dy dx
 \end{eqnarray}
 
 で表され，これは条件付きエントロピーといいます\cite{prml}\cite{dist}．さらにこれを使えば
@@ -520,7 +520,7 @@ xとyが独立であった場合の同時確率の情報量と独立でないと
 
 \begin{eqnarray}
 \label{eq:MI2}
-  MI(x,y) := \mathbb{D}_{KL}(p(x,y) || p(x)p(y)) = -\iint p(x,y) log \frac{p(x)p(y)}{p(x,y)} dxdy
+  MI(x,y) := \mathbb{D}_{KL}(p(x,y) || p(x)p(y)) = -\iint p(x,y) \log \frac{p(x)p(y)}{p(x,y)} dxdy
 \end{eqnarray}
 
 あら簡単．$変数x,y$の同時分布と周辺分布積とのKLDを見るだけですね．KLDなので，両者が同じ，つまりxとyが独立である時に限って0になる量ってわけですね．\\
@@ -532,7 +532,7 @@ xとyが独立であった場合の同時確率の情報量と独立でないと
 KLD同様，符号反転で以下の表記(式\ref{eq:MI3})もあります．
 \begin{eqnarray}
 \label{eq:MI3}
-  MI(x,y) := \iint p(x,y) log \frac{p(x,y)}{p(x)p(y)} dxdy
+  MI(x,y) := \iint p(x,y) \log \frac{p(x,y)}{p(x)p(y)} dxdy
 \end{eqnarray}
 
 式(\ref{eq:MI2})を見れば分かりますが，相互情報量は対称性を持っており，$MI(x,y) = MI(x,y)$です．なのでどっちがどっちにどの程度依存しているみたいな議論までは出来ません．
@@ -577,13 +577,13 @@ KLD同様，符号反転で以下の表記(式\ref{eq:MI3})もあります．
 
 \begin{eqnarray}
 \label{eq:TE1}
-  T_{y\rightarrow x} := \mathbb{D}_{KL}(p(x_{t+1}| \mathbf{x}_t, \mathbf{y}_t) || p(x_{t+1}| \mathbf{x}_t)) = -\sum p(x_{t+1}| \mathbf{x}_t, \mathbf{y}_t) log \frac{p(x_{t+1}| \mathbf{x}_t)}{p(x_{t+1}| \mathbf{x}_t, \mathbf{y}_t)} 
+  T_{y\rightarrow x} := \mathbb{D}_{KL}(p(x_{t+1}| \mathbf{x}_t, \mathbf{y}_t) || p(x_{t+1}| \mathbf{x}_t)) = -\sum p(x_{t+1}| \mathbf{x}_t, \mathbf{y}_t) \log \frac{p(x_{t+1}| \mathbf{x}_t)}{p(x_{t+1}| \mathbf{x}_t, \mathbf{y}_t)} 
 \end{eqnarray}
 
 で定義される量を，yからxへの Transfer entropyとします．例によって符号反転で
 \begin{eqnarray}
 \label{eq:TE2}
-  T_{y\rightarrow x} = \sum p(x_{t+1}| \mathbf{x}_t, \mathbf{y}_t) log \frac{p(x_{t+1}| \mathbf{x}_t, \mathbf{y}_t)}{p(x_{t+1}| \mathbf{x}_t)} 
+  T_{y\rightarrow x} = \sum p(x_{t+1}| \mathbf{x}_t, \mathbf{y}_t) \log \frac{p(x_{t+1}| \mathbf{x}_t, \mathbf{y}_t)}{p(x_{t+1}| \mathbf{x}_t)} 
 \end{eqnarray}
 とも表します．この量は$\mathbf{y}$を知る事によって減少した$x_{t+1}$の不確かさです．相互情報量とは似ているようで異なります．\\
 \\
@@ -638,7 +638,7 @@ p (\mathbf{y}) = \Pi_{i=1}^N p(y_i) \qquad \text{周辺分布}
 
 \begin{eqnarray}
 \label{eq:ICA1}
-\mathbb{D}_{KL}(\mathbf{y}) = \int p(\mathbf{y}) log \frac{p(\mathbf{y})}{\Pi_{i=1}^N p(y_i)} d\mathbf{y}
+\mathbb{D}_{KL}(\mathbf{y}) = \int p(\mathbf{y}) \log \frac{p(\mathbf{y})}{\Pi_{i=1}^N p(y_i)} d\mathbf{y}
 \end{eqnarray}
 
 と表せます．この時，式(\ref{eq:ICA1})が0になるのは$p(y_1, y_2,...,y_N) =\Pi_{i=1}^N p(y_i) $が成り立つ，つまり独立な信号源として仮定した$\mathbf{y}$がちゃんと独立である時になります．よって最小化しましょう．\\
@@ -646,7 +646,7 @@ p (\mathbf{y}) = \Pi_{i=1}^N p(y_i) \qquad \text{周辺分布}
 \begin{align}
 \label{eq:ICA2}
 \mathbf{\hat W} &= \argmin_{\mathbf{W}} \mathbb{D}_{KL}(\mathbf{y}|\mathbf{W}) \nonumber \\
-&= \argmin_{\mathbf{W}} \int p(\mathbf{y}|\mathbf{W}) log \frac{p(\mathbf{y}|\mathbf{W})}{\Pi_{i=1}^N p(y_i|\mathbf{W})} d\mathbf{y}
+&= \argmin_{\mathbf{W}} \int p(\mathbf{y}|\mathbf{W}) \log \frac{p(\mathbf{y}|\mathbf{W})}{\Pi_{i=1}^N p(y_i|\mathbf{W})} d\mathbf{y}
 \end{align}
 
 式(\ref{eq:ICA1})が0になるように分離行列$\mathbf{W}$を逐次更新していけばいいわけですね．最小化する逐次更新の仕方はいくつかあって，最有力?なのが勾配法を用いるものです．勾配法についてまだちゃんと勉強できていないので今は式だけ．
@@ -857,6 +857,428 @@ $V_{xx}\bm{a}, V_{yy}\bm{b}$が消えるのは，制約条件より1としてい
 いずれ，ICAやPCAなど，他の線形変換を使った手法との違いとかも考えられると良いのかも．
 
 
+\chapter{機械学習}
+個人的にPRMLを読んで頑張っていたり，モデリングとか自由エネルギー原理とか勉強する上でやっぱちょくちょく出てくるのが機械学習系の知見というか学習なので，それもまとめていこうと思います．ありえんむずいから合ってるのか自信ないけど頑張るぞい．
+
+\section{EMアルゴリズム}
+EMアルゴリズム，いろんなとこでよく聞きますよね．うちの助教さん曰く，自由エネルギー原理の前に変分ベイズやるべきで，その前にEMアルゴリズムはやっとくべき，だそうで．まあそらそうって感もあるので頑張って学習してみましたよって事でまとめます．\\
+
+\begin{screen}
+  EMアルゴリズム\\
+  確率モデルのパラメータ$\theta$を最尤推定する手法の一つ．観測可能な変数だけでなく，観測が不可能な潜在変数も観測データの振る舞いに影響している場合に使う
+\end{screen}
+
+ということで，最尤推定の問題を解く手法の一つということでした．\\
+
+最尤推定は以下の式でいうところの，尤度$p(x|\theta)$を最大にするようなパラメータを推定する手法でした．
+
+\begin{align}
+  p(\mathbf{\theta}|x) \propto p(x|{\theta)p(\theta)}
+\end{align}
+
+与えられたデータ集合をX, 尤度関数をL
+
+\begin{align}
+  L(\theta) = p(x_1, x_2, ... , x_n | \theta)
+\end{align}
+  
+として定義すると，最尤推定で解く問題は
+
+\begin{align}
+  \hat{\theta} = \argmax_\theta L(\theta)
+\end{align}
+
+であり，これはつまり最尤推定解は
+
+\begin{align}
+  \frac{\partial}{\partial \theta}\log L(\theta) = 0
+  \label{eq:ml}
+\end{align}
+
+の解でした．統計編でやってましたね．しかしここで，実は統計編の時には確認していなかった穴があります．その穴を解決するための手法の一つがEMアルゴリズムです．\\
+
+\subsection{不完全データ集合}
+さて，その穴とは何かを考えていきます．たとえば「ある人の知覚実験の結果」を観測変数として試行を繰り返すと，その結果はきっとなんらかの(普通は正規分布が妥当そう)分布に従いますよね．
+
+\begin{figure}[H]
+  \centering
+  \label{im:gauss-test1}
+  \includegraphics[width=10cm]{../figures/test1.eps}
+  \caption{被験者1人の実験結果}
+\end{figure}
+
+では次に，「２人の被験者の知覚実験の結果」を観測変数とするとどうなるかというと，
+
+\begin{figure}[H]
+  \centering
+  \label{im:gauss-test2}
+  \includegraphics[width=10cm]{../figures/test2.eps}
+  \caption{x:被験者2人の実験結果}
+\end{figure}
+
+図(\ref{im:gauss-test2})のようになるはずです．
+
+どっちの被験者の成績なのかが分からない場合，二つのガウス分布の足し合わせで出来る分布によってデータxが生成されることになります．ここでは，平均点が80点と50点の２人の被験者を想定してます．こうしてガウス分布を混ぜて作られる分布を混合ガウス分布と言います．\\
+
+被験者が1人の場合，観測変数xが$\theta(\mu,\sigma)$のパラメータに従って生成されているので普通に尤度関数を定義できました．が2人の場合どうでしょう．観測変数xは平均と分散だけでなく，どちらの被験者の結果なのかというもう一つのパラメータが必要になります．そこで，混合ガウス分布の式として
+
+\begin{align}
+  p(x|\mu,\sigma,\pi) = \sum_j \pi_j N(x|\mu,\sigma)
+\end{align}
+
+を考えます．$\pi$はどっちの被験者が採用されるか...?多いか...?のパラメータです．ガウス分布に対する重みですね．というわけで，このパラメータ$\pi$による被験者の決定結果として隠れた変数$z$を定義します．これはどっちの被験者が，つまりどちらのガウス分布からデータが生成されるかです．\\
+
+するとここで考える尤度は$p(x|\theta)$ではなく$p(x,z|\theta)$になります．ここで$\theta$も$(\mu,\sigma)$から$(\mu, \sigma, \pi)$になっています．\\
+
+では尤度関数を定義して，偏微分して最尤解を求めよう...と思ったところで問題が生じます．$z$が観測できないことです．観測できているのはあくまで$x$であって，その背景にあった$z$の値は不明です．こうなると，普通に最尤法を解くことはできなくなってしまうわけですね．\\
+
+これが最尤法の穴です．このように，データが生成される確率$p(x,z)$があった時にこのうち$z$の情報が観測できないというようなデータ集合のことを不完全データ集合と言います．EMアルゴリズムとは，不完全データ集合に対する最尤推定問題を解くための手法である，ということになりそうです．ではようやく，中身に入っていきます．
+
+\subsection{EMアルゴリズムの概要}
+数式を追っていくのはちょっとだけ大変なので，まずはモチベだけ確認します．EMアルゴリズムは，$p(x,z|\theta)$をどうにかして解き，最尤な$\theta$を求めるための手法でした．ただしこの時，問題になるのは変数$z$が観測できないということです．\\
+
+そのため，まず変数$z$も確率変数であると考えて，尤度$p(x,z|\theta)$を$z$周りで周辺化することで普通の尤度$p(x|\theta)$と等しいよねって考えます．つまり
+
+\begin{align}
+  \label{eq:em0}
+  p(x|\theta) = \sum_z p(x,z|\theta)
+\end{align}
+
+ですね．こうして，普通の最尤推定の時の尤度の最大化ではなく，尤度の期待値の最大化問題に置き換え，近似的に$\theta$を求めていきます．んで，そのために二つのステップ, EステップとMステップを繰り返し計算していくからＥＭアルゴリズムと呼ばれます．そのステップはなんぞやってのは式を見てからにします．
+
+\subsection{変分下界}
+てことで，例のごとく式(\ref{eq:em0})を対数化し，対数尤度の形に式を書き直します．
+
+\begin{align}
+  \label{eq:em1}
+  \log p(x|\theta) = \log \sum_z p(x,z|\theta)
+\end{align}
+
+ふむ．ここで新たな問題が生じます．なんかこれ，log-sumの形が出てきちゃっています．これは解析的には扱いにくくて困る形です．てことで次の課題は，どうにかしてこのlog-sumくんを扱える形に料理することです．\\
+
+いきなりですがここからなんかすごいアクロバットな事します．僕は思いつかないような技なんですけど...
+
+\begin{align}
+  \log p(x|\theta) &= \log \sum_z p(x,z|\theta)\\
+  &= \log \sum_z q(z) \frac{p(x,z|\theta)}{q(z)} 
+\end{align}
+
+と，確率変数である$z$についての分布$q(z)$を導入し，右辺に$\frac{q(z)}{q(z)}$をかけます．当然この分数は1なのでかけても問題はありません．さて，こうすると嬉しい事があって，対数と期待値に関する不等式として  
+
+\begin{screen}
+  \textbf{Jansenの不等式}\\
+  $\log E[X] \geq E \log[X]$
+\end{screen}
+
+というものがあります．これを使うことでさらに
+
+\begin{align}
+  \log p(x|\theta) &= \log \sum_z p(x,z|\theta)\\
+  &= \log \sum_z q(z) \frac{p(x,z|\theta)}{q(z)} \geq \sum_z q(z) \log \frac{p(x,z|\theta)}{q(z)}
+\end{align}
+
+という関係式をつくることができます．\\
+この右側の項を
+
+\begin{align}
+  L(q,\theta) = \sum_z q(z) \log \frac{p(x,z|\theta)}{q(z)}
+\end{align}
+
+として定義すると，式(\ref{eq:em1})は
+
+\begin{align}
+  \label{eq:em2}
+  \log p(x|\theta) \geq L(q,\theta)
+\end{align}
+
+という形に変わります．多分何やっているのか分からなくなってる頃だと思うので式を落ち着いて考えてみます．まず式(\ref{eq:em2})の左辺は対数尤度ですね．最尤推定において最大化したいやつです．普通だったら$\theta$で偏微分して最大化するやつ．そいつが，右辺のLと等号付きの不等式で表されています．\\
+
+つまり求めたい対数尤度は常に関数$L$以上であるという関係が見えるわけですね．これを使うと，Lの最大化を進めていけばそれに従って尤度の方も最大化が進んでいくことが分かります．\\
+
+そう，ここで何をしたかったのかと言うと, 今回求めるのが無理(zのせい)な尤度関数の最大化問題を，別の関数であるＬの最大化問題に置き換えたわけですね！\\
+
+\begin{figure}[H]
+  \label{im:em1}
+  \centering
+  \includegraphics[width=10cm]{../figures/em1.eps}
+  \caption{尤度とLの関係}
+\end{figure}
+
+
+以上の関係は図(\ref{im:em1})のようになります．ここで気になるのは，まず尤度とLの間には0以上の「差」があることです．この差を0に近付けていくことで，$\log p(x|\theta) = L(q,\theta)$の関係まではLを大きくすることが出来ます．\\
+
+まずはこの問題を考えます．とりあえず計算してみましょうか．
+
+\begin{align}
+  &\log p(x|\theta) - L(q,\theta)\nonumber\\
+  &=\log p(x|\theta) - \sum_z q(z) \log \frac{p(x,z|\theta)}{q(z)}\nonumber\\
+  &=\log p(x|\theta) - \sum_z q(z) \log \frac{p(z|x,\theta)p(x|\theta)}{q(z)}\nonumber\\
+  &=\sum_z q(z) \log p(x|\theta) - \sum_z q(z)(\log p(z|x,\theta)+\log p(x|\theta) -\log q(z))\nonumber\\
+  &=-\sum_z q(z)(\log p(z|x,\theta) - \log q(z))\nonumber\\
+  &=-\sum_z q(z) \log \frac{p(z|x,\theta)}{q(z)}
+  \label{eq:em3}
+\end{align}
+
+色々やってますが，まず1行目は普通に図(\ref{im:em1})でいうオレンジ矢印部分です．こいつをLの中身を代入して書き直し，乗法定理を使って3行目の形に書き直し，さらにlogの計算を足し算の形にばらしたのが4行目です．ここで左側の項にも$\sum q(z)$がかかっていますが，これは確率分布だから1になるので特に意味をなしません．んで$\sum q(z)$で全体をくくって打ち消しあわせて，分数の形になおしてみたのが\ref{eq:em3}になります．\\
+
+この形，よく見るとKLDになっているの分かるでしょうか．
+
+\begin{align}
+  \log p(x|\theta) - L(q,\theta)&= -\sum_z q(z) \log \frac{p(z|x,\theta)}{q(z)}\nonumber\\
+  &= KL[q(z)||p(z|x,\theta)]\nonumber
+\end{align}
+
+になっていますよね．てことで，オレンジの部分は$q(z)$と$p(z)$のKLDでした．\\
+
+さて，ここからついにEMアルゴリズムの中身に入っていきます．\\
+
+まずもう一度与えられている問題を考えると，最尤推定をするために最大化したいのは尤度$\log p(x|\theta)$なんだけど，でもこいつに未知の観測不可な要素も孕まれていると考えると普通に尤度の計算できねえじゃん．ということで$\log p(x,z|\theta)$を考えて，こいつをごちゃごちゃした結果として関数Ｌの最大化をしていこうという問題にすり替えられたのでした．\\
+
+関数Ｌは$L(q,\theta)$とあるので，いじれる変数は2つです．これらそれぞれの変数を使って関数の最大化をしていけばいいわけですね．\\
+
+それぞれ，片方を固定した状態でもう片方をその条件下で最適化する，という作業を繰り返していくのがＥＭアルゴリズムです．ＥステップとＭステップというのは，この2変数の最適化ステップに対応しています．つまり
+
+\begin{align}
+  \text{E-step:} \qquad q &= \argmax_{q}L(q,\theta)\nonumber\\
+  \text{M-step:} \qquad \hat{\theta} &= \argmax_{\theta}L(q,\theta)\nonumber
+\end{align}
+
+を交互に解く問題です．
+順番に見ましょう．\\
+
+\subsection{Eステップ}
+
+まず，
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=10cm]{../figures/em1.eps}
+  \caption{尤度とLの関係}
+\end{figure}
+
+を見直して明らかなのは，$p(x|\theta)$と$L(q,\theta)$の間にある，$KL(q||p)$を最小化する必要があるという事です．
+
+\begin{figure}[H]
+  \label{im:em2}
+  \centering
+  \includegraphics[width=15cm]{../figures/em2.eps}
+  \caption{Eステップ}
+\end{figure}
+
+$L(q,\theta)$の$\theta$を固定して，$q$をいじって$KL(q||p)$を最小化するステップがEステップです．
+
+\begin{align}
+  q &= \argmax_{q}L(q,\theta)
+\end{align}
+
+Eはexpectation, つまり期待値です．もともと
+
+\begin{align}
+  \log p(x|\theta) = L(q,\theta) + KL(q||p)\nonumber
+\end{align}
+
+なので，ここでKLDが最小化されればLの最大化になるわけですね．さらに，KLDが0ってことは$q=p$になる，つまり
+
+\begin{align}
+  \label{eq:e-step}
+  q(z) = p(z|x,\theta)\nonumber
+\end{align}
+
+となることを意味します．qの分布がpの事後分布と等しくなったことが分かります．\\
+
+\subsection{Mステップ}
+次にMステップです．今，Eステップによって
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=10cm]{../figures/em3.eps}
+\end{figure}
+
+の状態にまで更新されています．ここから何をやれば良いのかですが，真の最大値はまだまだ上にいます．なので$p(x|\theta)$と一緒に下界を押し上げる必要があります．
+
+EステップでKLDが最小化され，固定された$\theta$の元では$\log p(x|\theta)$が等しくなりましたが，ここで今度は$\theta$の方を最適化します．$q$を固定し，$\theta$を更新するわけですね．\\
+
+\begin{align}
+  \hat{\theta} &= \argmax_{\theta}L(q,\theta)
+\end{align}
+$\theta$は$\log p(x|\theta)$もKLDも条件に入っている変数なので，Lの$\theta$を更新すると他も更新されます．
+
+まず，Lは$\theta$について最大化なので当然上に伸びます．\\
+
+またKLDは0以上の値をとるもので，Eステップで0になっている状態なのでKLDは変わらないか増加するかです．で，元々最大化したい量である$\log p(x|\theta)$は
+
+\begin{align}
+  \log p(x|\theta) = L(q,\theta) + KL[q||p]\nonumber
+\end{align}
+
+があるので右辺が増加することによって一緒に増加します．こうして全体が上に押し上げられる感じですね．MはMaximizationのMで，最大化を意味します．
+
+\begin{figure}[H]
+  \label{im:em4}
+  \centering
+  \includegraphics[width=15cm]{../figures/em4.eps}
+  \caption{Mステップ}
+\end{figure}
+
+
+計算はまず$q(z)$を固定して，$\theta$の最大化をしていくので，Eステップの時に使っていた$\theta$を$\theta_{old}$としておきます．
+
+L関数の中身を式(\ref{eq:e-step})にあるEステップの結果を使って書き換えると
+
+\begin{align}
+  L(q,\theta) &= \sum q(z) \log \frac{p(x,z|\theta)}{q(z)}\\
+  &= \sum p(z|x,\theta_{old})\log p(x,z|\theta) - \sum p(z|x,\theta_{old})\log p(z|x,\theta_{old})
+\end{align}
+
+となります．qの分布が事後分布と等しくなるってやつですね．
+このうち，第二項は$\theta$に依存していないので最大化の際は定数と考えていいので，すると
+
+\begin{align}
+  L(q,\theta) &= \sum p(z|x,\theta_{old})\log p(x,z|\theta) + const.\\
+  &= Q(\theta, \theta_{old}) + const.
+\end{align}
+
+と，Q関数の最大化問題に置き換えて考えられます．Q関数は完全データの対数尤度$\log p(x,z|\theta)$の，Eで求めた事後分布$p(z|x,\theta_{old})$による期待値であると考えることができます．こいつの最大化によって全体を押し上げるのがMステップでした．ちなみに，ここで定数としたやつはエントロピーとよばれる量です．が，EMアルゴリズムでは関係ないのでスルー．
+
+\begin{align}
+  \theta_{new} = \argmax_{\theta}Q(\theta,\theta_{old})
+\end{align}
+
+これが実質のMステップです．更新の結果KLDがまた生じているので，またこいつを最小化するEステップをやり直します．で，またKLDが0になったら$\theta$を変えて押し上げるMステップ．この繰り返しをすることでLを限界まで最大化すると，一緒に値が更新されている対数尤度関数も最大化されるってわけですね．\\
+
+これをやっているうちに，$\theta$を更新してもKLDが増加しないところに来ます．こうなったときが最適化終了のタイミングです．\\
+ExpectationとMaximizationを繰り返す，期待値最大化法がEMアルゴリズムの正体でした．
+
+\begin{screen}
+  \textbf{EMアルゴリズム}
+  1. Eステップ: 現在推定されている潜在変数の分布に基づいて，モデルの尤度の期待値を計算．\\
+  2. Mステップ: Eステップの尤度期待値を最大化するパラメータ$\theta$を求める．\\
+  3. Mステップで求まったパラメータは，次のEステップで使われる潜在変数の分布を決定するために用いられる．\\
+  4. この2ステップの繰り返しで値が更新されなくなったところで最適化終了
+\end{screen}
+
+\section{変分ベイズ推定}
+EMアルゴリズムは隠れ変数としてzがいる時，変分下界を使ってパラメータ$\theta$を点推定する最尤法の解法でした．が，これにはいくつか課題点があります．
+
+\begin{itemize}
+  \item $\theta$の分布がなだらかだったり多峰の時うまくいかない
+  \item 隠れ変数が1層$z$の時しか使えない
+  \item 過学習してしまう
+\end{itemize}
+
+だそうです．結構つらいですよね．とりあえず解決法として考えられるのは点での推定じゃなくて確率分布にしちゃうことと，なんらかの形で正則化して過学習を防ぐことでしょうか．後者はともかく，前者は簡単です．ベイズ推定を使えばいいですよね．\\
+
+最尤推定と最大事後確率推定，ベイズ推定については統計編にまとめていますが，最尤法は尤度が最大になる$\theta$を，最大事後確率推定は事後確率が最大になる$\theta$を点推定する手法なのに対し，ベイズ推定は事後分布自体を使う手法でした．
+
+そのベイズの考え方をいれたEMアルゴリズムが変分ベイズEMアルゴリズム?VB-EMアルゴリズムです．最尤法の時のEMアルゴリズムではzは確率変数だったけど$\theta$は最大化できる特定の値でしたね．これも確率変数にしちゃうのがこれからやることです．\\
+
+まず，やりたいのはこれまでに得られたデータ集合$X$の確率，$p(X)$を最大化するパラメータの事後分布を考えることです．これはベイズモデルが持ってる，推定の根拠となるものなのでモデルエビデンスなんて言います．
+
+\begin{align}
+  \label{eq:vb-em1}
+  p(X) = \iint p(X,z,\theta)dzd\theta
+\end{align}
+
+を最大化するんですね．
+
+最尤法の時同様，確率分布qを導入して，式(\ref{eq:vb-em1})の最大化に必要な変分下界を求めます．
+
+\begin{align}
+  \log p(X) &= \log \iint p(X,z,\theta)dzd\theta\\
+  &=\log \iint q(z,\theta|X)\frac{p(X,z,\theta)}{q(z,\theta|X)}dzd\theta \geq \iint q(z,\theta|X) \log \frac{p(X,z,\theta)}{q(z,\theta|X)}dzd\theta = L(q(z,\theta))
+\end{align}
+
+ということで，変分下界$L(q(z,\theta))$が求まりました．が，問題なのは推定したい$q(z,\theta)$が同時分布の形をとっていることです．それぞれの全ての組み合わせを考慮しているわけですね．これだと面倒なので，変分ベイズ推定ではqの変数間に独立性を仮定します．つまり
+
+\begin{align}
+  q(z,\theta) = q(z)q(\theta)
+\end{align}
+
+ですね．このように各確率変数に独立性の仮定を置いて推定したい$q(z,θ)$を複数の確率分布の積で表現することを平均場近似と言います．なので平均場近似をやると
+
+\begin{align}
+  \log p(X) &
+  \geq \iint q(z,\theta|X) \log \frac{p(X,z,\theta)}{q(z,\theta|X)}dzd\theta\nonumber\\
+  &= \iint q(z)q(\theta) \log \frac{p(X,z,\theta)}{q(z)q(\theta)}dzd\theta\nonumber\\
+  &= L(q(z,\theta))
+  \label{eq:vb-em2}
+\end{align}
+
+と置き換えることができ，解く事のできる形にLを変形できます．このLが変分自由エネルギーと呼ばれる量です．自由エネルギー原理にでてきますよね，変分自由エネルギー．
+
+ともかく，こうして変数$z,\theta$を分離することが出来たのでそれぞれを逐次更新してLを最大化していきます．
+
+面倒なので$z,\theta$をまとめ(隠れ変数が1層以上であることも考慮して)，$Z$を定義します．
+
+\begin{align}
+  q(Z) = \prod_{i=1}^M q_i(Z_i), \qquad Z_i(i=1,...,M)
+  \label{eq:vb-em3}
+\end{align}
+
+で，このq(Z)の中でLを最大にするものを探します．式(\ref{eq:vb-em2})を書き直すと
+
+\begin{align}
+  L(q) &= \int q(Z)\log \frac{p(X,Z)}{q(Z)}dZ\\
+  &= \int q(Z)(\log p(X,Z)-\log q(Z))dZ\\
+  &= \int \prod_i q_i(Z_i)(\log p(X,Z)- \sum_i \log q_i(Z_i))dZ\\
+  &= \int \prod_i q_i \log p(X,Z)dZ - \int \prod_i q_i\sum_i \log q_i dZ
+\end{align}
+
+となります．2行目から3行目の変形に式(\ref{eq:em3})を使っています．logの中身はかけざんが足し算になるとこに注意ですね．
+
+ここでちょっと面白いことをします．今Lは$q_i(Z_i)$で書かれていますが，こいつをさらに$q_j(Z_j)$を使って整理してみます．すると
+
+\begin{align}
+  L(q) &= \int \prod_i q_i \log p(X,Z)dZ - \int \prod_i q_i\sum_i \log q_i dZ\\
+  &=\iint q_j\prod_i q_i (\log p(X,Z) - \sum_i \log q_i) dZ_{i \neq j}dZ_j
+\end{align}
+
+となります．これは元々Zにいれていた変数が$z,\theta$で，二重積分だったことを思い出せば大丈夫だと思います．こいつをさらに変形していくと
+
+\begin{align}
+  L(q) &= \int \prod_i q_i \log p(X,Z)dZ - \int \prod_i q_i\sum_i \log q_i dZ\\
+  &=\iint q_j\prod_{i\neq j} q_i (\log p(X,Z) - \sum_i \log q_i) dZ_{i \neq j}dZ_j\\
+  &=\int q_j \int \prod_{i\neq j}
+\end{align}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \chapter{知覚心理実験}
 やはり勉強していて思うのは，心理屋さんって頭良いよなあという事です．よく知らない数理や工学系の人達は心理屋さんを馬鹿にしがちで，というのも「心理の人達は定性的な議論しかしてない．科学じゃない」なんて偏見に基づいていると思います．\\
@@ -865,7 +1287,7 @@ $V_{xx}\bm{a}, V_{yy}\bm{b}$が消えるのは，制約条件より1としてい
 \section{信号検出理論}
 信号検出理論(Signal Detection Theory)はその名の通り，ある特定の信号があったかどうかを検出する我々のプロセスをモデル化したもので，たとえばAという刺激を学習して他の刺激と区別するようなタスクを考えた際に適用できます．この場合，被験者はA刺激を検知したらYesと，そうじゃないものであったらNoと回答します．この時，どれだけ正確にYes/Noを答えられるか(正答率)が被験者の成績として一般に評価されているわけですが，もう少し考えてみようぜ，という話です．\\
 \\
-　というのも，実際自分でやってみれば分かるのですが被験者の成績によっても正答率とかは変わってきます．YesとNoが25:75でランダマイズされた実験で考えてみましょう．被験者が保守的(筆者はこのタイプ)な場合，微妙だなと思う刺激に対してはNoと答えるため，全体的にYesと答える回数が減ります．その結果，Yes/No比が15:85になったけどYesと答えた刺激の中での正答率は100\%という人がいる一方，逆にとりあえずYesと答える人は40:60になっていて，刺激ＡをYesと答える確率は100\%だけどもそうじゃないのについてもYes判定してしまっている人がいたり...単純に正答率だけでは比べるのが難しい，というかフェアじゃないよねという事態が生じます．そこで使われるのがSDTです．SDTは，2値の正解データ(Yes or No)と，2値の回答データ(yes or no)の組み合わせそれぞれの確率について対応表を作成するところから始まります．統計でおなじみの偽陽性とか偽陰性のあれと一緒です．
+　というのも，実際自分でやってみれば分かるのですが被験者の性格によっても正答率とかは変わってきます．YesとNoが25:75でランダマイズされた実験で考えてみましょう．被験者が保守的(筆者はこのタイプ)な場合，微妙だなと思う刺激に対してはNoと答えるため，全体的にYesと答える回数が減ります．その結果，Yes/No比が15:85になったけどYesと答えた刺激の中での正答率は100\%という人がいる一方，逆にとりあえずYesと答える人は40:60になっていて，刺激ＡをYesと答える確率は100\%だけどもそうじゃないのについてもYes判定してしまっている人がいたり...単純に正答率だけでは比べるのが難しい，というかフェアじゃないよねという事態が生じます．そこで使われるのがSDTです．SDTは，2値の正解データ(Yes or No)と，2値の回答データ(yes or no)の組み合わせそれぞれの確率について対応表を作成するところから始まります．統計でおなじみの偽陽性とか偽陰性のあれと一緒です．
 
 \begin{table}[H]
   \centering
